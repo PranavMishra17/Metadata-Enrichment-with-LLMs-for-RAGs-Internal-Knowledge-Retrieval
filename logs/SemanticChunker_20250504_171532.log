@@ -1,0 +1,26 @@
+2025-05-04 17:15:32,713 - SemanticChunker - INFO - Loading sentence transformer model: all-MiniLM-L6-v2
+2025-05-04 17:15:39,364 - SemanticChunker - INFO - Processing document: input_files\s3-outposts.txt
+2025-05-04 17:15:39,415 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:15:39,415 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:15:39,495 - SemanticChunker - INFO - Generating embeddings for 2510 sentences
+2025-05-04 17:15:42,256 - SemanticChunker - INFO - Identified 126 semantic breakpoints
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,259 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,263 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,264 - SemanticChunker - DEBUG - Skipping small chunk with 1 sentences
+2025-05-04 17:15:42,264 - SemanticChunker - INFO - Merging small chunks with their most similar neighbors
+2025-05-04 17:15:42,439 - SemanticChunker - INFO - Created 75 valid chunks out of 75 total chunks
+2025-05-04 17:15:42,461 - SemanticChunker - INFO - Saved chunks to chunk_output\s3-outposts_63f82c2c.json
