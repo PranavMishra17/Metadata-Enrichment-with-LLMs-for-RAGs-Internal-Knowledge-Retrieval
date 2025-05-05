@@ -4,7 +4,7 @@ import os
 from typing import Dict, List, Any, Optional
 import random
 from langchain_openai import AzureChatOpenAI
-
+import re
 import config
 from metadata.base_metadata_generator import BaseMetadataGenerator
 
@@ -29,6 +29,7 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
             self.logger.error(f"Failed to initialize LLM: {str(e)}")
             self.client = None
     
+
     def _enrich_chunks(self, chunk_data, method):
         """Enrich chunks with metadata using LLM."""
         # Check if LLM is initialized
@@ -83,14 +84,15 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
         # Extract text content
         text = chunk.get("text", "")
         
-        # Generate metadata using LLM
-        content_metadata = self._generate_content_metadata(text)
-        technical_metadata = self._generate_technical_metadata(text)
-        semantic_metadata = self._generate_semantic_metadata(text)
+        # Generate all metadata using a single LLM call
+        metadata = self._generate_combined_metadata(text)
         
         # Create enhanced embedding data
         embedding_enhancement = self._generate_embedding_enhancement(
-            text, content_metadata, technical_metadata, semantic_metadata
+            text, 
+            metadata.get("content", {}), 
+            metadata.get("technical", {}), 
+            metadata.get("semantic", {})
         )
         
         # Create enriched chunk
@@ -98,23 +100,61 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
         
         # Remove redundant metadata if present
         if "metadata" in enriched_chunk:
-            metadata = enriched_chunk["metadata"]
+            existing_metadata = enriched_chunk["metadata"]
             # Remove metadata that won't help with retrieval
             keys_to_remove = ["page_range", "code_lines", "processing_time"]
             for key in keys_to_remove:
-                if key in metadata:
-                    del metadata[key]
+                if key in existing_metadata:
+                    del existing_metadata[key]
         else:
             enriched_chunk["metadata"] = {}
         
         # Add new metadata
-        enriched_chunk["metadata"]["content"] = content_metadata
-        enriched_chunk["metadata"]["technical"] = technical_metadata
-        enriched_chunk["metadata"]["semantic"] = semantic_metadata
+        enriched_chunk["metadata"]["content"] = metadata.get("content", {})
+        enriched_chunk["metadata"]["technical"] = metadata.get("technical", {})
+        enriched_chunk["metadata"]["semantic"] = metadata.get("semantic", {})
         enriched_chunk["embedding_enhancement"] = embedding_enhancement
         
-        return enriched_chunk
-    
+        return enriched_chunk 
+
+    def _clean_json_string(self, json_string):
+        """Helper function to clean and fix common JSON errors."""
+        # Remove code block markers
+        if "```json" in json_string:
+            parts = json_string.split("```json", 1)
+            if len(parts) > 1:
+                json_string = parts[1]
+            if "```" in json_string:
+                json_string = json_string.split("```", 1)[0]
+        
+        # Trim whitespace
+        json_string = json_string.strip()
+        
+        # Fix common JSON errors - extra commas before closing brackets
+        json_string = re.sub(r',\s*}', '}', json_string)
+        json_string = re.sub(r',\s*]', ']', json_string)
+        
+        return json_string
+
+
+    def _parse_json_safely(self, content):
+        """Safely parse JSON, handling errors and fixing common issues."""
+        try:
+            # Try direct parsing first
+            return json.loads(content)
+        except json.JSONDecodeError:
+            # Clean up the JSON string
+            cleaned_json = self._clean_json_string(content)
+            
+            try:
+                # Try parsing the cleaned JSON
+                return json.loads(cleaned_json)
+            except json.JSONDecodeError as e:
+                self.logger.error(f"JSON parsing error after cleanup: {str(e)}")
+                self.logger.error(f"Cleaned content: {cleaned_json}")
+                raise
+
+
     def _generate_content_metadata(self, text):
         """Generate content-based metadata using LLM."""
         try:
@@ -129,7 +169,7 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
             - entities: array of technical named entities (max 5)
             - has_code: boolean if it contains code snippets
             
-            Return ONLY the JSON object, nothing else.
+            Return ONLY valid JSON, nothing else.
             """
             
             # Call LLM with retries for rate limits
@@ -138,14 +178,20 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                     response = self.client.invoke(prompt)
                     content = response.content
                     
-                    # Extract JSON from response
-                    metadata = json.loads(content)
+                    # Log the raw response
+                    self.logger.debug(f"Raw LLM response: {content}")
+                    
+                    # Parse JSON safely
+                    metadata = self._parse_json_safely(content)
                     return metadata
+                    
                 except Exception as e:
                     if "rate limit" in str(e).lower() and attempt < config.RETRY_LIMIT - 1:
                         self.logger.warning(f"Rate limit hit, retrying in {config.RETRY_DELAY} seconds")
                         time.sleep(config.RETRY_DELAY)
                     else:
+                        self.logger.error(f"LLM error: {str(e)}")
+                        self.logger.error(f"Last response content: {content if 'content' in locals() else 'N/A'}")
                         raise
             
             # Fallback if all retries fail
@@ -164,7 +210,8 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                 "entities": [],
                 "has_code": False
             }
-    
+
+
     def _generate_technical_metadata(self, text):
         """Generate technical metadata using LLM."""
         try:
@@ -179,7 +226,7 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
             - mentioned_services: specific services referenced (max 3)
             - mentioned_tools: development tools mentioned (max 3)
             
-            Return ONLY the JSON object, nothing else.
+            Return ONLY valid JSON, nothing else.
             """
             
             # Call LLM with retries
@@ -188,14 +235,20 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                     response = self.client.invoke(prompt)
                     content = response.content
                     
-                    # Extract JSON from response
-                    metadata = json.loads(content)
+                    # Log the raw response
+                    self.logger.debug(f"Raw LLM response: {content}")
+                    
+                    # Parse JSON safely
+                    metadata = self._parse_json_safely(content)
                     return metadata
+                    
                 except Exception as e:
                     if "rate limit" in str(e).lower() and attempt < config.RETRY_LIMIT - 1:
                         self.logger.warning(f"Rate limit hit, retrying in {config.RETRY_DELAY} seconds")
                         time.sleep(config.RETRY_DELAY)
                     else:
+                        self.logger.error(f"LLM error: {str(e)}")
+                        self.logger.error(f"Last response content: {content if 'content' in locals() else 'N/A'}")
                         raise
             
             # Fallback
@@ -213,7 +266,8 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                 "mentioned_services": [],
                 "mentioned_tools": []
             }
-    
+
+
     def _generate_semantic_metadata(self, text):
         """Generate semantic metadata using LLM."""
         try:
@@ -227,7 +281,7 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
             - intents: array of user intents (How-To, Debug, Compare, Reference)
             - potential_questions: 2-3 specific questions this content answers
             
-            Return ONLY the JSON object, nothing else.
+            Return ONLY valid JSON, nothing else.
             """
             
             # Call LLM with retries
@@ -236,14 +290,20 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                     response = self.client.invoke(prompt)
                     content = response.content
                     
-                    # Extract JSON from response
-                    metadata = json.loads(content)
+                    # Log the raw response
+                    self.logger.debug(f"Raw LLM response: {content}")
+                    
+                    # Parse JSON safely
+                    metadata = self._parse_json_safely(content)
                     return metadata
+                    
                 except Exception as e:
                     if "rate limit" in str(e).lower() and attempt < config.RETRY_LIMIT - 1:
                         self.logger.warning(f"Rate limit hit, retrying in {config.RETRY_DELAY} seconds")
                         time.sleep(config.RETRY_DELAY)
                     else:
+                        self.logger.error(f"LLM error: {str(e)}")
+                        self.logger.error(f"Last response content: {content if 'content' in locals() else 'N/A'}")
                         raise
             
             # Fallback
@@ -259,7 +319,103 @@ class LLMMetadataGenerator(BaseMetadataGenerator):
                 "intents": [],
                 "potential_questions": []
             }
-    
+
+
+    def _generate_combined_metadata(self, text):
+        """Generate all metadata using a single LLM call."""
+        try:
+            prompt = f"""Analyze this technical documentation chunk and extract comprehensive metadata.
+            
+            TEXT:
+            {text}
+            
+            OUTPUT JSON with these fields:
+            1. content: object with:
+            - content_type: object with "primary" (Conceptual/Procedural/Reference/Warning/Example) and "subtypes" array
+            - keywords: array of important technical terms (max 10)
+            - entities: array of technical named entities (max 5)
+            - has_code: boolean if it contains code snippets
+            
+            2. technical: object with:
+            - primary_category: single most relevant technical category
+            - secondary_categories: array of related categories (max 2)
+            - mentioned_services: specific services referenced (max 3)
+            - mentioned_tools: development tools mentioned (max 3)
+            
+            3. semantic: object with:
+            - summary: concise 1-2 sentence summary
+            - intents: array of user intents (How-To, Debug, Compare, Reference)
+            - potential_questions: 2-3 specific questions this content answers
+            
+            Return ONLY valid JSON, nothing else.
+            """
+            
+            # Call LLM with retries for rate limits
+            for attempt in range(config.RETRY_LIMIT):
+                try:
+                    response = self.client.invoke(prompt)
+                    content = response.content
+                    
+                    # Log the raw response
+                    self.logger.debug(f"Raw LLM response: {content}")
+                    
+                    # Parse JSON safely
+                    metadata = self._parse_json_safely(content)
+                    return metadata
+                    
+                except Exception as e:
+                    if "rate limit" in str(e).lower() and attempt < config.RETRY_LIMIT - 1:
+                        self.logger.warning(f"Rate limit hit, retrying in {config.RETRY_DELAY} seconds")
+                        time.sleep(config.RETRY_DELAY)
+                    else:
+                        self.logger.error(f"LLM error: {str(e)}")
+                        self.logger.error(f"Last response content: {content if 'content' in locals() else 'N/A'}")
+                        raise
+            
+            # Fallback if all retries fail
+            return {
+                "content": {
+                    "content_type": {"primary": "Unknown", "subtypes": []},
+                    "keywords": [],
+                    "entities": [],
+                    "has_code": False
+                },
+                "technical": {
+                    "primary_category": "Unknown",
+                    "secondary_categories": [],
+                    "mentioned_services": [],
+                    "mentioned_tools": []
+                },
+                "semantic": {
+                    "summary": "Technical documentation content",
+                    "intents": [],
+                    "potential_questions": []
+                }
+            }
+        except Exception as e:
+            self.logger.error(f"Error generating combined metadata: {str(e)}")
+            # Return default metadata on error
+            return {
+                "content": {
+                    "content_type": {"primary": "Unknown", "subtypes": []},
+                    "keywords": [],
+                    "entities": [],
+                    "has_code": False
+                },
+                "technical": {
+                    "primary_category": "Unknown",
+                    "secondary_categories": [],
+                    "mentioned_services": [],
+                    "mentioned_tools": []
+                },
+                "semantic": {
+                    "summary": "Technical documentation content",
+                    "intents": [],
+                    "potential_questions": []
+                }
+            }
+
+
     def _generate_embedding_enhancement(self, text, content_metadata, technical_metadata, semantic_metadata):
         """Generate embedding enhancement fields."""
         try:
