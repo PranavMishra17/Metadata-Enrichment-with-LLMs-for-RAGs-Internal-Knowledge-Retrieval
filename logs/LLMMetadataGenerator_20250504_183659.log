@@ -1,0 +1,23 @@
+2025-05-04 18:36:59,906 - LLMMetadataGenerator - ERROR - Failed to initialize LLM: 1 validation error for AzureChatOpenAI
+  Value error, Must provide either the `api_version` argument or the `OPENAI_API_VERSION` environment variable [type=value_error, input_value={'azure_deployment': None...0.0, 'model_kwargs': {}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/value_error
+2025-05-04 18:36:59,919 - LLMMetadataGenerator - INFO - Processing chunks from chunk_output
+2025-05-04 18:36:59,919 - LLMMetadataGenerator - INFO - Found 8 chunk files
+2025-05-04 18:36:59,919 - LLMMetadataGenerator - INFO - Semantic files: 4
+2025-05-04 18:36:59,920 - LLMMetadataGenerator - INFO - Naive files: 0
+2025-05-04 18:36:59,927 - LLMMetadataGenerator - INFO - Recursive files: 0
+2025-05-04 18:36:59,927 - LLMMetadataGenerator - INFO - Processing semantic chunks
+2025-05-04 18:36:59,927 - LLMMetadataGenerator - INFO - Processing file: chunk_output\glacier-dg_semantic_p95_chunks.json
+2025-05-04 18:36:59,933 - LLMMetadataGenerator - ERROR - LLM not initialized, cannot enrich chunks
+2025-05-04 18:36:59,947 - LLMMetadataGenerator - INFO - Saved enriched chunks to metadata_gen_output\semantic_chunks_metadata\glacier-dg_enriched_chunks.json
+2025-05-04 18:36:59,947 - LLMMetadataGenerator - INFO - Processing file: chunk_output\s3-api_semantic_p95_chunks.json
+2025-05-04 18:36:59,975 - LLMMetadataGenerator - ERROR - LLM not initialized, cannot enrich chunks
+2025-05-04 18:37:00,010 - LLMMetadataGenerator - INFO - Saved enriched chunks to metadata_gen_output\semantic_chunks_metadata\s3-api_enriched_chunks.json
+2025-05-04 18:37:00,017 - LLMMetadataGenerator - INFO - Processing file: chunk_output\s3-outposts_semantic_p95_chunks.json
+2025-05-04 18:37:00,019 - LLMMetadataGenerator - ERROR - LLM not initialized, cannot enrich chunks
+2025-05-04 18:37:00,024 - LLMMetadataGenerator - INFO - Saved enriched chunks to metadata_gen_output\semantic_chunks_metadata\s3-outposts_enriched_chunks.json
+2025-05-04 18:37:00,025 - LLMMetadataGenerator - INFO - Processing file: chunk_output\s3-userguide_semantic_p95_chunks.json
+2025-05-04 18:37:00,051 - LLMMetadataGenerator - ERROR - LLM not initialized, cannot enrich chunks
+2025-05-04 18:37:00,106 - LLMMetadataGenerator - INFO - Saved enriched chunks to metadata_gen_output\semantic_chunks_metadata\s3-userguide_enriched_chunks.json
+2025-05-04 18:37:00,107 - LLMMetadataGenerator - INFO - Processing naive chunks
+2025-05-04 18:37:00,107 - LLMMetadataGenerator - INFO - Processing recursive chunks

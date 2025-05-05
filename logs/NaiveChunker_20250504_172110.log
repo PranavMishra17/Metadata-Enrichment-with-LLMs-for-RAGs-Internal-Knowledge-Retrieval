@@ -1,0 +1,24 @@
+2025-05-04 17:21:10,850 - NaiveChunker - INFO - Processing document: input_files\s3-outposts.txt
+2025-05-04 17:21:10,852 - NaiveChunker - INFO - Creating chunks...
+2025-05-04 17:21:10,949 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_15 (only 1 sentences)
+2025-05-04 17:21:10,950 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_28 (only 1 sentences)
+2025-05-04 17:21:10,950 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_33 (only 1 sentences)
+2025-05-04 17:21:10,951 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_71 (only 1 sentences)
+2025-05-04 17:21:10,951 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_79 (only 1 sentences)
+2025-05-04 17:21:10,952 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_91 (only 1 sentences)
+2025-05-04 17:21:10,952 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_93 (only 1 sentences)
+2025-05-04 17:21:10,952 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_95 (only 1 sentences)
+2025-05-04 17:21:10,953 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_123 (only 1 sentences)
+2025-05-04 17:21:10,953 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_126 (only 1 sentences)
+2025-05-04 17:21:10,953 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_131 (only 1 sentences)
+2025-05-04 17:21:10,953 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_141 (only 1 sentences)
+2025-05-04 17:21:10,954 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_189 (only 1 sentences)
+2025-05-04 17:21:10,954 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_191 (only 1 sentences)
+2025-05-04 17:21:10,954 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_200 (only 1 sentences)
+2025-05-04 17:21:10,954 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_201 (only 1 sentences)
+2025-05-04 17:21:10,955 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_204 (only 1 sentences)
+2025-05-04 17:21:10,955 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_214 (only 1 sentences)
+2025-05-04 17:21:10,955 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_215 (only 1 sentences)
+2025-05-04 17:21:10,955 - NaiveChunker - WARNING - Skipping too small chunk: 927224a2-6f25-49b7-9835-b09d8c036022_chunk_216 (only 1 sentences)
+2025-05-04 17:21:10,955 - NaiveChunker - INFO - Created 197 valid chunks out of 217 total chunks
+2025-05-04 17:21:10,963 - NaiveChunker - INFO - Saved chunks to chunk_output\s3-outposts_naive_paragraph_chunks.json

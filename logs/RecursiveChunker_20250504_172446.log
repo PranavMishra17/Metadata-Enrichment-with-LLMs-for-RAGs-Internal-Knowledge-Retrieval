@@ -1,0 +1,23 @@
+2025-05-04 17:24:46,348 - RecursiveChunker - INFO - Processing document: input_files\s3-outposts.txt
+2025-05-04 17:24:46,352 - RecursiveChunker - INFO - Creating chunks...
+2025-05-04 17:24:46,467 - RecursiveChunker - DEBUG - Skipping too small segment at depth 9 (only 1 sentences)
+2025-05-04 17:24:46,638 - RecursiveChunker - DEBUG - Skipping too small segment at depth 9 (only 1 sentences)
+2025-05-04 17:24:46,746 - RecursiveChunker - DEBUG - Skipping too small segment at depth 8 (only 1 sentences)
+2025-05-04 17:24:46,790 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_24 (only 1 sentences)
+2025-05-04 17:24:46,790 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_29 (only 1 sentences)
+2025-05-04 17:24:46,811 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_67 (only 1 sentences)
+2025-05-04 17:24:46,811 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_75 (only 1 sentences)
+2025-05-04 17:24:46,811 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_87 (only 1 sentences)
+2025-05-04 17:24:46,811 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_89 (only 1 sentences)
+2025-05-04 17:24:46,812 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_91 (only 1 sentences)
+2025-05-04 17:24:46,812 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_119 (only 1 sentences)
+2025-05-04 17:24:46,812 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_122 (only 1 sentences)
+2025-05-04 17:24:46,812 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_127 (only 1 sentences)
+2025-05-04 17:24:46,813 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_184 (only 1 sentences)
+2025-05-04 17:24:46,813 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_186 (only 1 sentences)
+2025-05-04 17:24:46,814 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_197 (only 1 sentences)
+2025-05-04 17:24:46,814 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_207 (only 1 sentences)
+2025-05-04 17:24:46,814 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_208 (only 1 sentences)
+2025-05-04 17:24:46,815 - RecursiveChunker - WARNING - Skipping too small chunk: 39910eed-3fb0-4660-8dd6-8fefa4ae9d53_chunk_209 (only 1 sentences)
+2025-05-04 17:24:46,815 - RecursiveChunker - INFO - Created 194 valid chunks out of 210 total chunks
+2025-05-04 17:24:46,819 - RecursiveChunker - INFO - Saved chunks to chunk_output\s3-outposts_recursive_length1000_chunks.json

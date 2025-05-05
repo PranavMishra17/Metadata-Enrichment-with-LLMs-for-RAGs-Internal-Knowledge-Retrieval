@@ -85,7 +85,7 @@ When processing PDF files, the system automatically converts them to text files 
 - `--overlap`: Number of sentences to overlap between chunks
 - `--evaluate`: Evaluate chunks after creation
 
-## Chunking Strategies
+# Chunking Strategies
 
 ### 1. Semantic Chunking
 
@@ -149,6 +149,167 @@ metadata-enrichment-llm/
     ├── logger.py
     └── pdf_utils.py # PDF handling utilities
 ```
+
+# Metadata Enrichment with LLMs - Metadata Generation
+
+This document outlines the metadata generation phase of the Metadata Enrichment with LLMs pipeline, which enhances document chunks with rich semantic and structural metadata to improve retrieval and answer composition.
+
+## Overview
+
+The metadata generation system:
+
+1. Reads chunked documents from the `chunk_output` directory
+2. Processes chunks by chunking method (semantic, naive, recursive)
+3. Generates rich metadata using LLMs
+4. Saves enriched chunks to organized output directories
+5. Optionally evaluates metadata quality
+
+## Installation
+
+```bash
+# Install required dependencies
+pip install -r requirements.txt
+
+# Set up environment variables (.env file in project root)
+AZURE_API_KEY=your_key
+AZURE_ENDPOINT=your_endpoint
+AZURE_DEPLOYMENT=your_deployment
+AZURE_API_VERSION=your_api_version
+TEMPERATURE=0.0
+BATCH_SIZE=10
+REQUEST_TIMEOUT=30
+RETRY_LIMIT=3
+RETRY_DELAY=5
+```
+
+## Usage
+
+```bash
+# Basic usage
+python metadata_gen.py
+
+# Custom paths and evaluation
+python metadata_gen.py --chunks_dir path/to/chunks --output_dir path/to/output --evaluate
+
+# Available options
+--chunks_dir      Directory containing chunk files (default: chunk_output)
+--output_dir      Directory to store enriched output (default: metadata_gen_output)
+--evaluation_dir  Directory to store evaluation results (default: evaluation)
+--evaluate        Run evaluation after metadata generation
+```
+
+## Directory Structure
+
+```
+metadata-enrichment-llm/
+├── metadata_gen.py               # Main entry point
+├── .env                          # Environment variables
+├── chunk_output/                 # Input chunks from chunking phase
+├── metadata_gen_output/
+│   ├── semantic_chunks_metadata/ # Enriched semantic chunks
+│   ├── naive_chunks_metadata/    # Enriched naive chunks 
+│   └── recursive_chunks_metadata/# Enriched recursive chunks
+└── evaluation/                   # Evaluation metrics and visualizations
+```
+
+## Metadata Structure
+
+Each chunk is enriched with the following metadata:
+
+```json
+{
+  "chunk_id": "unique-id",
+  "text": "original content",
+  "metadata": {
+    "content": {
+      "content_type": {
+        "primary": "Procedural|Conceptual|Reference|Warning|Example",
+        "subtypes": ["Setup Guide", "Configuration", ...]
+      },
+      "keywords": ["term1", "term2", ...],
+      "entities": ["Entity1", "Entity2", ...],
+      "has_code": true|false
+    },
+    "technical": {
+      "primary_category": "Category",
+      "secondary_categories": ["Category1", "Category2"],
+      "mentioned_services": ["Service1", "Service2", ...],
+      "mentioned_tools": ["Tool1", "Tool2", ...]
+    },
+    "semantic": {
+      "summary": "Concise summary of content",
+      "intents": ["How-To", "Debug", "Compare", "Reference"],
+      "potential_questions": ["Question1?", "Question2?", ...]
+    }
+  },
+  "embedding_enhancement": {
+    "contextual_prefix": "[ContentType] [Category]",
+    "tf_idf_keywords": ["keyword1", "keyword2", ...]
+  }
+}
+```
+
+## Metadata Components
+
+### Content Metadata
+- **Content Type**: Categorizes content as Procedural, Conceptual, Reference, Warning, or Example
+- **Keywords**: Important technical terms and concepts
+- **Entities**: Named entities (products, services, tools)
+- **Code Detection**: Identifies presence of code examples
+
+### Technical Metadata
+- **Primary Category**: Main technical category
+- **Secondary Categories**: Related technical categories
+- **Mentioned Services**: Specific services referenced
+- **Mentioned Tools**: Development tools mentioned
+
+### Semantic Metadata
+- **Summary**: Concise abstract of the content
+- **Intents**: User intents this content addresses (How-To, Debug, Compare, Reference)
+- **Potential Questions**: Questions this content can answer
+
+### Embedding Enhancement
+- **Contextual Prefix**: Prepended text for embedding enhancement
+- **TF-IDF Keywords**: Keywords for TF-IDF vector enhancement (30% weighting)
+
+## Evaluation
+
+The metadata evaluation system assesses:
+
+1. **Completeness**: Percentage of fields that are properly populated
+2. **Diversity**: Variety of content types, categories, and intents
+3. **Intent Coverage**: Coverage of standard user intents (How-To, Debug, Compare, Reference)
+4. **Keyword Statistics**: Analysis of keywords and their distribution
+
+Evaluation results are saved to the evaluation directory and include visualizations of:
+- Field completeness
+- Content type distribution
+- Category distribution
+- Intent distribution
+- Keyword distribution
+
+## Implementation Details
+
+### LLM Integration
+
+The system uses Azure OpenAI services for metadata generation with:
+- Rate limit handling
+- Batch processing
+- Retry mechanism
+
+### Error Handling
+
+The implementation includes:
+- Proper error logging
+- Graceful handling of rate limits
+- Fallbacks for failed metadata generation
+
+### Performance Considerations
+
+- Processes chunks in batches to respect API limits
+- Uses checkpoints to resume processing
+- Keeps different chunking methods separate for clean evaluation
+
 
 ## Future Work
 

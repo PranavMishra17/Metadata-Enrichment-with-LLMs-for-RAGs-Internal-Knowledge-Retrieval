@@ -1,0 +1,2 @@
+2025-05-04 17:37:38,894 - ChunkEvaluator - INFO - Loading sentence transformer model: paraphrase-MiniLM-L3-v2
+2025-05-04 17:37:39,518 - ChunkEvaluator - INFO - Evaluating 254 chunks

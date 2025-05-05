@@ -1,0 +1,12 @@
+2025-05-04 17:35:22,215 - SemanticChunker - INFO - Loading sentence transformer model: all-MiniLM-L6-v2
+2025-05-04 17:35:23,514 - SemanticChunker - INFO - Processing document: input_files\s3-outposts.txt
+2025-05-04 17:35:23,530 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:35:23,530 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:35:23,574 - SemanticChunker - INFO - Adding context to 2510 sentences with window size 1
+2025-05-04 17:35:23,581 - SemanticChunker - INFO - Generating embeddings for 2510 sentences
+2025-05-04 17:35:25,954 - SemanticChunker - DEBUG - Distance threshold: 0.4048278331756591 at percentile 95
+2025-05-04 17:35:25,954 - SemanticChunker - INFO - Identified 102 semantic breakpoints at percentile 95
+2025-05-04 17:35:25,957 - SemanticChunker - INFO - Created 103 initial chunks
+2025-05-04 17:35:26,181 - SemanticChunker - INFO - After normalization: 254 chunks
+2025-05-04 17:35:29,089 - SemanticChunker - INFO - Created 254 valid chunks out of 254 total chunks
+2025-05-04 17:35:29,097 - SemanticChunker - INFO - Saved chunks to chunk_output\s3-outposts_semantic_p95_chunks.json

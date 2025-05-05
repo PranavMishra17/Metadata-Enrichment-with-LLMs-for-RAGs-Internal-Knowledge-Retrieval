@@ -1,0 +1,52 @@
+2025-05-04 18:53:29,183 - ChunkingTool - INFO - Starting document chunking tool
+2025-05-04 18:53:29,183 - ChunkingTool - INFO - Looking for files in: input_files
+2025-05-04 18:53:29,183 - ChunkingTool - INFO - Found 4 text files and converted 0 PDF files in directory: input_files
+2025-05-04 18:53:29,183 - ChunkingTool - INFO - Using recursive chunking method
+2025-05-04 18:53:29,183 - ChunkingTool - INFO - Processing file: input_files\glacier-dg.txt
+2025-05-04 18:53:30,226 - ChunkingTool - INFO - Saved chunks to: chunk_output\glacier-dg_recursive_length1000_chunks.json
+2025-05-04 18:53:30,226 - ChunkingTool - INFO - Processing file: input_files\s3-api.txt
+2025-05-04 18:53:34,791 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-api_recursive_length1000_chunks.json
+2025-05-04 18:53:34,791 - ChunkingTool - INFO - Processing file: input_files\s3-outposts.txt
+2025-05-04 18:53:35,203 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-outposts_recursive_length1000_chunks.json
+2025-05-04 18:53:35,203 - ChunkingTool - INFO - Processing file: input_files\s3-userguide.txt
+2025-05-04 18:53:41,135 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-userguide_recursive_length1000_chunks.json
+2025-05-04 18:53:41,135 - ChunkingTool - INFO - Evaluating chunks...
+2025-05-04 18:53:48,331 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\glacier-dg_recursive_length1000_chunks_evaluation.json
+2025-05-04 18:54:10,214 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-api_recursive_length1000_chunks_evaluation.json
+2025-05-04 18:54:12,320 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-outposts_recursive_length1000_chunks_evaluation.json
+2025-05-04 18:54:43,203 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-userguide_recursive_length1000_chunks_evaluation.json
+2025-05-04 18:54:43,205 - ChunkingTool - INFO - 
+Evaluation Summary:
+2025-05-04 18:54:43,205 - ChunkingTool - INFO - File: glacier-dg.txt
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Chunking Method: RecursiveChunker
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Total Chunks: 456
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Avg Chunk Size (words): 213.42
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Coherence Score: 0.03913877917170634
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.55
+2025-05-04 18:54:43,205 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.30
+2025-05-04 18:54:43,205 - ChunkingTool - INFO - 
+2025-05-04 18:54:43,205 - ChunkingTool - INFO - File: s3-api.txt
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Chunking Method: RecursiveChunker
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Total Chunks: 1593
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Avg Chunk Size (words): 237.44
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Coherence Score: 0.04860293475386211
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.50
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.28
+2025-05-04 18:54:43,207 - ChunkingTool - INFO - 
+2025-05-04 18:54:43,207 - ChunkingTool - INFO - File: s3-outposts.txt
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Chunking Method: RecursiveChunker
+2025-05-04 18:54:43,207 - ChunkingTool - INFO -   Total Chunks: 194
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Avg Chunk Size (words): 254.38
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Coherence Score: 0.020534642076985382
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.58
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.33
+2025-05-04 18:54:43,208 - ChunkingTool - INFO - 
+2025-05-04 18:54:43,208 - ChunkingTool - INFO - File: s3-userguide.txt
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Chunking Method: RecursiveChunker
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Total Chunks: 1856
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Avg Chunk Size (words): 304.61
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Coherence Score: 0.051360586926001525
+2025-05-04 18:54:43,208 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.47
+2025-05-04 18:54:43,209 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.32
+2025-05-04 18:54:43,209 - ChunkingTool - INFO - 
+2025-05-04 18:54:43,209 - ChunkingTool - INFO - Document chunking completed

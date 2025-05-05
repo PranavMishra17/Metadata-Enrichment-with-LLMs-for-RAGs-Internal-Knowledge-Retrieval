@@ -1,0 +1,56 @@
+2025-05-04 17:42:05,655 - ChunkingTool - INFO - Starting document chunking tool
+2025-05-04 17:42:05,655 - ChunkingTool - INFO - Looking for files in: input_files
+2025-05-04 17:42:47,063 - ChunkingTool - INFO - Converted PDF to text: input_files\glacier-dg.pdf -> input_files\glacier-dg.txt
+2025-05-04 17:45:42,696 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-api.pdf -> input_files\s3-api.txt
+2025-05-04 17:46:14,098 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-outposts.pdf -> input_files\s3-outposts.txt
+2025-05-04 17:50:10,966 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-userguide.pdf -> input_files\s3-userguide.txt
+2025-05-04 17:50:10,968 - ChunkingTool - INFO - Found 0 text files and converted 4 PDF files in directory: input_files
+2025-05-04 17:50:14,614 - ChunkingTool - INFO - Using semantic chunking method
+2025-05-04 17:50:14,615 - ChunkingTool - INFO - Processing file: input_files\glacier-dg.txt
+2025-05-04 17:50:26,885 - ChunkingTool - INFO - Saved chunks to: chunk_output\glacier-dg_semantic_p95_chunks.json
+2025-05-04 17:50:26,885 - ChunkingTool - INFO - Processing file: input_files\s3-api.txt
+2025-05-04 17:51:19,853 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-api_semantic_p95_chunks.json
+2025-05-04 17:51:19,856 - ChunkingTool - INFO - Processing file: input_files\s3-outposts.txt
+2025-05-04 17:51:26,570 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-outposts_semantic_p95_chunks.json
+2025-05-04 17:51:26,570 - ChunkingTool - INFO - Processing file: input_files\s3-userguide.txt
+2025-05-04 17:52:47,057 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-userguide_semantic_p95_chunks.json
+2025-05-04 17:52:47,059 - ChunkingTool - INFO - Evaluating chunks...
+2025-05-04 17:52:54,853 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\glacier-dg_semantic_p95_chunks_evaluation.json
+2025-05-04 17:53:31,634 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-api_semantic_p95_chunks_evaluation.json
+2025-05-04 17:53:34,841 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-outposts_semantic_p95_chunks_evaluation.json
+2025-05-04 17:54:34,690 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-userguide_semantic_p95_chunks_evaluation.json
+2025-05-04 17:54:34,690 - ChunkingTool - INFO - 
+Evaluation Summary:
+2025-05-04 17:54:34,690 - ChunkingTool - INFO - File: glacier-dg.txt
+2025-05-04 17:54:34,690 - ChunkingTool - INFO -   Chunking Method: SemanticChunker
+2025-05-04 17:54:34,690 - ChunkingTool - INFO -   Total Chunks: 476
+2025-05-04 17:54:34,690 - ChunkingTool - INFO -   Avg Chunk Size (words): 231.24
+2025-05-04 17:54:34,690 - ChunkingTool - INFO -   Coherence Score: 0.04127627671535336
+2025-05-04 17:54:34,690 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.28
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.30
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - 
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - File: s3-api.txt
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Chunking Method: SemanticChunker
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Total Chunks: 1961
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Avg Chunk Size (words): 229.68
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Coherence Score: 0.06112055466768196
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.27
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.28
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - 
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - File: s3-outposts.txt
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Chunking Method: SemanticChunker
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Total Chunks: 254
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Avg Chunk Size (words): 204.89
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Coherence Score: 0.014388278755825212
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.33
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.33
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - 
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - File: s3-userguide.txt
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Chunking Method: SemanticChunker
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Total Chunks: 3015
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Avg Chunk Size (words): 197.01
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Coherence Score: 0.05124047841903973
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.24
+2025-05-04 17:54:34,706 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.32
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - 
+2025-05-04 17:54:34,706 - ChunkingTool - INFO - Document chunking completed

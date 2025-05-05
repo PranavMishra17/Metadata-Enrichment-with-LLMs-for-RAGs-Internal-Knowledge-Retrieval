@@ -1,0 +1,3 @@
+2025-05-04 18:50:37,061 - ChunkingTool - INFO - Starting document chunking tool
+2025-05-04 18:50:37,061 - ChunkingTool - INFO - Looking for files in: input_files
+2025-05-04 18:51:20,770 - ChunkingTool - INFO - Converted PDF to text: input_files\glacier-dg.pdf -> input_files\glacier-dg.txt

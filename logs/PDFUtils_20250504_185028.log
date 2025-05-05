@@ -1,0 +1,3 @@
+2025-05-04 18:50:37,061 - PDFUtils - INFO - Converting PDF to text: input_files\glacier-dg.pdf
+2025-05-04 18:51:20,770 - PDFUtils - INFO - Successfully converted PDF to text: input_files\glacier-dg.txt
+2025-05-04 18:51:20,772 - PDFUtils - INFO - Converting PDF to text: input_files\s3-api.pdf

@@ -1,0 +1,8 @@
+2025-05-04 17:42:05,655 - PDFUtils - INFO - Converting PDF to text: input_files\glacier-dg.pdf
+2025-05-04 17:42:47,063 - PDFUtils - INFO - Successfully converted PDF to text: input_files\glacier-dg.txt
+2025-05-04 17:42:47,063 - PDFUtils - INFO - Converting PDF to text: input_files\s3-api.pdf
+2025-05-04 17:45:42,696 - PDFUtils - INFO - Successfully converted PDF to text: input_files\s3-api.txt
+2025-05-04 17:45:42,696 - PDFUtils - INFO - Converting PDF to text: input_files\s3-outposts.pdf
+2025-05-04 17:46:14,098 - PDFUtils - INFO - Successfully converted PDF to text: input_files\s3-outposts.txt
+2025-05-04 17:46:14,099 - PDFUtils - INFO - Converting PDF to text: input_files\s3-userguide.pdf
+2025-05-04 17:50:10,948 - PDFUtils - INFO - Successfully converted PDF to text: input_files\s3-userguide.txt

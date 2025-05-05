@@ -1,0 +1,54 @@
+2025-05-04 19:20:48,567 - LLMMetadataGenerator - INFO - LLM initialized successfully
+2025-05-04 19:20:48,568 - LLMMetadataGenerator - INFO - Processing chunks from chunk_output
+2025-05-04 19:20:48,569 - LLMMetadataGenerator - INFO - Found 24 chunk files
+2025-05-04 19:20:48,569 - LLMMetadataGenerator - INFO - Semantic files: 4
+2025-05-04 19:20:48,569 - LLMMetadataGenerator - INFO - Naive files: 4
+2025-05-04 19:20:48,570 - LLMMetadataGenerator - INFO - Recursive files: 4
+2025-05-04 19:20:48,570 - LLMMetadataGenerator - INFO - Processing semantic chunks
+2025-05-04 19:20:48,570 - LLMMetadataGenerator - INFO - Processing file: chunk_output\glacier-dg_semantic_p95_chunks.json
+2025-05-04 19:20:48,598 - LLMMetadataGenerator - INFO - Enriching 476 chunks
+2025-05-04 19:20:48,599 - LLMMetadataGenerator - INFO - Processing batch 1/48
+2025-05-04 19:20:48,859 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:48,908 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:48,949 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:50,189 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:50,283 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:50,336 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:51,044 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:51,091 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:51,138 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:52,187 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:52,230 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:52,272 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:53,010 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:53,053 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:53,094 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:53,983 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:54,025 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:54,064 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:54,777 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:54,822 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:54,868 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:55,880 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:55,940 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:55,990 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:56,751 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:56,799 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:56,850 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:58,363 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:58,427 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:58,469 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:20:59,216 - LLMMetadataGenerator - INFO - Pausing between batches to avoid rate limits
+2025-05-04 19:21:00,975 - LLMMetadataGenerator - INFO - Processing batch 2/48
+2025-05-04 19:21:01,023 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:01,068 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:01,104 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:02,322 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:02,358 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:02,394 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,006 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,045 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,081 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,904 - LLMMetadataGenerator - ERROR - Error generating content metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,949 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}
+2025-05-04 19:21:03,993 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Error code: 404 - {'error': {'code': '404', 'message': 'Resource not found'}}

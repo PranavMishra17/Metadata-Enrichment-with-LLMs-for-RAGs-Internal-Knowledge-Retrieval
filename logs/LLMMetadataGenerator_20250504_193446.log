@@ -1,0 +1,15 @@
+2025-05-04 19:34:46,837 - LLMMetadataGenerator - INFO - LLM initialized successfully
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Processing chunks from chunk_output
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Found 24 chunk files
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Semantic files: 4
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Naive files: 4
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Recursive files: 4
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Processing semantic chunks
+2025-05-04 19:34:46,838 - LLMMetadataGenerator - INFO - Processing file: chunk_output\glacier-dg_semantic_p95_chunks.json
+2025-05-04 19:34:46,860 - LLMMetadataGenerator - INFO - Enriching 476 chunks
+2025-05-04 19:34:46,861 - LLMMetadataGenerator - INFO - Processing batch 1/48
+2025-05-04 19:34:48,897 - LLMMetadataGenerator - ERROR - Error generating content metadata: Expecting value: line 1 column 1 (char 0)
+2025-05-04 19:34:51,345 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Expecting value: line 1 column 1 (char 0)
+2025-05-04 19:34:54,386 - LLMMetadataGenerator - ERROR - Error generating content metadata: Expecting value: line 1 column 1 (char 0)
+2025-05-04 19:34:56,053 - LLMMetadataGenerator - ERROR - Error generating technical metadata: Expecting value: line 1 column 1 (char 0)
+2025-05-04 19:34:57,753 - LLMMetadataGenerator - ERROR - Error generating semantic metadata: Expecting value: line 1 column 1 (char 0)

@@ -1,0 +1,3 @@
+2025-05-04 18:36:59,906 - MetadataGenTool - INFO - Starting metadata generation tool
+2025-05-04 18:37:00,107 - MetadataGenTool - INFO - Metadata generation completed in 0.20 seconds
+2025-05-04 18:37:00,107 - MetadataGenTool - INFO - Saved processing metrics to evaluation\metadata_gen_metrics.json

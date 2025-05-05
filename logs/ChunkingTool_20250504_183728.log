@@ -1,0 +1,68 @@
+2025-05-04 18:37:28,078 - ChunkingTool - INFO - Starting document chunking tool
+2025-05-04 18:37:28,078 - ChunkingTool - INFO - Looking for files in: input_files
+2025-05-04 18:38:11,456 - ChunkingTool - INFO - Converted PDF to text: input_files\glacier-dg.pdf -> input_files\glacier-dg.txt
+2025-05-04 18:41:04,566 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-api.pdf -> input_files\s3-api.txt
+2025-05-04 18:41:32,640 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-outposts.pdf -> input_files\s3-outposts.txt
+2025-05-04 18:45:15,095 - ChunkingTool - INFO - Converted PDF to text: input_files\s3-userguide.pdf -> input_files\s3-userguide.txt
+2025-05-04 18:45:15,095 - ChunkingTool - INFO - Found 4 text files and converted 4 PDF files in directory: input_files
+2025-05-04 18:45:15,103 - ChunkingTool - INFO - Using naive chunking method
+2025-05-04 18:45:15,103 - ChunkingTool - INFO - Processing file: input_files\glacier-dg.txt
+2025-05-04 18:45:15,394 - ChunkingTool - INFO - Saved chunks to: chunk_output\glacier-dg_naive_paragraph_chunks.json
+2025-05-04 18:45:15,399 - ChunkingTool - INFO - Processing file: input_files\s3-api.txt
+2025-05-04 18:45:17,159 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-api_naive_paragraph_chunks.json
+2025-05-04 18:45:17,159 - ChunkingTool - INFO - Processing file: input_files\s3-outposts.txt
+2025-05-04 18:45:17,338 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-outposts_naive_paragraph_chunks.json
+2025-05-04 18:45:17,338 - ChunkingTool - INFO - Processing file: input_files\s3-userguide.txt
+2025-05-04 18:45:19,111 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-userguide_naive_paragraph_chunks.json
+2025-05-04 18:45:19,111 - ChunkingTool - INFO - Processing file: input_files\glacier-dg.txt
+2025-05-04 18:45:19,344 - ChunkingTool - INFO - Saved chunks to: chunk_output\glacier-dg_naive_paragraph_chunks.json
+2025-05-04 18:45:19,344 - ChunkingTool - INFO - Processing file: input_files\s3-api.txt
+2025-05-04 18:45:20,806 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-api_naive_paragraph_chunks.json
+2025-05-04 18:45:20,806 - ChunkingTool - INFO - Processing file: input_files\s3-outposts.txt
+2025-05-04 18:45:20,907 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-outposts_naive_paragraph_chunks.json
+2025-05-04 18:45:20,907 - ChunkingTool - INFO - Processing file: input_files\s3-userguide.txt
+2025-05-04 18:45:22,652 - ChunkingTool - INFO - Saved chunks to: chunk_output\s3-userguide_naive_paragraph_chunks.json
+2025-05-04 18:45:22,652 - ChunkingTool - INFO - Evaluating chunks...
+2025-05-04 18:45:30,778 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\glacier-dg_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:45:58,536 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-api_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:46:00,701 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-outposts_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:46:35,612 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-userguide_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:46:41,588 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\glacier-dg_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:47:09,985 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-api_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:47:12,124 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-outposts_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:47:49,258 - ChunkingTool - INFO - Saved evaluation results to: chunk_output\s3-userguide_naive_paragraph_chunks_evaluation.json
+2025-05-04 18:47:49,258 - ChunkingTool - INFO - 
+Evaluation Summary:
+2025-05-04 18:47:49,258 - ChunkingTool - INFO - File: glacier-dg.txt
+2025-05-04 18:47:49,258 - ChunkingTool - INFO -   Chunking Method: NaiveChunker
+2025-05-04 18:47:49,258 - ChunkingTool - INFO -   Total Chunks: 462
+2025-05-04 18:47:49,258 - ChunkingTool - INFO -   Avg Chunk Size (words): 212.75
+2025-05-04 18:47:49,274 - ChunkingTool - INFO -   Coherence Score: 0.04877547907495165
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.54
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.30
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - 
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - File: s3-api.txt
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Chunking Method: NaiveChunker
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Total Chunks: 1967
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Avg Chunk Size (words): 171.87
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Coherence Score: 0.058626620122402426
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.49
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.28
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - 
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - File: s3-outposts.txt
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Chunking Method: NaiveChunker
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Total Chunks: 197
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Avg Chunk Size (words): 252.33
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Coherence Score: 0.029322306540973342
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.57
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.34
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - 
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - File: s3-userguide.txt
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Chunking Method: NaiveChunker
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Total Chunks: 2166
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Avg Chunk Size (words): 255.19
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Coherence Score: 0.06160487103437188
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Inter-chunk Similarity: 0.47
+2025-05-04 18:47:49,275 - ChunkingTool - INFO -   Intra-chunk Similarity: 0.32
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - 
+2025-05-04 18:47:49,275 - ChunkingTool - INFO - Document chunking completed

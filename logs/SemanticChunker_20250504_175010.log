@@ -1,0 +1,48 @@
+2025-05-04 17:50:10,982 - SemanticChunker - INFO - Loading sentence transformer model: all-MiniLM-L6-v2
+2025-05-04 17:50:14,615 - SemanticChunker - INFO - Processing document: input_files\glacier-dg.txt
+2025-05-04 17:50:14,649 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:50:14,649 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:50:14,757 - SemanticChunker - INFO - Adding context to 4863 sentences with window size 1
+2025-05-04 17:50:14,765 - SemanticChunker - INFO - Generating embeddings for 4863 sentences
+2025-05-04 17:50:20,166 - SemanticChunker - DEBUG - Distance threshold: 0.43041820824146243 at percentile 95
+2025-05-04 17:50:20,167 - SemanticChunker - INFO - Identified 218 semantic breakpoints at percentile 95
+2025-05-04 17:50:20,174 - SemanticChunker - INFO - Created 219 initial chunks
+2025-05-04 17:50:20,694 - SemanticChunker - INFO - After normalization: 476 chunks
+2025-05-04 17:50:26,863 - SemanticChunker - INFO - Created 476 valid chunks out of 476 total chunks
+2025-05-04 17:50:26,885 - SemanticChunker - INFO - Saved chunks to chunk_output\glacier-dg_semantic_p95_chunks.json
+2025-05-04 17:50:26,885 - SemanticChunker - INFO - Processing document: input_files\s3-api.txt
+2025-05-04 17:50:27,132 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:50:27,132 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:50:27,495 - SemanticChunker - INFO - Adding context to 19822 sentences with window size 1
+2025-05-04 17:50:27,512 - SemanticChunker - INFO - Generating embeddings for 19822 sentences
+2025-05-04 17:50:49,594 - SemanticChunker - DEBUG - Distance threshold: 0.4461941123008728 at percentile 95
+2025-05-04 17:50:49,596 - SemanticChunker - INFO - Identified 859 semantic breakpoints at percentile 95
+2025-05-04 17:50:49,626 - SemanticChunker - INFO - Created 860 initial chunks
+2025-05-04 17:50:51,734 - SemanticChunker - INFO - After normalization: 1964 chunks
+2025-05-04 17:51:19,777 - SemanticChunker - WARNING - Skipping too small chunk: 60e91d28-1836-4b05-9340-ebf93c192453_chunk_1130 (only 1 sentences)
+2025-05-04 17:51:19,777 - SemanticChunker - WARNING - Skipping too small chunk: 60e91d28-1836-4b05-9340-ebf93c192453_chunk_1141 (only 1 sentences)
+2025-05-04 17:51:19,780 - SemanticChunker - WARNING - Skipping too small chunk: 60e91d28-1836-4b05-9340-ebf93c192453_chunk_1596 (only 1 sentences)
+2025-05-04 17:51:19,780 - SemanticChunker - INFO - Created 1961 valid chunks out of 1964 total chunks
+2025-05-04 17:51:19,853 - SemanticChunker - INFO - Saved chunks to chunk_output\s3-api_semantic_p95_chunks.json
+2025-05-04 17:51:19,856 - SemanticChunker - INFO - Processing document: input_files\s3-outposts.txt
+2025-05-04 17:51:19,908 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:51:19,908 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:51:19,954 - SemanticChunker - INFO - Adding context to 2510 sentences with window size 1
+2025-05-04 17:51:19,957 - SemanticChunker - INFO - Generating embeddings for 2510 sentences
+2025-05-04 17:51:22,513 - SemanticChunker - DEBUG - Distance threshold: 0.4048278331756591 at percentile 95
+2025-05-04 17:51:22,514 - SemanticChunker - INFO - Identified 102 semantic breakpoints at percentile 95
+2025-05-04 17:51:22,517 - SemanticChunker - INFO - Created 103 initial chunks
+2025-05-04 17:51:22,802 - SemanticChunker - INFO - After normalization: 254 chunks
+2025-05-04 17:51:26,552 - SemanticChunker - INFO - Created 254 valid chunks out of 254 total chunks
+2025-05-04 17:51:26,569 - SemanticChunker - INFO - Saved chunks to chunk_output\s3-outposts_semantic_p95_chunks.json
+2025-05-04 17:51:26,570 - SemanticChunker - INFO - Processing document: input_files\s3-userguide.txt
+2025-05-04 17:51:26,610 - SemanticChunker - INFO - Creating chunks...
+2025-05-04 17:51:26,610 - SemanticChunker - INFO - Processing text using semantic chunking
+2025-05-04 17:51:27,152 - SemanticChunker - INFO - Adding context to 29223 sentences with window size 1
+2025-05-04 17:51:27,175 - SemanticChunker - INFO - Generating embeddings for 29223 sentences
+2025-05-04 17:52:00,741 - SemanticChunker - DEBUG - Distance threshold: 0.43001487255096404 at percentile 95
+2025-05-04 17:52:00,741 - SemanticChunker - INFO - Identified 1176 semantic breakpoints at percentile 95
+2025-05-04 17:52:00,791 - SemanticChunker - INFO - Created 1177 initial chunks
+2025-05-04 17:52:03,825 - SemanticChunker - INFO - After normalization: 3015 chunks
+2025-05-04 17:52:46,933 - SemanticChunker - INFO - Created 3015 valid chunks out of 3015 total chunks
+2025-05-04 17:52:47,057 - SemanticChunker - INFO - Saved chunks to chunk_output\s3-userguide_semantic_p95_chunks.json
