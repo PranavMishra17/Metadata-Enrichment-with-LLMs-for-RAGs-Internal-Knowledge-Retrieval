@@ -311,18 +311,177 @@ The implementation includes:
 - Keeps different chunking methods separate for clean evaluation
 
 
-## Future Work
 
-The following components will be implemented in future releases:
 
-1. **Metadata Enrichment**: Enhancing chunks with descriptive metadata using LLMs
-2. **Embedding**: Creating vector representations of chunks
-3. **Retrieval**: Implementing a retrieval system for chunks
-4. **Retrieval Evaluation**: Assessing retrieval quality
-5. **Prompting**: Generating appropriate prompts for the LLM
-6. **Ground Truth Generation**: Creating test datasets
-7. **Evaluation**: Comprehensive system evaluation
 
-## License
+
+# Embedding System
+
+This document outlines the embedding generation phase of the Metadata Enrichment with LLMs pipeline, implementing a dual-embedding approach for technical documentation with rich metadata.
+
+## Overview
+
+The embedding system generates three types of vector representations for each chunking method:
+
+1. **Naive Embeddings**: Basic content-only embeddings
+2. **TF-IDF Weighted Embeddings**: Combines content (70%) and metadata keywords (30%)
+3. **Prefix-Fusion Embeddings**: Injects formatted metadata prefixes into content before embedding
+
+All embeddings are stored in FAISS indexes for efficient similarity search and retrieval.
+
+## Installation
+
+```bash
+# Install required dependencies
+pip install -r requirements.txt
+
+# Required packages include:
+# - sentence-transformers
+# - faiss-cpu (or faiss-gpu)
+# - scikit-learn
+# - matplotlib
+# - numpy
+```
+
+## Directory Structure
+
+```
+metadata-enrichment-llm/
+├── embeddings.py                   # Main entry point
+├── embeddings/                     # Embedding modules
+│   ├── base_embedder.py            # Base embedding class
+│   ├── naive_embedder.py           # Content-only embeddings
+│   ├── tfidf_embedder.py           # TF-IDF weighted embeddings
+│   ├── prefix_embedder.py          # Prefix-injection embeddings
+│   └── evaluator.py                # Embedding evaluation utilities
+├── metadata_gen_output/            # Input enriched chunks
+│   ├── semantic_chunks_metadata/   # Semantic chunking results
+│   ├── naive_chunks_metadata/      # Naive chunking results
+│   └── recursive_chunks_metadata/  # Recursive chunking results
+└── embeddings_output/              # Generated embeddings
+    ├── semantic/                   # Semantic chunking embeddings
+    │   ├── naive_embedding/        # Naive embeddings
+    │   ├── tfidf_embedding/        # TF-IDF embeddings
+    │   └── prefix_fusion_embedding/# Prefix embeddings
+    ├── naive/                      # [Similar structure]
+    └── recursive/                  # [Similar structure]
+```
+
+## Usage
+
+```bash
+# Basic usage - generate all embedding types for all chunking methods
+python embeddings.py
+
+# Generate specific embedding types
+python embeddings.py --embedding_types naive tfidf
+
+# Generate embeddings for specific chunking methods
+python embeddings.py --chunking_types semantic
+
+# Customize embedding model
+python embeddings.py --model all-MiniLM-L6-v2
+
+# Customize TF-IDF weights
+python embeddings.py --embedding_types tfidf --content_weight 0.6 --tfidf_weight 0.4
+
+# Run with evaluation
+python embeddings.py --evaluate
+
+# Available options
+--input_dir       Input directory containing enriched chunks (default: metadata_gen_output)
+--output_dir      Output directory for embeddings (default: embeddings_output)
+--chunking_types  Chunking types to process (default: semantic naive recursive)
+--embedding_types Types of embeddings to generate (default: naive tfidf prefix)
+--model           SentenceTransformer model to use (default: Snowflake/arctic-embed-s)
+--content_weight  Weight for content embeddings in TF-IDF approach (default: 0.7)
+--tfidf_weight    Weight for TF-IDF embeddings in TF-IDF approach (default: 0.3)
+--evaluate        Run evaluation after generating embeddings
+```
+
+## Embedding Approaches
+
+### 1. Naive Embeddings
+
+Simple content-only embeddings that serve as a baseline:
+
+- Uses raw chunk text without metadata
+- No special preprocessing or weighting
+- Fastest to generate but less retrieval-focused
+
+### 2. TF-IDF Weighted Embeddings
+
+Combines content and metadata in vector space:
+
+- Content embeddings (70% weight)
+- TF-IDF vectors from metadata (30% weight)
+- Metadata sources:
+  - Technical keywords (40%)
+  - Named entities (25%)
+  - Technical categories (20%)
+  - Question keywords (15%)
+
+### 3. Prefix-Fusion Embeddings
+
+Injects structured metadata prefixes into text:
+
+- Intent prefixes (25%): `[Intent:HowTo]`
+- Service context (20%): `[Service:S3|IAM]`
+- Content type (15%): `[Procedural]`
+- Technical category (10%): `[CloudStorage]`
+- Code presence (10%): `[Code:Python]`
+- Potential questions (20%): `[Q:howDoIConfigureS3Versioning]`
+
+## FAISS Index Structure
+
+Each embedding type generates a FAISS index with:
+
+- `index.faiss`: The FAISS vector index for similarity search
+- `id_mapping.pkl`: Mappings between chunk IDs and index positions
+- `metadata.json`: Essential chunk metadata for retrieval
+- `document_list.json`: List of processed documents
+
+## Evaluation
+
+When run with the `--evaluate` flag, the system evaluates:
+
+1. **Metadata Consistency**: How well the embedding space preserves metadata relationships
+2. **Nearest Neighbor Statistics**: Distribution of distances in the embedding space
+
+Evaluation results are saved to `evaluation/{chunking_type}/{embedding_type}_evaluation.json` with visualizations in `evaluation/{chunking_type}/visualizations/`.
+
+## Implementation Notes
+
+- All models use embeddings of dimension 384 by default
+- Dimension matching is done automatically for TF-IDF vectors
+- Metadata is normalized and formatted consistently across embedding types
+- FAISS uses inner product (dot product) for cosine similarity
+
+## Best Practices
+
+- **Model Selection**: The default `Snowflake/arctic-embed-s` model works well for technical content, but you can substitute other SentenceTransformer models
+- **Chunking Method**: Semantic chunking typically works best with prefix-fusion embeddings
+- **TF-IDF Weights**: The default 70/30 split balances content and metadata well, but you can adjust based on your retrieval needs
+- **Evaluation**: Always evaluate embeddings to understand their characteristics before using in production
+
+## Example Workflow
+
+A typical workflow might look like:
+
+1. Process documents with semantic chunking
+2. Generate metadata for chunks
+3. Create all three embedding types
+4. Evaluate and compare the embedding types
+5. Select the best performing embedding type for your retrieval system
+
+The system is designed to be modular, allowing you to experiment with different combinations of chunking methods and embedding strategies.
+
+# Future Work
+
+
+
+
+
+# License
 
 [MIT License](LICENSE)
