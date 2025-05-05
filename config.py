@@ -14,7 +14,7 @@ TEMPERATURE = 0.5
 # Processing configuration
 BATCH_SIZE = int(os.getenv("BATCH_SIZE", "10"))
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "10"))  # seconds
-RETRY_LIMIT = int(os.getenv("RETRY_LIMIT", "5"))
+RETRY_LIMIT = int(os.getenv("RETRY_LIMIT", "2"))
 RETRY_DELAY = int(os.getenv("RETRY_DELAY", "5"))
 
 # Output configuration
