@@ -30,31 +30,31 @@ class GPUVerifier:
         if self.gpu_available:
             self.logger.info(f"GPU Info: {self.gpu_info}")
     
+
     def _check_gpu_available(self):
         """Check if GPU is available using multiple frameworks."""
-        # PyTorch check
-        pytorch_available = torch.cuda.is_available()
+        # PyTorch CUDA check
+        pytorch_cuda = torch.cuda.is_available()
         
-        # TensorFlow check
+        # PyTorch MPS check (Apple Silicon GPU)
+        pytorch_mps = getattr(torch.backends, "mps", None) and torch.backends.mps.is_available()
+        
+        # TensorFlow checkS
         tf_gpus = len(tf.config.list_physical_devices('GPU')) > 0
-        
-        # NVIDIA-SMI check (platform specific)
+
+        # NVIDIA-SMI check
         nvidia_smi_available = False
         try:
-            if platform.system() == "Windows":
-                result = subprocess.run(['nvidia-smi'], capture_output=True)
-                nvidia_smi_available = result.returncode == 0
-            else:  # Linux/Mac
-                result = subprocess.run(['which', 'nvidia-smi'], capture_output=True)
-                nvidia_smi_available = result.returncode == 0
+            result = subprocess.run(['which', 'nvidia-smi'], capture_output=True)
+            nvidia_smi_available = result.returncode == 0
         except:
             nvidia_smi_available = False
-            
-        self.logger.debug(f"PyTorch GPU: {pytorch_available}, TensorFlow GPU: {tf_gpus}, NVIDIA-SMI: {nvidia_smi_available}")
+
+        self.logger.debug(f"PyTorch CUDA: {pytorch_cuda}, PyTorch MPS: {pytorch_mps}, TensorFlow GPU: {tf_gpus}, NVIDIA-SMI: {nvidia_smi_available}")
         
-        # Return True if any method detected a GPU
-        return pytorch_available or tf_gpus or nvidia_smi_available
-    
+        return pytorch_cuda or pytorch_mps or tf_gpus or nvidia_smi_available
+
+
     def _get_gpu_info(self):
         """Get detailed GPU information."""
         info = {}
@@ -76,6 +76,14 @@ class GPUVerifier:
                 "device_count": len(tf_gpus),
                 "devices": [gpu.name for gpu in tf_gpus]
             }
+
+        # In _get_gpu_info()
+        if getattr(torch.backends, "mps", None) and torch.backends.mps.is_available():
+            info["pytorch_mps"] = {
+                "device": "Apple Silicon MPS",
+                "note": "Running on Apple GPU (Metal)"
+            }
+
             
         return info
     
