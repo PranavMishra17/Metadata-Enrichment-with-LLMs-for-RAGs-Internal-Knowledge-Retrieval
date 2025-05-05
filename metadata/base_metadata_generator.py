@@ -7,6 +7,11 @@ import uuid
 
 from utils.logger import setup_logger
 
+from gpu_utils import GPUVerifier
+
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
+
 class BaseMetadataGenerator(ABC):
     """Base class for metadata generation."""
     

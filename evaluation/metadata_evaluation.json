@@ -1,4 +1,2474 @@
 {
-  "individual_results": {},
-  "aggregate_results": {}
+  "individual_results": {
+    "naive_chunks_metadata": {
+      "glacier-dg_enriched_chunks.json": {
+        "total_chunks": 462,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 99.78354978354979,
+            "entities": 99.78354978354979,
+            "primary_category": 100.0,
+            "secondary_categories": 99.78354978354979,
+            "summary": 100.0,
+            "intents": 99.78354978354979,
+            "potential_questions": 99.78354978354979,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 99.78354978354979
+          },
+          "overall_completeness": 99.87012987012987
+        },
+        "diversity_metrics": {
+          "unique_content_types": 6,
+          "unique_primary_categories": 42,
+          "unique_intents": 6,
+          "content_type_distribution": {
+            "Reference": 171,
+            "Procedural": 222,
+            "Example": 42,
+            "Unknown": 1,
+            "Conceptual": 25,
+            "Troubleshooting": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 340,
+            "Cloud Storage and Archiving": 1,
+            "Cloud Account Management": 1,
+            "AWS SDK Setup": 1,
+            "Cloud Storage Management": 25,
+            "Unknown": 1,
+            "AWS Cloud Storage": 1,
+            "Cloud Infrastructure": 1,
+            "Cloud Storage Configuration": 3,
+            "Cloud Storage Compliance": 1,
+            "Cloud Storage and Data Retrieval": 1,
+            "Cloud Storage API": 21,
+            "Cloud Storage APIs": 18,
+            "Cloud Security": 2,
+            "Cloud Storage Security": 3,
+            "Cloud Storage and Access Management": 1,
+            "Identity and Access Management": 4,
+            "Identity and Access Management (IAM)": 3,
+            "Access Control Policies": 1,
+            "AWS Identity and Access Management (IAM)": 1,
+            "Access Management": 2,
+            "Cloud Storage Policies": 4,
+            "Cloud Storage Policy Management": 1,
+            "Access Control and Authorization": 1,
+            "IAM Policy Management": 1,
+            "Cloud Storage Permissions": 1,
+            "Cloud Identity and Access Management": 1,
+            "Cloud Access Management": 1,
+            "Cloud Monitoring and Logging": 1,
+            "Cloud Security and Compliance": 1,
+            "AWS Resource Management": 1,
+            "Tagging and Metadata Management": 1,
+            "Cloud Service Logging": 1,
+            "Cloud Storage API Documentation": 1,
+            "Cloud Storage Authentication": 2,
+            "AWS API Authentication": 1,
+            "Data Integrity and Security": 1,
+            "Data Integrity and Storage": 1,
+            "Hashing and Cryptographic Functions": 1,
+            "Cloud Storage Services": 5,
+            "Cloud Storage Operations": 2,
+            "Data Processing": 1
+          },
+          "intents_distribution": {
+            "Reference": 461,
+            "How-To": 398,
+            "Debug": 67,
+            "Compare": 6,
+            "Example": 3,
+            "Configuration": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 10093,
+          "unique_keywords": 1438,
+          "avg_keywords_per_chunk": 21.846320346320347,
+          "most_common_keywords": [
+            [
+              "Amazon S3 Glacier",
+              812
+            ],
+            [
+              "vault",
+              230
+            ],
+            [
+              "AWS CLI",
+              190
+            ],
+            [
+              "API Version 2012-06-01",
+              170
+            ],
+            [
+              "S3 Glacier",
+              156
+            ],
+            [
+              "AWS SDK for .NET",
+              95
+            ],
+            [
+              "Amazon SNS",
+              94
+            ],
+            [
+              "x-amz-glacier-version",
+              94
+            ],
+            [
+              "REST API",
+              90
+            ],
+            [
+              "vault inventory",
+              87
+            ]
+          ]
+        }
+      },
+      "s3-api_enriched_chunks.json": {
+        "total_chunks": 1967,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 99.94916115912558,
+            "entities": 99.94916115912558,
+            "primary_category": 100.0,
+            "secondary_categories": 99.94916115912558,
+            "summary": 100.0,
+            "intents": 99.94916115912558,
+            "potential_questions": 99.94916115912558,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 99.94916115912558
+          },
+          "overall_completeness": 99.96949669547534
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 43,
+          "unique_intents": 10,
+          "content_type_distribution": {
+            "Reference": 1499,
+            "Example": 108,
+            "Unknown": 1,
+            "Procedural": 358,
+            "Warning": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 1618,
+            "Cloud Storage APIs": 68,
+            "Cloud Storage Operations": 7,
+            "Cloud Storage API": 107,
+            "Cloud Storage Encryption": 4,
+            "Cloud Storage Configuration": 42,
+            "Cloud Storage Permissions": 5,
+            "Encryption": 1,
+            "Unknown": 1,
+            "Cloud Storage Management": 26,
+            "Cloud Storage Security": 6,
+            "Cloud Storage Lifecycle Management": 1,
+            "Cloud Storage Services": 7,
+            "AWS S3 Access Grants": 1,
+            "Error Handling": 5,
+            "Cloud Storage Optimization": 1,
+            "Cloud Storage Metrics": 1,
+            "Cloud Security": 4,
+            "Cloud Storage Authentication": 16,
+            "AWS Identity and Access Management (IAM)": 1,
+            "Cloud Computing": 17,
+            "Identity and Access Management": 1,
+            "AWS Authentication and Security": 1,
+            "API Authentication": 1,
+            "Cloud Development": 1,
+            "AWS Development": 1,
+            "AWS SDK Development": 1,
+            "AWS S3 API Operations": 1,
+            "Cloud Storage and Services": 2,
+            "Cloud Storage and Computing": 1,
+            "Cloud Services Development": 1,
+            "AWS Services": 2,
+            "Cloud Storage and APIs": 1,
+            "Machine Learning and AI": 1,
+            "Cloud Services": 4,
+            "AWS SDK Usage": 1,
+            "Serverless Computing": 1,
+            "AWS API Authentication": 1,
+            "API Documentation": 1,
+            "Cloud Storage Error Handling": 1,
+            "Authentication": 2,
+            "Authentication and Security": 1,
+            "Cloud Storage Policies": 1
+          },
+          "intents_distribution": {
+            "Reference": 1966,
+            "How-To": 1434,
+            "Debug": 502,
+            "Example": 22,
+            "Compare": 38,
+            "Configuration": 21,
+            "Validation": 1,
+            "Integration Guidance": 1,
+            "Integration": 1,
+            "Warning": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 44010,
+          "unique_keywords": 5086,
+          "avg_keywords_per_chunk": 22.37417386883579,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              3491
+            ],
+            [
+              "AWS SDK",
+              900
+            ],
+            [
+              "API Reference",
+              778
+            ],
+            [
+              "Amazon Simple Storage Service",
+              651
+            ],
+            [
+              "bucket",
+              620
+            ],
+            [
+              "API Version 2006-03-01",
+              377
+            ],
+            [
+              "Bucket",
+              339
+            ],
+            [
+              "Amazon S3 Control",
+              335
+            ],
+            [
+              "AWS CLI",
+              302
+            ],
+            [
+              "AWS Code Examples Repository",
+              299
+            ]
+          ]
+        }
+      },
+      "s3-outposts_enriched_chunks.json": {
+        "total_chunks": 197,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 27,
+          "unique_intents": 7,
+          "content_type_distribution": {
+            "Reference": 57,
+            "Procedural": 118,
+            "Conceptual": 11,
+            "Example": 10,
+            "Warning": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 119,
+            "Cloud Storage Configuration": 15,
+            "Cloud Storage Management": 18,
+            "AWS Cloud Services": 1,
+            "Cloud Infrastructure": 4,
+            "Cloud Storage Networking": 1,
+            "Cloud Storage Policies": 6,
+            "Amazon S3 on Outposts": 1,
+            "Cloud Computing": 8,
+            "Cloud Storage Security": 2,
+            "Cloud Storage and Data Processing": 1,
+            "Cloud Storage Integration": 1,
+            "Authentication and Authorization": 1,
+            "Cloud Security": 1,
+            "Access Management": 1,
+            "Cloud Networking": 4,
+            "Cloud Storage Authentication": 1,
+            "AWS Identity and Access Management (IAM)": 1,
+            "Cloud Storage Permissions": 1,
+            "Cloud Storage Replication": 1,
+            "Cloud Services": 2,
+            "Cloud Storage Monitoring": 2,
+            "Storage and Replication": 1,
+            "Cloud Infrastructure Monitoring": 1,
+            "AWS CloudTrail Configuration": 1,
+            "Cloud Storage Logging": 1,
+            "Cloud Storage Access Control": 1
+          },
+          "intents_distribution": {
+            "Reference": 197,
+            "How-To": 189,
+            "Compare": 4,
+            "Debug": 34,
+            "Configuration": 1,
+            "Example": 1,
+            "Best Practice": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 4479,
+          "unique_keywords": 808,
+          "avg_keywords_per_chunk": 22.736040609137056,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              269
+            ],
+            [
+              "Outposts",
+              216
+            ],
+            [
+              "AWS CLI",
+              156
+            ],
+            [
+              "Amazon S3 on Outposts",
+              147
+            ],
+            [
+              "AWS Outposts",
+              77
+            ],
+            [
+              "access point",
+              74
+            ],
+            [
+              "S3 on Outposts",
+              68
+            ],
+            [
+              "bucket policy",
+              64
+            ],
+            [
+              "AWS SDK for Java",
+              56
+            ],
+            [
+              "AWS Management Console",
+              54
+            ]
+          ]
+        }
+      },
+      "s3-userguide_enriched_chunks.json": {
+        "total_chunks": 2166,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 99.86149584487535,
+            "entities": 99.86149584487535,
+            "primary_category": 100.0,
+            "secondary_categories": 99.86149584487535,
+            "summary": 100.0,
+            "intents": 99.86149584487535,
+            "potential_questions": 99.86149584487535,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 99.86149584487535
+          },
+          "overall_completeness": 99.91689750692521
+        },
+        "diversity_metrics": {
+          "unique_content_types": 8,
+          "unique_primary_categories": 144,
+          "unique_intents": 26,
+          "content_type_distribution": {
+            "Reference": 679,
+            "Procedural": 1151,
+            "Conceptual": 208,
+            "Example": 103,
+            "Warning": 14,
+            "Tutorial": 1,
+            "Troubleshooting": 7,
+            "Unknown": 3
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 1174,
+            "Identity and Access Management": 12,
+            "Cloud Storage Management": 257,
+            "Cloud Storage Configuration": 201,
+            "Cloud Storage Services": 3,
+            "Cloud Storage and Access Management": 6,
+            "Cloud Storage and Compute": 3,
+            "Cloud Storage Pricing": 1,
+            "Cloud Account Management": 2,
+            "Cloud Storage and Hosting": 2,
+            "Cloud Storage Encryption": 18,
+            "Cloud Storage Permissions": 33,
+            "File Management": 1,
+            "Cloud Storage Operations": 17,
+            "Cloud Storage Organization": 2,
+            "Cloud Storage Security": 41,
+            "Cloud Computing": 41,
+            "Cloud Services Configuration": 3,
+            "Cloud Infrastructure Management": 3,
+            "Cloud Infrastructure": 5,
+            "AWS Services": 1,
+            "Cloud Security": 21,
+            "Cloud Storage and Computing": 1,
+            "AWS Lambda Configuration": 1,
+            "AWS Services Management": 1,
+            "Access and Identity Management": 1,
+            "Cloud Storage and Data Redaction": 1,
+            "Cloud Identity and Access Management": 7,
+            "Cloud Storage and Data Processing": 1,
+            "Cloud Services": 6,
+            "AWS S3": 2,
+            "Access Control": 11,
+            "Cloud Storage Policies": 18,
+            "AWS S3 Batch Operations": 1,
+            "Cloud Storage and Media Processing": 2,
+            "AWS Identity and Access Management (IAM)": 6,
+            "Media Processing": 1,
+            "AWS Lambda": 1,
+            "Cloud Storage and Operations": 1,
+            "Cloud Resource Management": 2,
+            "Cloud Storage Querying": 1,
+            "Data Querying": 1,
+            "Data Storage and Querying": 2,
+            "SQL Query Syntax": 1,
+            "SQL Functions": 4,
+            "Data Transformation": 1,
+            "Date and Time Functions": 1,
+            "SQL Date and Time Functions": 1,
+            "Data Formatting": 1,
+            "String Functions": 1,
+            "String Manipulation": 1,
+            "Unknown": 3,
+            "Data Protection and Encryption": 1,
+            "Data Encryption and Security": 1,
+            "Cloud Storage Authorization": 6,
+            "Cloud Services Logging": 1,
+            "CloudTrail Logging": 1,
+            "Storage Optimization": 1,
+            "Access Management": 12,
+            "Cloud Storage Access Management": 26,
+            "Authentication and Identity Management": 1,
+            "Access Control and Policies": 1,
+            "Access Control and Security": 1,
+            "Cloud Storage Access Control": 10,
+            "Cloud Storage Policy Configuration": 2,
+            "Access Control and Permissions": 3,
+            "Cloud Storage and Access Control": 2,
+            "Cloud Storage Policy Management": 1,
+            "Cloud Security and Access Management": 1,
+            "Cloud Permissions Management": 2,
+            "Cloud Access Management": 1,
+            "Cloud Storage and Permissions": 1,
+            "AWS IAM Policies": 1,
+            "IAM Policies": 1,
+            "AWS Identity and Access Management": 2,
+            "Cloud Security and Permissions": 2,
+            "IAM and Access Management": 1,
+            "Amazon S3 Access Management": 1,
+            "AWS S3 Access Points": 1,
+            "Identity and Access Management (IAM)": 1,
+            "Cloud Storage Permissions Management": 1,
+            "AWS S3 Access Management": 1,
+            "AWS S3 Bucket Policies": 1,
+            "Cloud Monitoring and Auditing": 1,
+            "Data Encryption": 3,
+            "Encryption and Security": 1,
+            "Data Security": 1,
+            "Cloud Storage and Encryption": 2,
+            "Cloud Networking and Security": 1,
+            "Cloud Networking": 7,
+            "Networking": 2,
+            "Cloud Security and Compliance": 1,
+            "Data Replication": 2,
+            "Cloud Storage and Data Replication": 1,
+            "Cloud Storage Replication": 1,
+            "Cloud Storage and Security": 1,
+            "Cloud Storage Monitoring": 13,
+            "Cloud Storage Metrics": 22,
+            "Cloud Storage Analytics": 16,
+            "Cloud Storage and Replication": 1,
+            "Object Storage": 1,
+            "Cloud Storage Performance": 2,
+            "Data Storage and Security": 1,
+            "Storage Configuration": 1,
+            "Cloud Storage Billing and Reporting": 1,
+            "Cloud Cost Management": 1,
+            "Cloud Storage and Networking": 2,
+            "Cloud Storage Billing": 2,
+            "Cloud Storage Errors": 1,
+            "Error Handling": 1,
+            "Cloud Storage Lifecycle Management": 4,
+            "Cloud Monitoring": 7,
+            "Cloud Security and Monitoring": 1,
+            "Cloud Logging and Monitoring": 3,
+            "Cloud Monitoring and Logging": 1,
+            "Cloud Event Logging": 1,
+            "AWS Logging and Monitoring": 1,
+            "Cloud Logging": 1,
+            "Cloud Storage and Logging": 1,
+            "Cloud Data Storage": 1,
+            "Cloud Monitoring and Metrics": 3,
+            "Cloud Storage and Messaging": 3,
+            "AWS Services Integration": 1,
+            "Cloud Storage and Event Management": 1,
+            "Cloud Storage Notifications": 2,
+            "Cloud Storage and Event Notifications": 2,
+            "Cloud Storage and Notification": 1,
+            "Cloud Storage Event Notifications": 1,
+            "Cloud Storage & Notifications": 1,
+            "Cloud Storage and Event Handling": 1,
+            "Cloud Storage Event Management": 1,
+            "Cloud Storage Insights": 1,
+            "Cloud Storage Optimization": 8,
+            "Metrics and Monitoring": 1,
+            "Cloud Data Querying": 1,
+            "Data Querying and Storage": 1,
+            "Performance Optimization": 1,
+            "Cloud Storage Performance Optimization": 1,
+            "Cloud Infrastructure Configuration": 2,
+            "Cloud Storage and Distribution": 2,
+            "Cloud Storage and Content Delivery": 1,
+            "DNS Management": 1,
+            "Cloud Hosting": 1,
+            "Cloud Storage Quotas": 1
+          },
+          "intents_distribution": {
+            "Reference": 2163,
+            "How-To": 2026,
+            "Compare": 152,
+            "Debug": 388,
+            "Configuration": 18,
+            "Explore": 1,
+            "Best Practices": 5,
+            "Example": 20,
+            "Best Practice": 3,
+            "Warning": 6,
+            "Optimization": 2,
+            "Setup": 2,
+            "Tutorial": 1,
+            "Configure": 1,
+            "Auditing": 1,
+            "Monitor": 2,
+            "Performance Optimization": 1,
+            "Monitoring": 1,
+            "Security": 1,
+            "Inform": 1,
+            "Cost Analysis": 1,
+            "Troubleshooting": 1,
+            "Integration": 1,
+            "Optimize": 1,
+            "Analyze": 1,
+            "Management": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 48851,
+          "unique_keywords": 6315,
+          "avg_keywords_per_chunk": 22.553554939981534,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              3479
+            ],
+            [
+              "AWS CLI",
+              823
+            ],
+            [
+              "API Version 2006-03-01",
+              656
+            ],
+            [
+              "permissions",
+              576
+            ],
+            [
+              "bucket",
+              538
+            ],
+            [
+              "Amazon Simple Storage Service",
+              475
+            ],
+            [
+              "bucket policy",
+              461
+            ],
+            [
+              "AWS Management Console",
+              418
+            ],
+            [
+              "AWS SDKs",
+              347
+            ],
+            [
+              "REST API",
+              340
+            ]
+          ]
+        }
+      }
+    },
+    "recursive_chunks_metadata": {
+      "glacier-dg_enriched_chunks.json": {
+        "total_chunks": 456,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 41,
+          "unique_intents": 8,
+          "content_type_distribution": {
+            "Reference": 163,
+            "Procedural": 222,
+            "Example": 44,
+            "Conceptual": 26,
+            "Troubleshooting": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 331,
+            "Cloud Account Management": 1,
+            "AWS Development": 3,
+            "Cloud Storage Management": 18,
+            "Cloud Storage Configuration": 6,
+            "Cloud Storage Compliance": 1,
+            "Cloud Storage and Data Management": 1,
+            "Cloud Storage and Compliance": 1,
+            "Cloud Storage Security": 4,
+            "Data Storage and Transfer": 1,
+            "AWS S3 Glacier": 1,
+            "Cryptographic Hashing": 2,
+            "Cloud Storage and Notifications": 1,
+            "Cloud Security": 1,
+            "Identity and Access Management": 4,
+            "IAM and Permissions": 1,
+            "AWS Identity and Access Management (IAM)": 4,
+            "Access Management": 5,
+            "Cloud Storage Policies": 5,
+            "Access Control and Permissions": 1,
+            "Access Control": 1,
+            "Cloud Storage Permissions": 3,
+            "Cloud Security and Permissions": 1,
+            "Cloud Monitoring and Logging": 1,
+            "Cloud Compliance": 1,
+            "Tagging and Resource Management": 1,
+            "AWS Resource Tagging": 1,
+            "Cloud Logging and Monitoring": 1,
+            "Cloud Storage Logging": 1,
+            "Cloud Storage APIs": 18,
+            "Cloud Storage Authentication": 2,
+            "AWS API Signature Calculation": 1,
+            "Data Integrity and Storage": 1,
+            "File Integrity and Security": 1,
+            "Hashing Algorithms": 2,
+            "Checksum Computation": 1,
+            "Cloud Storage API": 19,
+            "Cloud Storage API Operations": 1,
+            "Cloud Storage Operations": 4,
+            "Data Processing": 1,
+            "Cloud Storage Services": 2
+          },
+          "intents_distribution": {
+            "Reference": 456,
+            "How-To": 406,
+            "Debug": 61,
+            "Compare": 9,
+            "Example": 1,
+            "Warning": 1,
+            "Configuration": 1,
+            "Configure": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 10094,
+          "unique_keywords": 1455,
+          "avg_keywords_per_chunk": 22.135964912280702,
+          "most_common_keywords": [
+            [
+              "Amazon S3 Glacier",
+              762
+            ],
+            [
+              "vault",
+              225
+            ],
+            [
+              "S3 Glacier",
+              217
+            ],
+            [
+              "API Version 2012-06-01",
+              180
+            ],
+            [
+              "AWS CLI",
+              180
+            ],
+            [
+              "Amazon SNS",
+              104
+            ],
+            [
+              "archive",
+              101
+            ],
+            [
+              "AWS SDK",
+              92
+            ],
+            [
+              "x-amz-glacier-version",
+              91
+            ],
+            [
+              "REST API",
+              87
+            ]
+          ]
+        }
+      },
+      "s3-api_enriched_chunks.json": {
+        "total_chunks": 1593,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 39,
+          "unique_intents": 16,
+          "content_type_distribution": {
+            "Reference": 1224,
+            "Example": 100,
+            "Procedural": 267,
+            "Conceptual": 1,
+            "Warning": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 1277,
+            "Cloud Storage API": 97,
+            "Cloud Storage Encryption": 3,
+            "Cloud Storage Security": 7,
+            "Cloud Storage APIs": 42,
+            "Cloud Storage Operations": 12,
+            "Cloud Storage Permissions": 2,
+            "Cloud Storage Configuration": 43,
+            "Cloud Storage API Operations": 1,
+            "Cloud Storage Services": 11,
+            "Cloud Storage Notifications": 1,
+            "Cloud Storage Management": 28,
+            "AWS S3 Access Management": 1,
+            "Cloud Storage Analytics": 2,
+            "Cloud Storage Error Handling": 3,
+            "Cloud Storage Metrics": 1,
+            "Cloud Storage and Data Management": 1,
+            "Cloud Security": 3,
+            "Identity and Access Management (IAM)": 1,
+            "AWS Identity and Access Management": 1,
+            "Cloud Storage Authentication": 19,
+            "AWS Authentication": 1,
+            "Authentication": 5,
+            "AWS Services": 1,
+            "AWS Storage Services": 1,
+            "Cloud Computing": 15,
+            "AWS SDK Integration": 1,
+            "Cloud Services": 2,
+            "Cloud Storage and Computing": 1,
+            "Cloud Storage and Processing": 1,
+            "Amazon S3 API": 1,
+            "Cloud Storage and Transfer": 1,
+            "Serverless Computing": 1,
+            "AWS Authentication and Signature": 1,
+            "API Documentation": 1,
+            "Cloud Storage Service": 1,
+            "Error Handling": 1,
+            "REST API Authentication": 1,
+            "Cloud Storage Policy Management": 1
+          },
+          "intents_distribution": {
+            "Reference": 1593,
+            "How-To": 1272,
+            "Debug": 444,
+            "Compare": 37,
+            "Configuration": 24,
+            "Integration": 3,
+            "Example": 24,
+            "Clarification": 1,
+            "Configuration Details": 1,
+            "Learn": 1,
+            "Configuration Guidance": 1,
+            "Metrics Analysis": 1,
+            "Constraints": 1,
+            "Setup": 1,
+            "Best Practices": 1,
+            "Warning": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 36010,
+          "unique_keywords": 4373,
+          "avg_keywords_per_chunk": 22.605147520401758,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              2715
+            ],
+            [
+              "AWS SDK",
+              915
+            ],
+            [
+              "bucket",
+              443
+            ],
+            [
+              "Amazon Simple Storage Service",
+              401
+            ],
+            [
+              "API Reference",
+              349
+            ],
+            [
+              "Bucket",
+              285
+            ],
+            [
+              "AWS CLI",
+              260
+            ],
+            [
+              "Amazon S3 Control",
+              258
+            ],
+            [
+              "API Version 2006-03-01",
+              208
+            ],
+            [
+              "S3Client",
+              202
+            ]
+          ]
+        }
+      },
+      "s3-outposts_enriched_chunks.json": {
+        "total_chunks": 194,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 25,
+          "unique_intents": 7,
+          "content_type_distribution": {
+            "Reference": 61,
+            "Procedural": 115,
+            "Conceptual": 6,
+            "Example": 11,
+            "Warning": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 118,
+            "Cloud Storage Configuration": 20,
+            "AWS S3 on Outposts": 2,
+            "AWS Services": 1,
+            "Cloud Computing": 6,
+            "Cloud Storage Networking": 2,
+            "Cloud Networking": 5,
+            "Cloud Storage Management": 14,
+            "Cloud Storage Access Management": 1,
+            "Cloud Storage Access Control": 1,
+            "AWS Identity and Access Management (IAM)": 3,
+            "Cloud Storage and Data Processing": 2,
+            "AWS Configuration": 1,
+            "Cloud Security": 1,
+            "Access Management": 1,
+            "Cloud Storage Policies": 2,
+            "Cloud Services": 1,
+            "Cloud Storage Policy Management": 1,
+            "Cloud Infrastructure Management": 2,
+            "Cloud Infrastructure Permissions": 1,
+            "Cloud Storage Replication": 3,
+            "Cloud Storage and Replication": 2,
+            "Cloud Infrastructure": 1,
+            "Cloud Storage Monitoring": 2,
+            "Cloud Services Configuration": 1
+          },
+          "intents_distribution": {
+            "Reference": 194,
+            "How-To": 186,
+            "Compare": 3,
+            "Configuration": 2,
+            "Debug": 33,
+            "Example": 5,
+            "Best Practice": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 4433,
+          "unique_keywords": 843,
+          "avg_keywords_per_chunk": 22.850515463917525,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              227
+            ],
+            [
+              "Outposts",
+              174
+            ],
+            [
+              "AWS CLI",
+              154
+            ],
+            [
+              "Amazon S3 on Outposts",
+              128
+            ],
+            [
+              "S3 on Outposts",
+              127
+            ],
+            [
+              "AWS Outposts",
+              72
+            ],
+            [
+              "AWS SDK for Java",
+              65
+            ],
+            [
+              "bucket policy",
+              62
+            ],
+            [
+              "access point",
+              61
+            ],
+            [
+              "API Version 2006-03-01",
+              60
+            ]
+          ]
+        }
+      },
+      "s3-userguide_enriched_chunks.json": {
+        "total_chunks": 1856,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 99.89224137931035,
+            "entities": 99.89224137931035,
+            "primary_category": 100.0,
+            "secondary_categories": 99.89224137931035,
+            "summary": 100.0,
+            "intents": 99.89224137931035,
+            "potential_questions": 99.89224137931035,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 99.89224137931035
+          },
+          "overall_completeness": 99.9353448275862
+        },
+        "diversity_metrics": {
+          "unique_content_types": 8,
+          "unique_primary_categories": 130,
+          "unique_intents": 19,
+          "content_type_distribution": {
+            "Reference": 625,
+            "Procedural": 983,
+            "Conceptual": 147,
+            "Example": 78,
+            "Warning": 14,
+            "Tutorial": 1,
+            "Unknown": 2,
+            "Troubleshooting": 6
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 955,
+            "Cloud Storage and Monitoring": 1,
+            "Cloud Storage Configuration": 177,
+            "Cloud Storage Management": 192,
+            "Cloud Computing": 53,
+            "Cloud Account Management": 1,
+            "Cloud Storage and Access Management": 8,
+            "Cloud Storage Security": 56,
+            "Cloud Storage Services": 3,
+            "Cloud Storage Permissions": 37,
+            "Cloud Storage Operations": 15,
+            "Object Tagging": 1,
+            "Access Control": 5,
+            "Object Tagging in Amazon S3": 1,
+            "Cloud Service Configuration": 1,
+            "Cloud Security": 13,
+            "Cloud Storage and Access Control": 3,
+            "Cloud Permissions Management": 2,
+            "AWS Lambda Integration": 1,
+            "AWS Services": 2,
+            "AWS Lambda Configuration": 1,
+            "AWS Services Management": 2,
+            "Cloud Data Management": 2,
+            "Cloud Storage and Security": 5,
+            "Cloud Storage and Data Processing": 1,
+            "Cloud Services Management": 2,
+            "AWS S3 Batch Operations": 1,
+            "Cloud Storage Access Management": 17,
+            "Cloud Storage and Computing": 1,
+            "Cloud Storage and Processing": 5,
+            "Cloud Services": 5,
+            "Access Control and Resource Management": 1,
+            "Cloud Storage and Media Processing": 2,
+            "AWS Identity and Access Management (IAM)": 9,
+            "Unknown": 2,
+            "Cloud Storage Querying": 3,
+            "SQL Querying": 1,
+            "Data Storage": 1,
+            "SQL Functions and Syntax": 1,
+            "Date and Time Functions": 1,
+            "String Manipulation Functions": 1,
+            "SQL String Functions": 1,
+            "Cloud Storage Encryption": 16,
+            "Identity and Access Management": 9,
+            "Cloud Storage and Analytics": 1,
+            "Cloud Storage Authorization": 6,
+            "Cloud Storage Access Control": 10,
+            "Cloud Storage Policies": 16,
+            "AWS S3 Bucket Policy": 1,
+            "Cloud Storage Authentication": 1,
+            "Cloud Storage Monitoring": 16,
+            "Cloud Logging and Monitoring": 3,
+            "Cloud Monitoring and Logging": 2,
+            "Cloud Storage Organization": 1,
+            "Access Management": 19,
+            "Authentication": 1,
+            "Identity and Access Management (IAM)": 3,
+            "Access Control and Permissions": 1,
+            "IAM (Identity and Access Management)": 1,
+            "Cloud Storage Policy Management": 2,
+            "Access Control and Authorization": 1,
+            "Cloud Security and Access Control": 1,
+            "Cloud Infrastructure Management": 2,
+            "Cloud Identity and Access Management": 2,
+            "Amazon S3 Bucket Policies": 1,
+            "AWS Identity and Access Management": 1,
+            "Cloud Security and Permissions": 2,
+            "Cloud Storage Policy Configuration": 2,
+            "AWS S3 Access Management": 1,
+            "Access Control Management": 1,
+            "AWS S3 Permissions": 1,
+            "Cloud Monitoring and Auditing": 1,
+            "Data Encryption": 1,
+            "Cloud Storage and Encryption": 2,
+            "Storage and Encryption": 1,
+            "Server-Side Encryption": 1,
+            "Cloud Networking Security": 1,
+            "Cloud Networking": 5,
+            "Networking": 2,
+            "Cloud Infrastructure": 8,
+            "Cloud Storage Compliance": 1,
+            "Cloud Storage Replication": 5,
+            "Amazon S3 Replication": 1,
+            "Cloud Storage Performance": 2,
+            "Cloud Storage Metrics": 22,
+            "AWS S3 Replication": 1,
+            "Cloud Storage Optimization": 12,
+            "Data Protection": 1,
+            "Data Storage and Management": 1,
+            "Storage Management": 1,
+            "Data Backup and Recovery": 1,
+            "Cloud Storage Billing and Reporting": 1,
+            "Cloud Storage and Billing Management": 1,
+            "Cloud Storage and Billing": 1,
+            "Cloud Storage Billing": 1,
+            "Error Handling": 1,
+            "Cloud Storage Analytics": 15,
+            "Cloud Storage Lifecycle Management": 2,
+            "Monitoring and Logging": 1,
+            "Logging and Monitoring": 1,
+            "Cloud Storage and Logging": 3,
+            "Cloud Storage Logging": 2,
+            "Cloud Monitoring": 6,
+            "AWS S3 Metrics Configuration": 1,
+            "Cloud Storage and Event Notifications": 2,
+            "Cloud Storage and Messaging Services": 1,
+            "Cloud Event Notifications": 1,
+            "Cloud Storage and Event Handling": 1,
+            "Cloud Storage Notifications": 1,
+            "Cloud Storage and Messaging": 1,
+            "Cloud Service Integration": 1,
+            "Cloud Storage Notification Configuration": 1,
+            "Cloud Storage Event Management": 1,
+            "Metrics and Monitoring": 1,
+            "Cloud Monitoring and Metrics": 3,
+            "Cloud Monitoring and Analytics": 1,
+            "Cloud Storage Analysis": 1,
+            "Cloud Storage Administration": 2,
+            "Cloud Administration": 1,
+            "AWS S3 Management": 1,
+            "AWS Resource Management": 2,
+            "Cloud Data Querying": 1,
+            "Cloud Storage and Querying": 1,
+            "Cloud Storage Performance Optimization": 2,
+            "Cloud Hosting": 2,
+            "Cloud Storage and Delivery": 1,
+            "Cloud Hosting and Delivery": 1,
+            "Cloud Storage and Content Delivery": 2,
+            "Cloud DNS Management": 1,
+            "Cloud Storage and Management": 1
+          },
+          "intents_distribution": {
+            "Reference": 1853,
+            "How-To": 1759,
+            "Debug": 370,
+            "Compare": 131,
+            "Setup": 3,
+            "Warning": 8,
+            "Configuration": 18,
+            "Best Practices": 3,
+            "Optimization": 4,
+            "Pricing": 1,
+            "Best Practice": 1,
+            "Example": 21,
+            "Guidelines": 1,
+            "Troubleshooting": 1,
+            "Cost Optimization": 1,
+            "Monitor": 3,
+            "Cost Analysis": 2,
+            "Organize": 1,
+            "Optimize": 3
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 41997,
+          "unique_keywords": 5534,
+          "avg_keywords_per_chunk": 22.627693965517242,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              2894
+            ],
+            [
+              "AWS CLI",
+              786
+            ],
+            [
+              "permissions",
+              520
+            ],
+            [
+              "bucket",
+              458
+            ],
+            [
+              "bucket policy",
+              425
+            ],
+            [
+              "API Version 2006-03-01",
+              388
+            ],
+            [
+              "AWS Management Console",
+              375
+            ],
+            [
+              "REST API",
+              330
+            ],
+            [
+              "AWS SDKs",
+              310
+            ],
+            [
+              "IAM",
+              301
+            ]
+          ]
+        }
+      }
+    },
+    "semantic_chunks_metadata": {
+      "glacier-dg_enriched_chunks.json": {
+        "total_chunks": 476,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 179,
+          "unique_intents": 4,
+          "content_type_distribution": {
+            "Conceptual": 57,
+            "Reference": 150,
+            "Procedural": 253,
+            "Example": 14,
+            "Warning": 2
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 27,
+            "Amazon S3 Glacier": 8,
+            "Amazon S3 Glacier API and Operations": 1,
+            "AWS S3 Glacier": 15,
+            "Data Storage": 5,
+            "Storage Management": 1,
+            "Data Archival and Retrieval": 1,
+            "Notification Configuration": 3,
+            "Cloud Storage Operations": 9,
+            "Cloud Account Setup": 1,
+            "AWS Account Management": 1,
+            "AWS SDKs": 4,
+            "Amazon S3 Glacier Vault Management": 2,
+            "AWS SDK for Java": 18,
+            "Cloud Storage Management": 12,
+            "AWS CLI": 1,
+            "Data Retrieval": 14,
+            "AWS SDK Usage": 5,
+            "Data Storage and Management": 2,
+            "AWS Command Line Interface": 1,
+            "AWS S3 Glacier Job Management": 5,
+            "AWS S3 Glacier Operations": 7,
+            "Vault Management": 3,
+            "Vault Operations in S3 Glacier": 1,
+            "Vault Operations": 1,
+            "Data Storage Management": 2,
+            "Cloud Storage Configuration": 1,
+            "Vault Configuration": 1,
+            "AWS SDK for .NET": 12,
+            "AWS CLI Commands": 7,
+            "Amazon S3 Glacier Vault Metadata Retrieval": 1,
+            "AWS S3 Glacier API": 5,
+            "Vault Metadata Retrieval": 1,
+            "AWS CLI Configuration and Usage": 1,
+            "Vault Inventory Management": 1,
+            "AWS S3 Glacier Vault Inventory Management": 1,
+            "Cloud Storage and Messaging": 3,
+            "Inventory Management": 1,
+            "AWS Command Line Interface (AWS CLI)": 1,
+            "Vault Notifications Configuration": 2,
+            "AWS Notifications Configuration": 2,
+            "AWS SDK": 1,
+            "Event Notifications": 1,
+            "Notification Management": 1,
+            "AWS SNS Configuration": 1,
+            "AWS CLI Configuration": 2,
+            "Vault Management in Amazon S3 Glacier": 1,
+            "Vault Operations in AWS S3 Glacier": 1,
+            "Vault Management in AWS S3 Glacier": 1,
+            "AWS Command Line Interface (CLI)": 1,
+            "Tagging": 2,
+            "Tag Management": 2,
+            "AWS Management Console": 1,
+            "AWS S3 Glacier Vault Tagging": 1,
+            "Access Control Policies": 6,
+            "Vault Lock Management": 4,
+            "Data Retention Management": 1,
+            "Data Security": 1,
+            "Vault Lock Configuration": 1,
+            "Archive Operations": 1,
+            "Amazon S3 Glacier Operations": 2,
+            "Data Storage and Transfer": 1,
+            "Data Archival and Storage": 1,
+            "AWS CLI Usage": 1,
+            "Amazon S3 Glacier Archive Upload": 1,
+            "Multipart Upload": 9,
+            "Multipart Upload Operations": 7,
+            "Multipart Upload Management": 1,
+            "AWS S3 Glacier Multipart Uploads": 1,
+            "File Management and Uploading": 1,
+            "Multipart File Upload": 1,
+            "Data Integrity": 1,
+            "File Upload and Checksums": 1,
+            "Multipart Upload in Amazon S3 Glacier": 2,
+            "Archive Retrieval in Amazon S3 Glacier": 1,
+            "Data Retrieval Options": 2,
+            "Provisioned Capacity Management": 4,
+            "Cloud Storage and Notifications": 2,
+            "Cloud Storage and Retrieval": 2,
+            "Data Integrity Verification": 2,
+            "AWS Glacier Operations": 2,
+            "Archive Management": 2,
+            "Amazon S3 Glacier Archive Management": 2,
+            "AWS CLI Operations": 1,
+            "AWS SDK Libraries": 1,
+            "AWS SDKs and APIs": 1,
+            "AWS SDK Code Examples": 1,
+            "AWS SDK for Python (Boto3)": 2,
+            "Cloud Data Management": 1,
+            "Amazon S3 Glacier API Operations": 9,
+            "AWS SDK for JavaScript": 1,
+            "AWS SDKs and Tools": 1,
+            "AWS S3 Glacier Multipart Upload": 1,
+            "Job Management": 4,
+            "Security and Compliance": 1,
+            "Data Encryption": 2,
+            "Security and Access Management": 1,
+            "Identity and Access Management": 3,
+            "Identity and Access Management (IAM)": 3,
+            "Authentication and Security": 1,
+            "IAM (Identity and Access Management)": 1,
+            "IAM Roles": 2,
+            "IAM Policies and Permissions": 1,
+            "Access Management": 9,
+            "IAM Policies": 5,
+            "Access Control": 3,
+            "IAM Policy Conditions": 1,
+            "IAM Permissions and Roles": 1,
+            "IAM Policy Management": 1,
+            "AWS Identity and Access Management (IAM) Policies": 1,
+            "IAM Permissions": 1,
+            "AWS IAM Policy Management": 1,
+            "Monitoring and Incident Response": 1,
+            "Compliance and Security": 2,
+            "Cloud Infrastructure": 1,
+            "S3 Glacier Data Retrieval Policies": 1,
+            "Data Retrieval Policies": 4,
+            "Data Retrieval Policy": 2,
+            "AWS Configuration": 1,
+            "Data Retrieval Policy Management": 1,
+            "Tagging and Resource Management": 1,
+            "Tagging Restrictions": 1,
+            "Tagging and Cost Management": 1,
+            "Cloud Monitoring and Logging": 1,
+            "CloudTrail Logging": 1,
+            "CloudTrail Log Analysis": 1,
+            "API Request Headers": 1,
+            "HTTP Headers": 1,
+            "API Documentation": 29,
+            "Authentication": 1,
+            "Signature Calculation": 1,
+            "AWS Signature Calculation": 2,
+            "Cryptographic Hashing": 2,
+            "Data Integrity and Checksum Calculation": 1,
+            "Hashing Algorithms": 1,
+            "Data Integrity and Checksums": 2,
+            "Hashing and Cryptographic Algorithms": 1,
+            "Checksum Computation": 1,
+            "Data Retrieval and Alignment": 1,
+            "Error Handling": 3,
+            "API Error Handling": 1,
+            "API Operations": 22,
+            "HTTP Response Handling": 3,
+            "Amazon S3 Glacier API": 13,
+            "API Request Structure": 2,
+            "Data Validation": 1,
+            "Amazon S3 Glacier API Documentation": 1,
+            "Amazon S3 Glacier Notifications": 1,
+            "Vault Locking Process": 1,
+            "API Request Parameters": 1,
+            "AWS API Operations": 2,
+            "HTTP Operations": 1,
+            "Data Storage and Retrieval": 2,
+            "Data Upload and Validation": 1,
+            "Data Storage and Integrity": 1,
+            "Data Transfer and Storage": 1,
+            "Pagination": 1,
+            "Data Formats": 1,
+            "Amazon S3 Glacier Multipart Upload": 1,
+            "API Pagination": 1,
+            "Multipart Uploads": 1,
+            "Data Integrity and Upload Management": 1,
+            "HTTP Headers and Responses": 1,
+            "Amazon S3 Glacier Job Management": 3,
+            "Data Retrieval and Validation": 1,
+            "API Usage": 1,
+            "Data Retrieval and Storage": 2,
+            "Job Retrieval and Output Management": 1,
+            "Vault Notification Configuration": 1,
+            "Data Inventory Management": 1,
+            "Data Retrieval Operations": 1,
+            "Data Retrieval Tiers": 1,
+            "Data Serialization": 1,
+            "Data Processing Configuration": 1,
+            "Data Processing": 1,
+            "Job Metadata": 1,
+            "Data Retrieval and Processing": 1,
+            "API Response Handling": 1,
+            "Resource Management": 1
+          },
+          "intents_distribution": {
+            "Reference": 472,
+            "How-To": 459,
+            "Debug": 116,
+            "Compare": 22
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 10596,
+          "unique_keywords": 1602,
+          "avg_keywords_per_chunk": 22.26050420168067,
+          "most_common_keywords": [
+            [
+              "Amazon S3 Glacier",
+              636
+            ],
+            [
+              "S3 Glacier",
+              344
+            ],
+            [
+              "vault",
+              185
+            ],
+            [
+              "API Version 2012-06-01",
+              172
+            ],
+            [
+              "AWS CLI",
+              169
+            ],
+            [
+              "archive",
+              131
+            ],
+            [
+              "Amazon SNS",
+              114
+            ],
+            [
+              "AWS SDK for .NET",
+              96
+            ],
+            [
+              "AWS SDK",
+              95
+            ],
+            [
+              "REST API",
+              93
+            ]
+          ]
+        }
+      },
+      "s3-api_enriched_chunks.json": {
+        "total_chunks": 1961,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 99.94900560938297,
+            "entities": 99.94900560938297,
+            "primary_category": 100.0,
+            "secondary_categories": 99.94900560938297,
+            "summary": 100.0,
+            "intents": 99.94900560938297,
+            "potential_questions": 99.94900560938297,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 99.94900560938297
+          },
+          "overall_completeness": 99.96940336562977
+        },
+        "diversity_metrics": {
+          "unique_content_types": 6,
+          "unique_primary_categories": 148,
+          "unique_intents": 13,
+          "content_type_distribution": {
+            "Reference": 1274,
+            "Warning": 17,
+            "Procedural": 549,
+            "Conceptual": 25,
+            "Example": 95,
+            "Unknown": 1
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 1088,
+            "Cloud Storage API": 138,
+            "Cloud Storage APIs": 47,
+            "Cloud Storage Management": 78,
+            "Cloud Storage Operations": 59,
+            "Cloud Storage Permissions": 19,
+            "Cloud Storage Services": 9,
+            "Cloud Storage Encryption": 16,
+            "Cloud Storage Security": 12,
+            "Cloud Storage Configuration": 150,
+            "Amazon S3 API": 9,
+            "Data Encryption": 3,
+            "Cloud Storage Analytics": 3,
+            "Cloud Storage and Encryption": 1,
+            "Cloud Storage Optimization": 1,
+            "HTTP Protocol": 6,
+            "AWS S3 Configuration": 1,
+            "HTTP Methods": 1,
+            "Access Control": 3,
+            "Cloud Storage Access Control": 3,
+            "Storage Lifecycle Management": 1,
+            "Cloud Services": 9,
+            "Cloud Cost Management": 1,
+            "API Documentation": 5,
+            "HTTP Headers": 3,
+            "HTTP API Documentation": 1,
+            "AWS Services": 4,
+            "AWS S3 Error Handling": 2,
+            "Data Integrity": 2,
+            "Cloud Identity and Access Management": 2,
+            "Identity and Access Management": 3,
+            "Cloud Configuration": 2,
+            "AWS Identity Management": 3,
+            "Access Management": 4,
+            "Cloud Computing": 51,
+            "Cloud Identity Management": 3,
+            "Cloud Access Management": 1,
+            "AWS Access Management": 1,
+            "Job Configuration": 1,
+            "Configuration Management": 2,
+            "AWS IAM Identity Center": 2,
+            "IAM and Access Management": 1,
+            "Cloud Infrastructure": 3,
+            "AWS Account Management": 1,
+            "Data Validation": 3,
+            "AWS Identity and Access Management": 1,
+            "AWS API Documentation": 1,
+            "AWS API Reference": 1,
+            "API Reference": 1,
+            "Amazon S3 on Outposts": 1,
+            "AWS S3": 3,
+            "AWS Resource Management": 1,
+            "Amazon S3 Control API": 4,
+            "HTTP Error Handling": 1,
+            "Data Processing": 3,
+            "Error Handling": 22,
+            "Cloud Storage Error Handling": 4,
+            "Amazon S3 Error Handling": 1,
+            "Amazon S3 API Documentation": 1,
+            "Web Configuration": 1,
+            "Object Filtering": 1,
+            "Web Development": 4,
+            "Cloud Security": 13,
+            "Cloud Storage Metrics": 1,
+            "Cloud Storage and Configuration": 1,
+            "Amazon S3 Batch Operations": 1,
+            "Data Filtering": 1,
+            "Cloud Storage Lifecycle Management": 2,
+            "Cloud Storage Access Management": 1,
+            "Amazon S3 Object Lambda": 1,
+            "Amazon Web Services (AWS)": 2,
+            "AWS S3 Storage Lens Configuration": 1,
+            "Cloud Storage Monitoring": 1,
+            "Configuration": 1,
+            "Cloud Storage Integration": 1,
+            "AWS Security and Identity Management": 2,
+            "AWS Identity and Access Management (IAM)": 3,
+            "Cloud Security and Authentication": 1,
+            "AWS IAM and Security": 1,
+            "AWS IAM and STS": 1,
+            "HTTP Protocols": 1,
+            "Cloud Storage and Networking": 1,
+            "Cloud Development": 8,
+            "Authentication and Security": 2,
+            "Cloud Storage Authentication": 17,
+            "API Authentication": 4,
+            "SDK Versioning and Authentication": 1,
+            "SDK Upgrade Guidance": 1,
+            "AWS Logging and Troubleshooting": 1,
+            "Amazon S3": 2,
+            "Build Configuration": 1,
+            "Unknown": 1,
+            "API Development": 1,
+            "Programming": 1,
+            "Amazon S3 Configuration Management": 1,
+            "Amazon S3 API Operations": 1,
+            "Amazon S3 Lifecycle and Inventory Management": 1,
+            "Amazon S3 Bucket Policy Management": 1,
+            "Amazon S3 SDK Usage": 1,
+            "AWS SDK": 1,
+            "AWS S3 Object Retention": 1,
+            "AWS S3 Management": 1,
+            "Cloud Storage Policies": 3,
+            "AWS S3 Bucket Policy Management": 1,
+            "Amazon S3 Configuration": 1,
+            "Amazon S3 Bucket Tagging": 1,
+            "AWS S3 Bucket Management": 1,
+            "AWS S3 Access Control": 1,
+            "AWS SDK Usage": 2,
+            "HTTP Request Handling": 2,
+            "Cloud Application Development": 2,
+            "Document Processing": 1,
+            "AWS SDK for Java": 1,
+            "AWS Services Integration": 2,
+            "AWS S3 Operations": 1,
+            "Error Handling in Cloud Services": 1,
+            "File Management": 2,
+            "Data Management": 1,
+            "AWS Event Processing": 1,
+            "AWS S3 File Transfer": 1,
+            "Cloud Storage and File Transfer": 1,
+            "File Processing and Hashing": 1,
+            "Serverless Computing": 2,
+            "Job Management": 1,
+            "Java Programming": 1,
+            "Cloud Storage SDK": 1,
+            "Authentication": 6,
+            "Data Transfer": 1,
+            "AWS Authentication Methods": 1,
+            "Cryptography": 3,
+            "String Processing": 1,
+            "AWS API Authentication": 1,
+            "AWS Security and Authentication": 1,
+            "AWS Signature Version 4": 2,
+            "Data Transmission": 1,
+            "AWS Signature Version 4 Signing Process": 1,
+            "Data Encoding": 2,
+            "Data Serialization": 2,
+            "AWS Authentication": 4,
+            "Data Integrity and Authentication": 1,
+            "AWS Key Management Service (KMS)": 1,
+            "Cloud Storage Errors": 1,
+            "Cloud Services Documentation": 1,
+            "Data Storage and Access": 1,
+            "Data Handling": 1,
+            "Authentication and Authorization": 1,
+            "AWS REST API Authentication": 1,
+            "Policy Validation": 1
+          },
+          "intents_distribution": {
+            "Reference": 1953,
+            "How-To": 1499,
+            "Debug": 590,
+            "Configuration": 28,
+            "Compare": 44,
+            "Example": 18,
+            "Understand": 1,
+            "Integration": 1,
+            "Learn": 1,
+            "Clarification": 1,
+            "Validation": 1,
+            "Support": 1,
+            "Informational": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 43492,
+          "unique_keywords": 5361,
+          "avg_keywords_per_chunk": 22.17848036715961,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              2916
+            ],
+            [
+              "AWS SDK",
+              1115
+            ],
+            [
+              "bucket",
+              474
+            ],
+            [
+              "API Version 2006-03-01",
+              450
+            ],
+            [
+              "Amazon Simple Storage Service",
+              356
+            ],
+            [
+              "Amazon S3 Control",
+              300
+            ],
+            [
+              "API Reference",
+              261
+            ],
+            [
+              "AWS SDKs",
+              234
+            ],
+            [
+              "AWS CLI",
+              219
+            ],
+            [
+              "S3Client",
+              219
+            ]
+          ]
+        }
+      },
+      "s3-outposts_enriched_chunks.json": {
+        "total_chunks": 254,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 100.0,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 100.0
+        },
+        "diversity_metrics": {
+          "unique_content_types": 5,
+          "unique_primary_categories": 44,
+          "unique_intents": 8,
+          "content_type_distribution": {
+            "Reference": 67,
+            "Conceptual": 19,
+            "Procedural": 162,
+            "Warning": 2,
+            "Example": 4
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 119,
+            "AWS S3": 1,
+            "AWS Storage Services": 1,
+            "Cloud Computing": 14,
+            "Cloud Networking": 14,
+            "Networking": 6,
+            "Cloud Infrastructure": 8,
+            "Cloud Services": 3,
+            "Networking Configuration": 2,
+            "Cloud Storage Configuration": 15,
+            "User Interface Interaction": 1,
+            "Cloud Resource Management": 2,
+            "Cloud Storage Management": 24,
+            "Cloud Storage Access Management": 2,
+            "Amazon S3 on Outposts": 2,
+            "Object Storage Management": 1,
+            "AWS S3 Multipart Upload": 1,
+            "Cloud Storage Policies": 2,
+            "Access Control": 1,
+            "Cloud Storage Integration": 1,
+            "Authentication and Security": 1,
+            "Cloud Security": 2,
+            "Identity and Access Management": 2,
+            "Cloud Storage Access Control": 1,
+            "Cloud Storage Security": 4,
+            "Cloud Security and Access Management": 1,
+            "Identity and Access Management (IAM)": 1,
+            "IAM Role and Permissions Management": 1,
+            "Configuration Management": 2,
+            "Cloud Storage Lifecycle Management": 1,
+            "Cloud Storage Replication": 3,
+            "IAM Policies": 1,
+            "Cloud Storage Permissions": 1,
+            "Cloud Infrastructure Management": 1,
+            "AWS Outposts Configuration": 1,
+            "AWS S3 on Outposts": 1,
+            "AWS Services": 1,
+            "AWS Services Integration": 1,
+            "Cloud Logging and Monitoring": 2,
+            "AWS CloudTrail Configuration": 1,
+            "Cloud Monitoring and Logging": 1,
+            "Cloud Logging": 2,
+            "Tag Management": 1,
+            "AWS Development": 1
+          },
+          "intents_distribution": {
+            "Reference": 246,
+            "How-To": 236,
+            "Debug": 37,
+            "Compare": 3,
+            "Security": 1,
+            "Troubleshooting": 1,
+            "Best Practice": 1,
+            "Warning": 1
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 5491,
+          "unique_keywords": 1035,
+          "avg_keywords_per_chunk": 21.618110236220474,
+          "most_common_keywords": [
+            [
+              "S3 on Outposts",
+              231
+            ],
+            [
+              "Amazon S3",
+              226
+            ],
+            [
+              "AWS CLI",
+              158
+            ],
+            [
+              "Outposts",
+              139
+            ],
+            [
+              "Amazon S3 on Outposts",
+              95
+            ],
+            [
+              "access point",
+              78
+            ],
+            [
+              "AWS Outposts",
+              70
+            ],
+            [
+              "VPC",
+              70
+            ],
+            [
+              "Outposts bucket",
+              69
+            ],
+            [
+              "bucket policy",
+              64
+            ]
+          ]
+        }
+      },
+      "s3-userguide_enriched_chunks.json": {
+        "total_chunks": 3015,
+        "completeness_metrics": {
+          "field_completeness": {
+            "content_type": 100.0,
+            "keywords": 100.0,
+            "entities": 99.93366500829187,
+            "primary_category": 100.0,
+            "secondary_categories": 100.0,
+            "summary": 100.0,
+            "intents": 100.0,
+            "potential_questions": 100.0,
+            "contextual_prefix": 100.0,
+            "tf_idf_keywords": 100.0
+          },
+          "overall_completeness": 99.99336650082918
+        },
+        "diversity_metrics": {
+          "unique_content_types": 6,
+          "unique_primary_categories": 286,
+          "unique_intents": 18,
+          "content_type_distribution": {
+            "Reference": 850,
+            "Conceptual": 270,
+            "Example": 62,
+            "Warning": 44,
+            "Procedural": 1783,
+            "Troubleshooting": 6
+          },
+          "primary_category_distribution": {
+            "Cloud Storage": 1182,
+            "Cloud Storage Management": 329,
+            "Access Management": 41,
+            "Cloud Storage Monitoring": 15,
+            "Cloud Computing": 166,
+            "Cloud Account Management": 3,
+            "Identity and Access Management": 23,
+            "Cloud Storage Configuration": 271,
+            "Cloud Storage Security": 68,
+            "File Management": 3,
+            "Configuration Management": 5,
+            "Cloud Storage Access Management": 21,
+            "AWS Key Management Service (KMS)": 1,
+            "Cloud Storage Operations": 41,
+            "Security": 1,
+            "Package Management": 1,
+            "Cloud Storage Optimization": 19,
+            "Cloud Storage Billing": 5,
+            "Cloud Storage APIs": 2,
+            "Metadata Management": 2,
+            "Configuration": 2,
+            "Cloud Storage Permissions": 41,
+            "AWS S3 Permissions": 7,
+            "Data Integrity": 1,
+            "Cloud Storage Validation": 1,
+            "Object Storage Management": 2,
+            "Programming": 1,
+            "Data Organization": 1,
+            "Tagging and Categorization": 1,
+            "Data Categorization and Management": 1,
+            "AWS IAM Policy Management": 1,
+            "Cloud Security": 58,
+            "Cloud Development": 2,
+            "Cloud Services": 21,
+            "Cloud Infrastructure": 24,
+            "AWS Lambda Configuration": 4,
+            "AWS S3 Configuration": 6,
+            "AWS Lambda Functionality": 1,
+            "Cloud Security and Access Control": 1,
+            "Cloud Permissions Management": 9,
+            "AWS Lambda": 8,
+            "Cloud Data Processing": 1,
+            "AWS Lambda Integration": 1,
+            "AWS Identity and Access Management": 3,
+            "Data Transformation": 1,
+            "AWS S3": 3,
+            "Software Installation": 1,
+            "Cloud Storage Setup": 1,
+            "Cloud Networking": 19,
+            "Serverless Computing": 4,
+            "Runtime Configuration": 1,
+            "Cloud Monitoring": 27,
+            "Object Management": 2,
+            "Cloud Management": 3,
+            "User Management": 3,
+            "Data Privacy and Security": 1,
+            "AWS Identity and Access Management (IAM)": 14,
+            "Policy Management": 3,
+            "Cloud Application Development": 1,
+            "Workflow Navigation": 2,
+            "Identity and Access Management (IAM)": 6,
+            "Financial Services": 1,
+            "Data Redaction": 1,
+            "Access Control": 29,
+            "Data Processing": 5,
+            "Cloud Storage Services": 6,
+            "Cloud Configuration": 7,
+            "Data Management": 9,
+            "Cloud Identity and Access Management": 8,
+            "Workflow Configuration": 1,
+            "AWS S3 Batch Operations": 3,
+            "AWS IAM Policy Configuration": 1,
+            "Cloud Security and Access Management": 2,
+            "Encryption": 4,
+            "Cloud Storage Encryption": 21,
+            "Error Handling": 3,
+            "AWS S3 Operations": 1,
+            "AWS Lambda and S3 Integration": 1,
+            "Job Scheduling": 1,
+            "Cloud Operations": 3,
+            "Cloud Event Monitoring": 1,
+            "Access Control and Permissions": 5,
+            "AWS S3 Object Lock": 1,
+            "Cloud Video Processing": 1,
+            "Web Development": 2,
+            "AWS IAM Permissions": 1,
+            "Cloud Policy Management": 1,
+            "Video Processing": 1,
+            "Media Processing": 2,
+            "Video Transcoding": 1,
+            "Cloud Function Management": 1,
+            "Cloud Storage and Computing": 1,
+            "AWS IAM Policies": 2,
+            "Cloud IAM": 1,
+            "Batch Processing": 1,
+            "Software Configuration": 1,
+            "AWS Services": 5,
+            "Cloud Functions": 1,
+            "Cloud Monitoring and Logging": 8,
+            "AWS Permissions": 1,
+            "Cloud Storage Querying": 8,
+            "Cloud Storage and Data Querying": 1,
+            "Cloud Data Querying": 4,
+            "Database Querying": 1,
+            "SQL Syntax and Operations": 1,
+            "Data Types": 1,
+            "Data Querying": 1,
+            "SQL Querying": 1,
+            "SQL Functions": 2,
+            "Date and Time Functions": 1,
+            "String Functions in SQL": 1,
+            "SQL String Functions": 1,
+            "String Manipulation Functions": 1,
+            "Cloud Computing Services": 2,
+            "Cloud Storage Authorization": 6,
+            "Data Format": 1,
+            "Cloud Storage Networking": 1,
+            "Amazon S3": 2,
+            "Data Protection and Encryption": 1,
+            "Data Encryption": 4,
+            "Cloud Storage and Encryption": 4,
+            "Cloud Storage Access Control": 12,
+            "Cloud Storage Policies": 13,
+            "Cloud Storage Policy Management": 2,
+            "Authentication and API Signing": 1,
+            "Cloud Storage Performance": 1,
+            "Data Security": 3,
+            "Authentication and Access Management": 1,
+            "IAM Permissions Management": 2,
+            "IAM Policies and Permissions": 1,
+            "IAM Policies": 1,
+            "Access Control and Security": 1,
+            "Cloud Security and Permissions": 2,
+            "Access Control Policies": 2,
+            "Access Control in Amazon S3": 1,
+            "AWS Security and Permissions": 1,
+            "Cloud Access Management": 1,
+            "Amazon S3 API Permissions": 1,
+            "AWS S3 API Permissions": 2,
+            "AWS Permissions and Policies": 1,
+            "Storage Management": 4,
+            "AWS S3 Bucket Policies": 2,
+            "IAM Policy Management": 1,
+            "Cloud Infrastructure Management": 2,
+            "IAM (Identity and Access Management)": 4,
+            "Access Control Configuration": 1,
+            "AWS Setup and Configuration": 1,
+            "AWS Permissions Management": 2,
+            "Cloud Storage and Access Management": 3,
+            "IAM Role Management": 1,
+            "AWS IAM and Security": 1,
+            "IAM Roles and Permissions": 1,
+            "IAM Permissions": 1,
+            "Security Policy Configuration": 1,
+            "Amazon S3 Access Management": 2,
+            "Cloud Resource Management": 7,
+            "Access Point Management": 1,
+            "Amazon S3 Access Points": 1,
+            "Amazon S3 Access Grants": 1,
+            "Cloud Instance Management": 2,
+            "AWS Configuration": 3,
+            "AWS Resource Management": 3,
+            "Cloud Storage Permission Management": 1,
+            "Settings Management": 1,
+            "User Interaction": 1,
+            "Cloud Configuration Management": 1,
+            "Data Protection": 3,
+            "Encryption Configuration": 1,
+            "Security and Encryption": 1,
+            "Encryption and Key Management": 1,
+            "AWS S3 Server-Side Encryption": 1,
+            "Encryption and Security": 1,
+            "Networking": 5,
+            "AWS S3 Access Management": 1,
+            "Cloud Security and Compliance": 2,
+            "Cloud Storage Replication": 9,
+            "Data Replication": 3,
+            "AWS S3 Replication": 2,
+            "IAM Configuration": 1,
+            "Cloud Storage and Security": 2,
+            "Workflow Management": 2,
+            "Cloud Storage and Replication": 1,
+            "Storage and Replication": 1,
+            "Cloud Storage Analytics": 20,
+            "Cloud Storage Permissions and Errors": 1,
+            "User Interface Interaction": 1,
+            "Cloud Storage and Networking": 2,
+            "AWS Security and Identity Management": 1,
+            "Data Synchronization": 1,
+            "AWS S3 Multi-Region Access Points": 1,
+            "Cloud Infrastructure Logging": 1,
+            "Object Storage": 1,
+            "Cloud Storage API": 1,
+            "Object Version Management": 1,
+            "Data Retention": 1,
+            "Cloud Backup and Recovery": 1,
+            "Cloud Storage Billing and Usage": 2,
+            "Cloud Billing and Cost Management": 1,
+            "Tag Management": 4,
+            "Cloud Storage Billing and Pricing": 1,
+            "Cloud Storage Metrics": 29,
+            "Cloud Storage Error Handling": 1,
+            "Cloud Storage Analysis": 2,
+            "Data Recovery": 1,
+            "Cloud Storage Costs": 1,
+            "Cloud Storage Lifecycle Management": 3,
+            "Object Filtering": 1,
+            "Cloud Service Monitoring": 1,
+            "Cloud Storage Logging": 2,
+            "Cloud Logging and Monitoring": 5,
+            "AWS Security and Logging": 1,
+            "AWS CloudTrail Logging": 1,
+            "AWS Cloud Services": 3,
+            "Cloud Storage and Logging": 2,
+            "Cloud Infrastructure Monitoring": 1,
+            "Cloud Logging": 1,
+            "Cloud Security Auditing": 1,
+            "Cloud Logging Configuration": 1,
+            "Cloud Services Logging": 1,
+            "AWS S3 Logging": 2,
+            "Cloud Data Management": 4,
+            "Cloud Storage and Querying": 1,
+            "Cloud Storage Pricing": 1,
+            "Metrics and Monitoring": 1,
+            "Cloud Monitoring and Metrics": 5,
+            "AWS S3 Metrics Configuration": 1,
+            "Cloud Storage and Notifications": 2,
+            "Cloud Storage and Event Notifications": 1,
+            "AWS Event Notification Services": 1,
+            "AWS Services Integration": 1,
+            "Cloud Event Management": 2,
+            "Cloud Storage Notifications": 3,
+            "AWS Services and Policies": 1,
+            "Event Configuration": 1,
+            "Cloud Services Configuration": 3,
+            "Cloud Messaging": 1,
+            "Cloud Storage Event Notifications": 1,
+            "AWS S3 Notification Configuration": 1,
+            "Event Handling": 1,
+            "Amazon S3 Event Notifications": 1,
+            "Cloud Storage Events": 1,
+            "Cloud Monitoring and Analytics": 2,
+            "Storage Metrics": 1,
+            "Configuration Settings": 2,
+            "AWS S3 Storage Lens Configuration": 1,
+            "AWS S3 Storage Lens": 1,
+            "AWS Storage Management": 1,
+            "Metrics Analysis": 1,
+            "Dashboard Management": 1,
+            "Data Visualization": 1,
+            "Error Monitoring": 2,
+            "AWS Permissions and Access Management": 1,
+            "AWS Organizations Management": 1,
+            "Metrics Configuration": 1,
+            "User Interface Navigation": 1,
+            "Resource Tagging": 1,
+            "AWS Resource Tagging": 1,
+            "AWS Storage Lens": 1,
+            "Cloud Inventory Management": 1,
+            "Report Configuration": 1,
+            "Cloud Storage Performance Optimization": 1,
+            "Performance Optimization": 1,
+            "Web Hosting": 5,
+            "Routing": 1,
+            "Access Control Management": 1,
+            "Cloud Object Storage": 1,
+            "Amazon S3 CORS Configuration": 1,
+            "Cross-Origin Resource Sharing (CORS)": 2,
+            "CORS Troubleshooting": 1,
+            "Cloud Storage and Hosting": 1,
+            "Cloud Hosting and Delivery": 1,
+            "Cloud Distribution": 1,
+            "Web Security": 1,
+            "Content Delivery Network (CDN)": 2,
+            "Cloud Certificate Management": 1,
+            "SSL Configuration": 1,
+            "Cloud DNS Management": 2,
+            "DNS Configuration": 7,
+            "DNS Management": 5,
+            "Cloud Storage and Delivery": 1,
+            "Cloud Hosting": 2,
+            "Cloud Hosting Configuration": 1,
+            "Web Hosting and Optimization": 1,
+            "Cloud Distribution Configuration": 1,
+            "Cloud Distribution Management": 1,
+            "Cloud Storage and SDKs": 1
+          },
+          "intents_distribution": {
+            "Reference": 2892,
+            "How-To": 2794,
+            "Debug": 414,
+            "Compare": 160,
+            "Warning": 9,
+            "Performance Optimization": 2,
+            "Example": 21,
+            "Best Practice": 2,
+            "Configuration": 16,
+            "Optimization": 3,
+            "Troubleshooting": 3,
+            "Optimize": 2,
+            "Best Practices": 2,
+            "Troubleshoot": 1,
+            "Cleanup": 1,
+            "Monitor": 1,
+            "Cost Analysis": 2,
+            "Analysis": 2
+          }
+        },
+        "intent_coverage": {
+          "standard_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "covered_intents": [
+            "Compare",
+            "Reference",
+            "How-To",
+            "Debug"
+          ],
+          "coverage_percentage": 100.0
+        },
+        "keyword_statistics": {
+          "total_keywords": 63240,
+          "unique_keywords": 8020,
+          "avg_keywords_per_chunk": 20.975124378109452,
+          "most_common_keywords": [
+            [
+              "Amazon S3",
+              4017
+            ],
+            [
+              "API Version 2006-03-01",
+              900
+            ],
+            [
+              "AWS CLI",
+              851
+            ],
+            [
+              "bucket",
+              709
+            ],
+            [
+              "permissions",
+              662
+            ],
+            [
+              "AWS Management Console",
+              504
+            ],
+            [
+              "bucket policy",
+              477
+            ],
+            [
+              "Amazon Simple Storage Service",
+              443
+            ],
+            [
+              "AWS SDKs",
+              409
+            ],
+            [
+              "IAM",
+              394
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "aggregate_results": {
+    "total_files": 3,
+    "total_chunks": 0,
+    "avg_completeness": 0.0,
+    "avg_intent_coverage": 0.0,
+    "unique_content_types": [],
+    "unique_primary_categories": [],
+    "unique_intents": [],
+    "content_type_distribution": {},
+    "primary_category_distribution": {},
+    "intents_distribution": {},
+    "most_common_keywords": {}
+  }
 }

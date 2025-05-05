@@ -1,0 +1,143 @@
+{
+  "naive": {
+    "naive_embedding": {
+      "total_vectors": 4792,
+      "dimension": 384,
+      "index_size_bytes": 7360557,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.8928691744804382,
+      "min_neighbor_distance": 0.787373423576355,
+      "max_neighbor_distance": 0.9547934532165527
+    },
+    "prefix_fusion_embedding": {
+      "total_vectors": 4792,
+      "dimension": 384,
+      "index_size_bytes": 7360557,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.9021623730659485,
+      "min_neighbor_distance": 0.817779541015625,
+      "max_neighbor_distance": 0.9681757688522339
+    },
+    "tfidf_embedding": {
+      "total_vectors": 4792,
+      "dimension": 384,
+      "index_size_bytes": 7360557,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.8394502401351929,
+      "min_neighbor_distance": 0.7330887913703918,
+      "max_neighbor_distance": 0.9208744764328003
+    }
+  },
+  "recursive": {
+    "naive_embedding": {
+      "total_vectors": 4099,
+      "dimension": 384,
+      "index_size_bytes": 6296109,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.887087881565094,
+      "min_neighbor_distance": 0.8165828585624695,
+      "max_neighbor_distance": 0.9694482684135437
+    },
+    "prefix_fusion_embedding": {
+      "total_vectors": 4099,
+      "dimension": 384,
+      "index_size_bytes": 6296109,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.898895800113678,
+      "min_neighbor_distance": 0.8509562611579895,
+      "max_neighbor_distance": 0.9575088620185852
+    },
+    "tfidf_embedding": {
+      "total_vectors": 4099,
+      "dimension": 384,
+      "index_size_bytes": 6296109,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.8349615335464478,
+      "min_neighbor_distance": 0.7339988946914673,
+      "max_neighbor_distance": 0.9157084226608276
+    }
+  },
+  "semantic": {
+    "naive_embedding": {
+      "total_vectors": 5706,
+      "dimension": 384,
+      "index_size_bytes": 8764461,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.884626030921936,
+      "min_neighbor_distance": 0.7827179431915283,
+      "max_neighbor_distance": 0.9768807291984558
+    },
+    "prefix_fusion_embedding": {
+      "total_vectors": 5706,
+      "dimension": 384,
+      "index_size_bytes": 8764461,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.8896659016609192,
+      "min_neighbor_distance": 0.803305447101593,
+      "max_neighbor_distance": 0.9759325981140137
+    },
+    "tfidf_embedding": {
+      "total_vectors": 5706,
+      "dimension": 384,
+      "index_size_bytes": 8764461,
+      "documents": [
+        "glacier-dg",
+        "s3-api",
+        "s3-outposts",
+        "s3-userguide"
+      ],
+      "document_count": 4,
+      "avg_neighbor_distance": 0.8330851793289185,
+      "min_neighbor_distance": 0.6828737258911133,
+      "max_neighbor_distance": 0.9457623362541199
+    }
+  }
+}

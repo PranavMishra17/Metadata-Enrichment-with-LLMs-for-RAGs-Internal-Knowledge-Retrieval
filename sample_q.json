@@ -1,0 +1,7 @@
+[
+    {"id": "q1", "query": "How do I create a bucket in S3 using the AWS CLI?"},
+    {"id": "q2", "query": "What are the differences between S3 storage classes and when should I use each one?"},
+    {"id": "q3", "query": "How can I implement versioning and lifecycle policies for S3 objects using boto3 Python SDK?"},
+    {"id": "q4", "query": "Explain S3 Select and how it can optimize data retrieval compared to standard GET operations"},
+    {"id": "q5", "query": "What are the best practices for securing S3 buckets against unauthorized access and potential data leaks?"}
+]

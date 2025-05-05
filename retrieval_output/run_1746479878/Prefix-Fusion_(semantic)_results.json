@@ -1,0 +1,1420 @@
+{
+  "q1": [
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_34",
+      "text": "In the left navigation pane, choose Buckets. 4. Choose Create bucket. The Create bucket page opens. Step 1: Create a bucket API Version 2006-03-01 19\n\nAmazon Simple Storage Service User Guide\n5. Under...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides step-by-step instructions for creating a bucket in Amazon S3 and configuring its AWS Region.",
+      "score": 0.9069535732269287,
+      "rank": 1
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1547",
+      "text": "In the left navigation pane, choose Buckets. 4. Choose Create bucket. The Create bucket page opens. 5. Under General configuration, view the AWS Region where your bucket will be created. 6.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides step-by-step instructions for creating a bucket in Amazon S3 and viewing its AWS Region configuration.",
+      "score": 0.9066588878631592,
+      "rank": 2
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_104",
+      "text": "In the left navigation pane, choose Buckets. 4. Choose Create bucket. The Create bucket page opens. Creating a bucket API Version 2006-03-01 62\n\nAmazon Simple Storage Service User Guide\n5. Under Gener...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides step-by-step instructions on how to create a bucket in Amazon S3, including selecting the AWS Region and accessing the Create bucket page.",
+      "score": 0.9052227139472961,
+      "rank": 3
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_421",
+      "text": "Create a bucket. In this example, we will use amzn-s3-demo-bucket1. For information about\ncreating buckets, see the section called \u201cCreating a bucket\u201d.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This content provides instructions for creating a bucket in Amazon S3, using 'amzn-s3-demo-bucket1' as an example.",
+      "score": 0.9050406217575073,
+      "rank": 4
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2826",
+      "text": "In the left navigation pane, choose Buckets. 3. Choose Create bucket. The Create bucket page opens. 4. For Bucket name, enter a name for your bucket (for example, tutorial-bucket). For more informatio...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to create a bucket in Amazon S3, including naming rules and selecting an appropriate AWS Region.",
+      "score": 0.8998546600341797,
+      "rank": 5
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1197",
+      "text": "Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. DATA(lo_session) = /aws1/cl_rt_session_aws=>create( cv_pfl ). DATA(lo_s3) = /aws1/cl_s3_factory=>create( ...",
+      "document_id": "",
+      "content_type": "Example",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation snippet demonstrates how to create an Amazon S3 bucket using AWS SDK and includes a code example for implementation.",
+      "score": 0.8970125913619995,
+      "rank": 6
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_872",
+      "text": "In the left navigation pane, choose Buckets. 4. Choose Create bucket. The Create bucket page opens. 5. Under General configuration, view the AWS Region where your bucket will be created. 6. Under Buck...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to create a bucket in AWS S3, including selecting a bucket type and ensuring the chosen AWS Region supports directory buckets.",
+      "score": 0.8913577795028687,
+      "rank": 7
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_546",
+      "text": "In the left navigation pane, choose Buckets. 3. Choose Create bucket. The Create bucket page opens. S3 Object Lambda tutorials API Version 2006-03-01 393\n\nAmazon Simple Storage Service User Guide\n4. F...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This document provides a step-by-step guide to creating an Amazon S3 bucket, including naming conventions, region selection, and public access settings.",
+      "score": 0.8814842104911804,
+      "rank": 8
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_576",
+      "text": "In the left navigation pane, choose Buckets. 3. In the Buckets list, choose the option button next to the name of the bucket that you created\nin Step 1 (for example, tutorial-bucket). 4.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "The text provides step-by-step instructions for selecting a bucket in the AWS S3 console's navigation pane.",
+      "score": 0.8809822797775269,
+      "rank": 9
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2902",
+      "text": "To create your buckets for website hosting\nThe following instructions provide an overview of how to create your buckets for website hosting. For detailed, step-by-step instructions on creating a bucke...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides an overview of creating Amazon S3 buckets for website hosting, including selecting a root domain and configuring a Region for optimal performance and compliance.",
+      "score": 0.8797025680541992,
+      "rank": 10
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_119",
+      "text": "puts \"Your bucket's region is: #{wrapper.location}\"\nend\nrun_demo if $PROGRAM_NAME == __FILE__\nUsing the AWS CLI\nYou can also use the AWS Command Line Interface (AWS CLI) to create an S3 bucket. For mo...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Management",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to manage Amazon S3 buckets, including viewing properties, enabling versioning, and using the AWS CLI to create buckets. It also highlights tagging for cost allocation and provides a code snippet for determining a bucket's region.",
+      "score": 0.8796096444129944,
+      "rank": 11
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_486",
+      "text": "In the left navigation pane, choose Buckets. 3. Choose Create bucket. The Create bucket page opens. 4. For Bucket name, enter a name (for example, tutorial-bucket) for your bucket. S3 Object Lambda tu...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides a step-by-step guide on creating a bucket in Amazon S3, including configuring the bucket name, region, and public access settings.",
+      "score": 0.8770591616630554,
+      "rank": 12
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_791",
+      "text": "In the left navigation pane, choose Buckets. 3. In the Buckets list, choose the name of your source bucket (for example, amzn-s3-demo-\nsource-bucket). 4.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to select a source bucket from the Buckets list in the Amazon S3 console.",
+      "score": 0.8754242658615112,
+      "rank": 13
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1242",
+      "text": "Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. Create a bucket. $s3client = new Aws\\S3\\S3Client(['region' => 'us-west-2']);\ntry {\nBasics API Version 200...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation provides instructions and code examples for creating an Amazon S3 bucket using AWS SDKs for PHP and Python, including error handling and configuration details.",
+      "score": 0.875281035900116,
+      "rank": 14
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1236",
+      "text": "#\n# Parameters:\n# -b bucket_name -- The name of the bucket to create. # -r region_code -- The code for an AWS Region in which to\n# create the bucket. #\nBasics API Version 2006-03-01 1847\n\nAmazon Simpl...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides details about creating an Amazon S3 bucket, including required parameters and return values.",
+      "score": 0.8744162321090698,
+      "rank": 15
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2798",
+      "text": "Open the Amazon S3 console at https://console.aws.amazon.com/s3/. 2. In the Buckets list, choose the name of the bucket that you have configured as a static website\n(for example, example.com). 3.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides instructions for accessing the Amazon S3 console and selecting a bucket configured as a static website.",
+      "score": 0.8733663558959961,
+      "rank": 16
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_933",
+      "text": "In the left navigation pane, choose Buckets. 3. Choose the Directory buckets tab. 4. Choose the name of the bucket that you want to upload your folders or files to. 5.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides step-by-step instructions for selecting a bucket and uploading folders or files in a cloud storage service.",
+      "score": 0.8714916706085205,
+      "rank": 17
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_715",
+      "text": "In the left navigation pane, choose Buckets. 3. In the Buckets list, choose the name of the bucket that you created earlier (for example,\namzn-s3-demo-destination-bucket1). 4.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "The text provides step-by-step instructions for selecting a bucket from the Buckets list in the AWS S3 console.",
+      "score": 0.8700036406517029,
+      "rank": 18
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+      "text": "Review the bucket policy\n1. Sign in to the AWS Management Console and open the Amazon S3 console at https://\nconsole.aws.amazon.com/s3/. 2.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This text provides instructions on how to review a bucket policy in Amazon S3 using the AWS Management Console.",
+      "score": 0.8692013025283813,
+      "rank": 19
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2835",
+      "text": "4. In the Origin section, for Origin domain, choose the domain name of your S3 origin, which\nstarts with the name of the S3 bucket that you created in Step 1 (for example, tutorial-\nbucket). 5.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Configuration",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This section provides instructions for selecting the domain name of an S3 origin in the Origin section of a configuration process.",
+      "score": 0.8676062822341919,
+      "rank": 20
+    }
+  ],
+  "q2": [
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2137",
+      "text": "Try again. 411 MissingContentLength You must provide the\nLength Content-Length HTTP\nRequired header. 412 RequestIsNotMultiP A bucket POST request\nPrecondit artContent must be of the enclosure\nion Fail...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Debug",
+        "Reference"
+      ],
+      "summary": "This document explains error codes related to HTTP requests for Amazon S3 and provides an overview of storage classes available in S3. It highlights the importance of choosing the right storage class for cost optimization and performance requirements.",
+      "score": 0.8144469261169434,
+      "rank": 1
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1035",
+      "text": "At least one prefix must be specified. Up to 10 prefixes are allowed. Type: Array of strings\nRequired: No\nMatchAnySuffix\nContains a list of suffixes. At least one suffix must be specified. Up to 10 su...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Configuration",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation describes configuration options for matching object properties such as prefixes, suffixes, tags, age, and size ranges in an S3 environment.",
+      "score": 0.8119165897369385,
+      "rank": 2
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+      "text": "Amazon's trademarks and trade dress may not be used in connection with any product or service\nthat is not Amazon's, in any manner that is likely to cause confusion among customers, or in any\nmanner th...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation provides comprehensive information about Amazon S3, including its features, access management, security, and procedural guides for managing buckets and objects. It also covers advanced configurations like Transfer Acceleration and S3 Express One Zone functionality.",
+      "score": 0.8062752485275269,
+      "rank": 3
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1179",
+      "text": "For your reference, see the following\nimplementations of those utilities. export const dirnameFromMetaUrl = (metaUrl) =>\nfileURLToPath(new URL(\". \", metaUrl));\nimport { select, input, confirm, checkbo...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "API Development",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation outlines utility functions and API methods for interacting with Amazon S3 and provides examples of JavaScript-based implementations using the Prompter class and related utilities.",
+      "score": 0.8008027076721191,
+      "rank": 4
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2142",
+      "text": "For more information\nabout S3 Intelligent-Tiering, see S3 Intelligent-Tiering access tiers. Storage classes for infrequently accessed objects\nThe S3 Standard-IA and S3 One Zone-IA storage classes are ...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation discusses Amazon S3 storage classes, including S3 Standard-IA and S3 One Zone-IA, which are optimized for infrequently accessed data with millisecond retrieval times. It also covers lifecycle management and pricing considerations for transitioning data between storage classes.",
+      "score": 0.7989270687103271,
+      "rank": 5
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2101",
+      "text": "Backing up your data API Version 2006-03-01 1721\n\nAmazon Simple Storage Service User Guide\nCost optimization\nAmazon S3 offers a range of features and storage classes to help you optimize costs through...",
+      "document_id": "",
+      "content_type": "Conceptual",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Compare",
+        "Reference"
+      ],
+      "summary": "The documentation explains Amazon S3's storage classes and features designed to optimize costs based on data access patterns and lifecycle needs, with a pay-as-you-go model.",
+      "score": 0.7989233732223511,
+      "rank": 6
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_0",
+      "text": "API Reference\nAmazon Simple Storage Service\nAPI Version 2006-03-01\nCopyright \u00a9 2024 Amazon Web Services, Inc. and/or its affiliates. All rights reserved. Amazon Simple Storage Service API Reference\nAm...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This document provides a reference for the Amazon Simple Storage Service (S3) API, including details about the API version 2006-03-01.",
+      "score": 0.7938586473464966,
+      "rank": 7
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1847",
+      "text": "They specifically note any new features,\ncorrections, and known issues. Tools for Amazon Web Services A central starting point to find documentation, code\nsamples, release notes, and other information...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Services Documentation",
+      "intents": [
+        "Reference",
+        "Support",
+        "Informational"
+      ],
+      "summary": "This documentation provides an overview of AWS resources including Amazon S3, support tools, release notes, and forums for technical discussions, along with details on the API version history and support options.",
+      "score": 0.792765736579895,
+      "rank": 8
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2144",
+      "text": "The S3 One Zone-\nIA storage class is as durable as S3 Standard-IA, but it is less available and less resilient. For a\ncomparison of storage class durability and availability, see Comparing the Amazon ...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Compare",
+        "Reference",
+        "How-To"
+      ],
+      "summary": "The document explains Amazon S3 storage classes, focusing on their durability, availability, and use cases, including S3 One Zone-IA for re-creatable data and Glacier classes for long-term archiving.",
+      "score": 0.7914036512374878,
+      "rank": 9
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1846",
+      "text": "For example, the NoSuchKey and NoSuchBucket Amazon S3 errors both map to\nthe HTTP 404 Not Found status code. Although the HTTP status codes contain less information about the error, clients that under...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage Services",
+      "intents": [
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation explains how Amazon S3 maps specific errors to HTTP status codes and emphasizes the importance of using Amazon S3 error codes for detailed error information. It also outlines additional resources such as release notes and FAQs for developers.",
+      "score": 0.7903577089309692,
+      "rank": 10
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2988",
+      "text": "For more information about storage metrics, see\nMonitoring metrics with Amazon CloudWatch. Earlier updates API Version 2006-03-01 2462\n\nAmazon Simple Storage Service User Guide\nChange Description Date...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "Compare"
+      ],
+      "summary": "This documentation outlines updates to Amazon S3, including a new storage class (STANDARD_IA), support for SQL-based object retrieval with S3 Select, and availability in the Asia Pacific (Osaka-Local) Region.",
+      "score": 0.7901614904403687,
+      "rank": 11
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2138",
+      "text": "Understanding and managing storage classes API Version 2006-03-01 1779\n\nAmazon Simple Storage Service User Guide\nThe following sections provide details of the various storage classes and how to set th...",
+      "document_id": "",
+      "content_type": "Conceptual",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Compare",
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation explains the various Amazon S3 storage classes, their use cases, and how they can optimize performance and costs for different data access patterns. It includes recommendations for latency-sensitive and infrequently accessed data storage options.",
+      "score": 0.7901268601417542,
+      "rank": 12
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1004",
+      "text": "Action API Description Access Condition keys\nlevel\ns3express CreateBuc Grants permission to create a Write s3express\n:CreateBu ket new bucket. :authType\ncket\nAuthenticating and authorizing requests AP...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides detailed reference information about S3 Express API actions, including permissions, condition keys, and their usage in IAM policies for managing Amazon S3 resources.",
+      "score": 0.7895442247390747,
+      "rank": 13
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_209",
+      "text": "Response Syntax\nHTTP/1.1 200\nx-amz-delete-marker: DeleteMarker\naccept-ranges: AcceptRanges\nAmazon S3 API Version 2006-03-01 294\n\nAmazon Simple Storage Service API Reference\nx-amz-expiration: Expiratio...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation outlines the response syntax and HTTP headers returned by Amazon S3 for successful API calls, including metadata and caching behavior details.",
+      "score": 0.7892478704452515,
+      "rank": 14
+    },
+    {
+      "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_3",
+      "text": "To learn more about these storage options, see S3 Glacier storage classes and Long-term\ndata storage using S3 Glacier storage classes in the Amazon S3 User Guide. These storage classes\nuse the Amazon ...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Compare"
+      ],
+      "summary": "This documentation provides information about Amazon S3 Glacier storage classes, their features, and usage for low-cost data archiving and long-term backup. It includes details on supported operations, accessing the service, and pricing information.",
+      "score": 0.7883236408233643,
+      "rank": 15
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_0",
+      "text": "User Guide\nAmazon Simple Storage Service\nAPI Version 2006-03-01\nCopyright \u00a9 2024 Amazon Web Services, Inc. and/or its affiliates. All rights reserved. Amazon Simple Storage Service User Guide\nAmazon S...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This document is a user guide for Amazon Simple Storage Service (Amazon S3) API, providing reference material for the 2006-03-01 version.",
+      "score": 0.7881931066513062,
+      "rank": 16
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2717",
+      "text": "\u2022 Storage class \u2013 The storage class that's used for storing the object. \u2022 Intelligent-Tiering: Access tier \u2013 Indicates the access tier (frequent or infrequent) of the\nobject if it was stored in the S3...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "Compare"
+      ],
+      "summary": "This documentation explains the storage class, access tiers in S3 Intelligent-Tiering, and the ETag hash used to represent object content changes in Amazon S3.",
+      "score": 0.7874751091003418,
+      "rank": 17
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2155",
+      "text": "For pricing information, see Management\nand replication Amazon S3 pricing. Topics\n\u2022 How do I set up storage class analysis? \u2022 How do I use storage class analysis? \u2022 How can I export storage class anal...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Configuration"
+      ],
+      "summary": "The document provides instructions on setting up and using storage class analysis in Amazon S3, including configuration options for analyzing object data by bucket contents, prefixes, and tags.",
+      "score": 0.7874280214309692,
+      "rank": 18
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1031",
+      "text": "If you have a good understanding of some of the\nfollowing topics, you can skip to the section that applies to you. For more information about the permissions to S3 API operations by S3 resource types,...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Debug"
+      ],
+      "summary": "This documentation provides an overview of Amazon S3 resources, including buckets and objects, along with related features, permissions, and access management tools.",
+      "score": 0.7862191200256348,
+      "rank": 19
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_5",
+      "text": "The S3 API reference groups each of its Actions and Data Types into three sets: Amazon S3, Amazon\nS3 Control, and Amazon S3 on Outposts. There is no functional distinction between the three sets. If y...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage APIs",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides a detailed reference for Amazon S3 API actions and data types, grouped into Amazon S3, Amazon S3 Control, and Amazon S3 on Outposts categories with no functional distinction between them.",
+      "score": 0.7851701974868774,
+      "rank": 20
+    }
+  ],
+  "q3": [
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1628",
+      "text": "This topic also includes information about getting started and details\nabout previous SDK versions. Work with Amazon S3 versioned objects using an AWS SDK\nThe following code example shows how to:\n\u2022 Cr...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to work with Amazon S3 versioned objects using an AWS SDK, including creating versioned buckets, managing object versions, and implementing lifecycle configurations.",
+      "score": 0.8709855079650879,
+      "rank": 1
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1244",
+      "text": ":return: The newly created bucket.\n\"\"\" try:\nbucket = s3.create_bucket(\nBucket=bucket_name,\nCreateBucketConfiguration={\n\"LocationConstraint\": s3.meta.client.meta.region_name\n},\n)\nlogger.info(\"Created b...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Management",
+      "intents": [
+        "How-To",
+        "Debug",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to create an Amazon S3 bucket, enable versioning, and configure lifecycle rules for noncurrent version expiration using the AWS SDK for Python (Boto3). It includes error handling for bucket creation and configuration steps.",
+      "score": 0.8507980108261108,
+      "rank": 2
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1629",
+      "text": "Adding a lifecycle configuration to a versioned bucket is a best practice. It helps prevent objects in the bucket from accumulating a large number of\nnoncurrent versions, which can slow down request p...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Debug",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to add a lifecycle configuration to a versioned bucket in Amazon S3 to manage noncurrent object versions and includes a code example for bucket creation.",
+      "score": 0.8409366011619568,
+      "rank": 3
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2241",
+      "text": "For more information, see the\nfollowing:\n\u2022 Managing the lifecycle of objects\n\u2022 Retaining multiple versions of objects with S3 Versioning\nTo create a lifecycle rule\n1. Sign in to the AWS Management Con...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Management",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This section provides step-by-step instructions for creating a lifecycle rule in Amazon S3 using the AWS Management Console, along with links to related lifecycle and versioning concepts.",
+      "score": 0.8384668827056885,
+      "rank": 4
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_110",
+      "text": "(Optional) Under Bucket Versioning, you can choose if you wish to keep variants of objects in\nyour bucket. For more information about versioning, see Retaining multiple versions of objects\nwith S3 Ver...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to enable or disable versioning for an S3 bucket and how to add tags for categorization using key-value pairs.",
+      "score": 0.8280919790267944,
+      "rank": 5
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_40",
+      "text": "(Optional) Under Bucket Versioning, you can choose if you wish to keep variants of objects in\nyour bucket. For more information about versioning, see Retaining multiple versions of objects\nwith S3 Ver...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Configuration",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to enable or disable bucket versioning in S3 and optionally add tags to categorize storage using key-value pairs.",
+      "score": 0.8265804648399353,
+      "rank": 6
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1243",
+      "text": "self.bucket = bucket\nself.name = bucket.name\ndef create(self, region_override=None):\n\"\"\"\nBasics API Version 2006-03-01 1859\n\nAmazon Simple Storage Service API Reference\nCreate an Amazon S3 bucket in t...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to create and configure Amazon S3 buckets, including enabling versioning and adding lifecycle rules to manage object versions effectively.",
+      "score": 0.825992226600647,
+      "rank": 7
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1324",
+      "text": "Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. Basics API Version 2006-03-01 1984\n\nAmazon Simple Storage Service API Reference\nclass BucketWrapper:\n\"\"\"E...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Debug"
+      ],
+      "summary": "This documentation provides a reference for interacting with Amazon S3 buckets using the BucketWrapper class in Boto3, including lifecycle configuration retrieval and relevant API details.",
+      "score": 0.8234755992889404,
+      "rank": 8
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2013",
+      "text": "It helps prevent objects in the bucket from accumulating a large number of\nnoncurrent versions, which can slow down request performance. Usage is shown in the usage_demo_single_object function at the ...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Debug",
+        "Reference"
+      ],
+      "summary": "The documentation explains how to create and configure an Amazon S3 bucket with versioning enabled, including handling errors when a bucket already exists.",
+      "score": 0.821943998336792,
+      "rank": 9
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_381",
+      "text": "This version\nhas been deprecated. Existing lifecycle configurations will work. For new lifecycle\nconfigurations, use the updated API. Creates a new lifecycle configuration for the bucket or replaces a...",
+      "document_id": "",
+      "content_type": "Warning",
+      "primary_category": "Cloud Storage Configuration",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation warns that the current version of lifecycle configuration has been deprecated and advises using the updated API for new configurations. It also explains access permissions and the s3:PutLifecycleConfiguration requirement for modifying lifecycle settings.",
+      "score": 0.8203226923942566,
+      "rank": 10
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2253",
+      "text": "Using the REST API\nThe following topics in the Amazon Simple Storage Service API Reference describe the REST API\noperations related to S3 Lifecycle configuration:\n\u2022 PutBucketLifecycleConfiguration\n\u2022 G...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage Configuration",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Debug"
+      ],
+      "summary": "This documentation explains the REST API operations for configuring S3 Lifecycle, how it interacts with other bucket settings, and troubleshooting common issues. It also outlines rules for managing object versions and lifecycle actions.",
+      "score": 0.8195368647575378,
+      "rank": 11
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2245",
+      "text": "10. To expire current versions of objects, under Expire current versions of objects, in Number of\ndays after object creation, enter the number of days. Important\nIn a nonversioned bucket, the expirati...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Management",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This section explains how to configure expiration rules for current object versions in Amazon S3 and highlights the implications for nonversioned buckets.",
+      "score": 0.8172224760055542,
+      "rank": 12
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1377",
+      "text": "Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. require 'aws-sdk-s3'\n# Wraps Amazon S3 object actions. class ObjectExistsWrapper\nattr_reader :object\n# @p...",
+      "document_id": "",
+      "content_type": "Example",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides an example of using the AWS SDK for Ruby to check the existence of an Amazon S3 object through the ObjectExistsWrapper class.",
+      "score": 0.8153365850448608,
+      "rank": 13
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1384",
+      "text": "Python\nSDK for Python (Boto3)\nNote\nThere's more on GitHub. Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. class BucketWrapper:\n\"\"\"Encapsulates S3 bucket...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides an overview of a Python SDK (Boto3) for interacting with Amazon S3 buckets, including code examples for listing buckets.",
+      "score": 0.8148961663246155,
+      "rank": 14
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2008",
+      "text": "This includes actions such as changing the tags on an object. Important\nIf you notice a significant increase in the number of HTTP 503 (Service Unavailable)\nresponses received for Amazon S3 PUT or DEL...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Debug",
+        "Reference"
+      ],
+      "summary": "This documentation explains enabling S3 Versioning to manage multiple object versions in Amazon S3 buckets, including recommendations for handling HTTP 503 errors and protecting data using additional features like S3 Object Lock and S3 Replication.",
+      "score": 0.8146189451217651,
+      "rank": 15
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1633",
+      "text": "\", object_key)\nraise\nUpload the stanza of a poem to a versioned object and perform a series of actions on it. def usage_demo_single_object(obj_prefix=\"demo-versioning/\"):\n\"\"\"\nDemonstrates usage of ver...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation demonstrates how to use Amazon S3 versioning by uploading a stanza of a poem, performing revisions, rollbacks, and deletions, and managing object versions programmatically.",
+      "score": 0.812522828578949,
+      "rank": 16
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_392",
+      "text": "Valid Values: varies_by_storage_class | all_storage_classes_128K\nExamples\nExample 1: Add lifecycle configuration - bucket not versioning-enabled\nThe following lifecycle configuration specifies two rul...",
+      "document_id": "",
+      "content_type": "Example",
+      "primary_category": "Cloud Storage Configuration",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides examples and details on configuring Amazon S3 lifecycle policies, including transitioning objects to the GLACIER storage class and expiring objects after a specified duration. It includes procedural guidance for both versioning-enabled and non-versioning-enabled buckets.",
+      "score": 0.8121092915534973,
+      "rank": 17
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1630",
+      "text": "\", bucket_name)\nraise\ntry:\nbucket.Versioning().enable()\nlogger.info(\"Enabled versioning on bucket %s. \", bucket.name)\nexcept ClientError:\nlogger.exception(\"Couldn't enable versioning on bucket %s. \", ...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Debug",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to enable versioning, configure lifecycle rules, and roll back objects in an Amazon S3 bucket using Python and Boto3. It includes error handling and procedural steps for managing bucket configurations.",
+      "score": 0.8107506036758423,
+      "rank": 18
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1389",
+      "text": "Find the complete example and learn how to set up and run\nin the AWS Code Examples Repository. // S3Actions wraps S3 service actions. type S3Actions struct {\nS3Client *s3.Client\nS3Manager *manager.Upl...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides examples and instructions for using the ListObjectVersions API in the AWS SDK for Go and Rust to list all versions of objects in an Amazon S3 bucket.",
+      "score": 0.8093719482421875,
+      "rank": 19
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1553",
+      "text": "(Optional) Under Bucket Versioning, you can choose if you wish to keep variants of objects in\nyour bucket. For more information about versioning, see Retaining multiple versions of objects\nwith S3 Ver...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to configure bucket versioning and tags in Amazon S3, including enabling or disabling versioning and categorizing storage with key-value pair tags.",
+      "score": 0.8085461854934692,
+      "rank": 20
+    }
+  ],
+  "q4": [
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_633",
+      "text": "3. After you locate and select the data file in the S3 console, choose Actions, and then choose\nQuery with S3 Select. 4.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to query a data file in the S3 console using the S3 Select feature.",
+      "score": 0.8257709741592407,
+      "rank": 1
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_806",
+      "text": "Querying data in place with Amazon S3 Select\nImportant\nAmazon S3 Select is no longer available to new customers. Existing customers of Amazon\nS3 Select can continue to use the feature as usual. Learn ...",
+      "document_id": "",
+      "content_type": "Warning",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "Amazon S3 Select allows existing customers to query and filter data from S3 objects using SQL, reducing data transfer costs and latency. It supports CSV, JSON, and Apache Parquet formats but is no longer available to new customers.",
+      "score": 0.8234773874282837,
+      "rank": 2
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_828",
+      "text": "Learn more\nAmazon S3 Select supports the following operators. Logical operators\n\u2022 AND\n\u2022 NOT\n\u2022 OR\nComparison operators\n\u2022 <\n\u2022 >\n\u2022 <=\n\u2022 >=\n\u2022 =\n\u2022 <>\n\u2022 !=\n\u2022 BETWEEN\n\u2022 IN \u2013 For example: IN ('a', 'b', 'c')\nP...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Data Querying",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Compare"
+      ],
+      "summary": "This documentation provides a reference for Amazon S3 Select's supported SQL operators, reserved keywords, and their precedence, along with a list of SQL functions and usage notes.",
+      "score": 0.823249101638794,
+      "rank": 3
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1035",
+      "text": "At least one prefix must be specified. Up to 10 prefixes are allowed. Type: Array of strings\nRequired: No\nMatchAnySuffix\nContains a list of suffixes. At least one suffix must be specified. Up to 10 su...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Configuration",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation describes configuration options for matching object properties such as prefixes, suffixes, tags, age, and size ranges in an S3 environment.",
+      "score": 0.8023519515991211,
+      "rank": 4
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_816",
+      "text": "SQL reference for Amazon S3 Select\nImportant\nAmazon S3 Select is no longer available to new customers. Existing customers of Amazon\nS3 Select can continue to use the feature as usual. Learn more\nThis ...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage Querying",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation provides an overview of the SQL elements supported by Amazon S3 Select, including the SELECT command and its supported clauses. Note that Amazon S3 Select is no longer available to new customers.",
+      "score": 0.8021560907363892,
+      "rank": 5
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1004",
+      "text": "Action API Description Access Condition keys\nlevel\ns3express CreateBuc Grants permission to create a Write s3express\n:CreateBu ket new bucket. :authType\ncket\nAuthenticating and authorizing requests AP...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides detailed reference information about S3 Express API actions, including permissions, condition keys, and their usage in IAM policies for managing Amazon S3 resources.",
+      "score": 0.8010511994361877,
+      "rank": 6
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_818",
+      "text": "\u2022 Wildcard characters always emit at least one record. If no record matches, then Amazon\nS3 Select emits the value MISSING. During output serialization (after the query finishes\nrunning), Amazon S3 Se...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage Querying",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation explains how Amazon S3 Select handles wildcard characters, MISSING values, JSON document structures, and aggregate functions during SQL querying and output serialization.",
+      "score": 0.7970860004425049,
+      "rank": 7
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1870",
+      "text": "These libraries pr\novide basic functions (not included in the REST or SOAP\nAPIs), such as request authentication, request retries, and\nerror handling so that it's easier to get started. API Version 20...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage API",
+      "intents": [
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation provides details about Amazon S3 API operations, including SelectObjectContent response handling, authentication methods, and deprecated lifecycle configuration APIs. It also explains how SQL queries can be used with Amazon S3 Select.",
+      "score": 0.7965710163116455,
+      "rank": 8
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1643",
+      "text": "For a complete list of AWS SDK developer guides and code examples, see Developing with Amazon\nS3 using the AWS SDKs. This topic also includes information about getting started and details\nabout previo...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides an overview of Amazon S3 Control using AWS SDKs, including developer guides, code examples, and instructions for core operations with Java SDK for Java 2.x.",
+      "score": 0.7962796688079834,
+      "rank": 9
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_65",
+      "text": "Their purpose is to provide general guidance. They are not intended for direct use in a\nproduction environment without careful review and adaptation to meet the unique needs of your\norganization's env...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides tutorials on various Amazon S3 functionalities, including storage optimization, data protection, hosting websites, and processing data, alongside training and support resources.",
+      "score": 0.7951339483261108,
+      "rank": 10
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1847",
+      "text": "They specifically note any new features,\ncorrections, and known issues. Tools for Amazon Web Services A central starting point to find documentation, code\nsamples, release notes, and other information...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Services Documentation",
+      "intents": [
+        "Reference",
+        "Support",
+        "Informational"
+      ],
+      "summary": "This documentation provides an overview of AWS resources including Amazon S3, support tools, release notes, and forums for technical discussions, along with details on the API version history and support options.",
+      "score": 0.7943525314331055,
+      "rank": 11
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_812",
+      "text": "In the left navigation pane, choose Buckets. 3. Choose the bucket that contains the object that you want to select content from, and then\nchoose the name of the object. 4. Choose Object actions, and c...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To"
+      ],
+      "summary": "This documentation provides a step-by-step guide on querying object content using S3 Select in Amazon S3 buckets.",
+      "score": 0.7939135432243347,
+      "rank": 12
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_824",
+      "text": "\u2022 column_reference\nA reference to a column in the form column_name or alias.column_name. \u2022 unary_op expression\nIn this case, unary_op is an SQL unary operator. \u2022 expression binary_op expression\nIn thi...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "SQL Syntax and Operations",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation explains SQL syntax elements such as column references, operators, and scalar functions, and provides guidance on data type handling and conversions in Amazon S3 Select.",
+      "score": 0.7931629419326782,
+      "rank": 13
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_825",
+      "text": "For more information about the CAST function, see CAST. Supported data types\nAmazon S3 Select supports the following set of primitive data types. Name Description Examples\nbool A Boolean value, either...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Data Processing",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation provides information about the CAST function and the supported primitive data types in Amazon S3 Select, including Boolean values.",
+      "score": 0.7931268215179443,
+      "rank": 14
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_813",
+      "text": "Configure Output settings, based on the format of the output that you want to receive. Errors API Version 2006-03-01 588\n\nAmazon Simple Storage Service User Guide\n7. To extract records from the chosen...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation explains how to configure output settings and write SQL queries to extract records from Amazon S3 objects using the S3 Select feature.",
+      "score": 0.793070375919342,
+      "rank": 15
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2101",
+      "text": "Backing up your data API Version 2006-03-01 1721\n\nAmazon Simple Storage Service User Guide\nCost optimization\nAmazon S3 offers a range of features and storage classes to help you optimize costs through...",
+      "document_id": "",
+      "content_type": "Conceptual",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Compare",
+        "Reference"
+      ],
+      "summary": "The documentation explains Amazon S3's storage classes and features designed to optimize costs based on data access patterns and lifecycle needs, with a pay-as-you-go model.",
+      "score": 0.7927694320678711,
+      "rank": 16
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_821",
+      "text": "JSON\n\u2022 Document \u2013 You can access JSON document fields as alias.name. You can also access nested\nfields, for example, alias.name1.name2.name3. \u2022 List \u2013 You can access elements in a JSON list by using z...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation explains how to query JSON and CSV objects stored in Amazon S3 using S3 Select, including examples of accessing fields, lists, and handling case sensitivity in headers and attributes.",
+      "score": 0.7922497987747192,
+      "rank": 17
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_831",
+      "text": "Learn more\nAmazon S3 Select supports the following conditional functions. Topics\n\u2022 CASE\n\u2022 COALESCE\n\u2022 NULLIF\nCASE\nThe CASE expression is a conditional expression, similar to if/then/else statements fou...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage Querying",
+      "intents": [
+        "Reference",
+        "Compare"
+      ],
+      "summary": "This documentation explains the conditional functions supported by Amazon S3 Select, focusing on the CASE expression and its two types: simple and searched. It also notes limitations such as the lack of support for ORDER BY and queries with line breaks.",
+      "score": 0.7898382544517517,
+      "rank": 18
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1031",
+      "text": "If you have a good understanding of some of the\nfollowing topics, you can skip to the section that applies to you. For more information about the permissions to S3 API operations by S3 resource types,...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To",
+        "Debug"
+      ],
+      "summary": "This documentation provides an overview of Amazon S3 resources, including buckets and objects, along with related features, permissions, and access management tools.",
+      "score": 0.789165735244751,
+      "rank": 19
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+      "text": "Amazon's trademarks and trade dress may not be used in connection with any product or service\nthat is not Amazon's, in any manner that is likely to cause confusion among customers, or in any\nmanner th...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation provides comprehensive information about Amazon S3, including its features, access management, security, and procedural guides for managing buckets and objects. It also covers advanced configurations like Transfer Acceleration and S3 Express One Zone functionality.",
+      "score": 0.7880012392997742,
+      "rank": 20
+    }
+  ],
+  "q5": [
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1569",
+      "text": "\u2022 Enabling detective controls such as AWS CloudTrail or Amazon GuardDuty for Amazon S3. This documentation will help you understand how to apply the shared responsibility model when\nusing Amazon S3. T...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Security",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides security best practices, configuration guidelines, and monitoring options for Amazon S3, emphasizing the shared responsibility model and services like AWS CloudTrail and Amazon GuardDuty.",
+      "score": 0.8622861504554749,
+      "rank": 1
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1728",
+      "text": "Additionally,\nrequests must be signed using AWS Signature V4 or AWS Signature V2, requiring valid credentials\nto be provided. These APIs are callable from any network location. However, Amazon S3 does...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Security",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation outlines security practices for Amazon S3, including access management via AWS Signatures, bucket policies, and VPC endpoints. It also highlights infrastructure security, compliance validation, and configuration tools like AWS Config.",
+      "score": 0.8501659035682678,
+      "rank": 2
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1575",
+      "text": "For more information, see\nProtecting data by using client-side encryption. Enforce encryption of data in transit\nYou can use HTTPS (TLS) to help prevent potential attackers from eavesdropping on or\nma...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage Security",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation explains best practices for securing data in Amazon S3, including client-side encryption, enforcing HTTPS connections, avoiding certificate pinning, and using S3 Object Lock for data protection. It also highlights AWS Config rules for monitoring SSL requests in S3 buckets.",
+      "score": 0.8484995365142822,
+      "rank": 3
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+      "text": "Amazon's trademarks and trade dress may not be used in connection with any product or service\nthat is not Amazon's, in any manner that is likely to cause confusion among customers, or in any\nmanner th...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference",
+        "Debug"
+      ],
+      "summary": "This documentation provides comprehensive information about Amazon S3, including its features, access management, security, and procedural guides for managing buckets and objects. It also covers advanced configurations like Transfer Acceleration and S3 Express One Zone functionality.",
+      "score": 0.8473086953163147,
+      "rank": 4
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1004",
+      "text": "Action API Description Access Condition keys\nlevel\ns3express CreateBuc Grants permission to create a Write s3express\n:CreateBu ket new bucket. :authType\ncket\nAuthenticating and authorizing requests AP...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides detailed reference information about S3 Express API actions, including permissions, condition keys, and their usage in IAM policies for managing Amazon S3 resources.",
+      "score": 0.8449310660362244,
+      "rank": 5
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1030",
+      "text": "Every S3 customer likely has buckets\nwith objects in them. As new features were added to S3, additional resources were also added, but\nnot every customer uses these feature-specific resources. For mor...",
+      "document_id": "",
+      "content_type": "Conceptual",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This document provides an overview of Amazon S3 resources, access management tools, and best practices for granting and managing access to S3 resources.",
+      "score": 0.8447557687759399,
+      "rank": 6
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1035",
+      "text": "At least one prefix must be specified. Up to 10 prefixes are allowed. Type: Array of strings\nRequired: No\nMatchAnySuffix\nContains a list of suffixes. At least one suffix must be specified. Up to 10 su...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Configuration",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation describes configuration options for matching object properties such as prefixes, suffixes, tags, age, and size ranges in an S3 environment.",
+      "score": 0.8444569706916809,
+      "rank": 7
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1578",
+      "text": "These services can also help you protect your\ndata from those risks. These services include automated detection, monitoring, and protection\ncapabilities that are designed to scale from Amazon S3 resou...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Security",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation outlines best practices for monitoring and auditing Amazon S3 resources to enhance security and compliance, including the use of tools like Tag Editor and S3 Inventory for asset identification and reporting.",
+      "score": 0.8421288728713989,
+      "rank": 8
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1123",
+      "text": "GetBucketRequestPayment (Required) s3:GetBuc Required to return the\nketRequestPayment request payment configura\ntion for an S3 bucket. Required permissions for S3 API operations API Version 2006-03-01...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "AWS S3 Permissions",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation outlines the required permissions for various Amazon S3 API operations related to bucket configurations and management.",
+      "score": 0.8418574929237366,
+      "rank": 9
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_82",
+      "text": "\u2022 Bucket names must not start with the prefix xn--. \u2022 Bucket names must not start with the prefix sthree-. \u2022 Bucket names must not start with the prefix sthree-configurator. \u2022 Bucket names must not st...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation outlines the naming restrictions for Amazon S3 bucket names, including reserved prefixes and suffixes for specific functionalities like access points and Object Lambda Access Points.",
+      "score": 0.838830828666687,
+      "rank": 10
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+      "text": "Review the bucket policy\n1. Sign in to the AWS Management Console and open the Amazon S3 console at https://\nconsole.aws.amazon.com/s3/. 2.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This text provides instructions on how to review a bucket policy in Amazon S3 using the AWS Management Console.",
+      "score": 0.8387227654457092,
+      "rank": 11
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2923",
+      "text": "Step 9: Attach a bucket policy\nIn this example, you attach a bucket policy to the domain bucket (example.com) to allow public\nread access. You replace the Bucket-Name in the example bucket policy with...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This section explains how to attach a bucket policy to an Amazon S3 bucket to allow public read access while highlighting security considerations. It includes an example of a bucket policy and emphasizes reviewing best practices before granting public access.",
+      "score": 0.8385990858078003,
+      "rank": 12
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1881",
+      "text": "DisplayName is a human-readable name representing the developer who\nmade the request. It is not unique, and might change over time.We recommend that you match\nyour DisplayName to your Forum name. \u2022 Na...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation explains the usage of DisplayName and bucket properties in Amazon S3, including creation date, access control, and deprecated SOAP API support. It highlights the recommended use of REST API or AWS SDKs for bucket operations.",
+      "score": 0.8385714292526245,
+      "rank": 13
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1502",
+      "text": "Choose Permissions. 4. Choose Edit to change the public access settings for the bucket. For more information about\nthe four Amazon S3 Block Public Access Settings, see Block public access settings. 5.",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "The text explains how to configure public access settings for an Amazon S3 bucket, including using the Block Public Access Settings feature.",
+      "score": 0.8384439945220947,
+      "rank": 14
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_59",
+      "text": "The following topics explain the learning paths that you can use to gain a deeper understanding of\nAmazon S3 so that you can implement it in your applications. Deleting your bucket API Version 2006-03...",
+      "document_id": "",
+      "content_type": "Conceptual",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides an overview of Amazon S3 learning paths, common use cases, and security features, including backups, hosting, and compliance management. It also references additional resources for deeper exploration.",
+      "score": 0.8371838331222534,
+      "rank": 15
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_309",
+      "text": "Important\nThis action has been revised. We recommend that you use the newer version,\nListObjectsV2, when developing applications. For backward compatibility, Amazon S3\ncontinues to support ListObjects...",
+      "document_id": "",
+      "content_type": "Warning",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation highlights the revised usage of the ListObjects action in Amazon S3, recommending the newer ListObjectsV2 operation for application development while maintaining backward compatibility. It also provides the request syntax, URI parameters, and naming conventions for buckets and access points.",
+      "score": 0.8361055850982666,
+      "rank": 16
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_65",
+      "text": "Their purpose is to provide general guidance. They are not intended for direct use in a\nproduction environment without careful review and adaptation to meet the unique needs of your\norganization's env...",
+      "document_id": "",
+      "content_type": "Procedural",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "How-To",
+        "Reference"
+      ],
+      "summary": "This documentation provides tutorials on various Amazon S3 functionalities, including storage optimization, data protection, hosting websites, and processing data, alongside training and support resources.",
+      "score": 0.836084246635437,
+      "rank": 17
+    },
+    {
+      "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_86",
+      "text": "For more information about bucket names, see Bucket naming rules. Bucket naming and automatically created buckets\nQuotas, restrictions and limitations API Version 2006-03-01 48\n\nAmazon Simple Storage ...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides guidelines on bucket naming and operations for Amazon S3, emphasizing high availability engineering and tools for accessing and managing buckets effectively.",
+      "score": 0.835446834564209,
+      "rank": 18
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_209",
+      "text": "Response Syntax\nHTTP/1.1 200\nx-amz-delete-marker: DeleteMarker\naccept-ranges: AcceptRanges\nAmazon S3 API Version 2006-03-01 294\n\nAmazon Simple Storage Service API Reference\nx-amz-expiration: Expiratio...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage",
+      "intents": [
+        "Reference"
+      ],
+      "summary": "This documentation outlines the response syntax and HTTP headers returned by Amazon S3 for successful API calls, including metadata and caching behavior details.",
+      "score": 0.8347058892250061,
+      "rank": 19
+    },
+    {
+      "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1880",
+      "text": "We recommend that you use either the REST API\nor the AWS SDKs. This section describes the SOAP API with respect to service, bucket, and object operations. Note\nthat SOAP requests, both authenticated a...",
+      "document_id": "",
+      "content_type": "Reference",
+      "primary_category": "Cloud Storage APIs",
+      "intents": [
+        "Reference",
+        "How-To"
+      ],
+      "summary": "This documentation provides an overview of the SOAP API for Amazon S3, including its operations, authentication requirements, and examples of requests and responses. It emphasizes the deprecated status of SOAP over HTTP and recommends using REST API or AWS SDKs for new features.",
+      "score": 0.8337839841842651,
+      "rank": 20
+    }
+  ]
+}

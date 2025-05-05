@@ -476,6 +476,210 @@ A typical workflow might look like:
 
 The system is designed to be modular, allowing you to experiment with different combinations of chunking methods and embedding strategies.
 
+# Retriever System
+
+This section outlines the retrieval phase of the Metadata Enrichment with LLMs pipeline, implementing multiple retrieval strategies with comprehensive evaluation capabilities.
+
+## Overview
+
+The retrieval system provides three main retrieval approaches:
+
+1. **Content-Only Retrieval**: Basic text similarity using naive embeddings
+2. **Content + Metadata Retrieval**: 
+   - TF-IDF Weighted: Combines content (70%) and metadata (30%) vectors
+   - Prefix-Fusion: Uses metadata-injected embeddings 
+3. **Content + Metadata + Reranker**: Adds cross-encoder reranking for improved relevance
+
+Each approach can be used with any of the chunking methods (semantic, naive, recursive).
+
+## Installation
+
+```bash
+# Install required dependencies
+pip install -r requirements.txt
+
+# Required packages include:
+# - sentence-transformers
+# - faiss-cpu (or faiss-gpu)
+# - scikit-learn
+# - numpy
+# - scipy
+# - matplotlib
+```
+
+## Directory Structure
+
+```
+metadata-enrichment-llm/
+├── retriever.py                   # Main entry point
+├── retrieval/                     # Retrieval modules
+│   ├── base_retriever.py          # Base retriever class
+│   ├── content_retriever.py       # Content-only retriever
+│   ├── tfidf_retriever.py         # TF-IDF weighted retriever
+│   ├── prefix_retriever.py        # Prefix-fusion retriever
+│   ├── reranker_retriever.py      # Reranker wrapper
+│   └── evaluator.py               # Evaluation utilities
+├── embeddings_output/             # Input embeddings
+│   ├── semantic/                  # Semantic chunking embeddings
+│   ├── naive/                     # Naive chunking embeddings
+│   └── recursive/                 # Recursive chunking embeddings
+└── retrieval_output/              # Generated results
+    └── run_[timestamp]/           # Run-specific outputs
+        ├── Content_(semantic)_results.json
+        ├── TF-IDF_(naive)_results.json
+        ├── Prefix-Fusion_(recursive)_results.json
+        ├── Reranker_(semantic)_results.json
+        ├── run_[id]_content_semantic_evaluation.json
+        ├── run_[id]_tfidf_naive_evaluation.json
+        ├── run_[id]_prefix_recursive_evaluation.json
+        ├── run_[id]_reranker_semantic_evaluation.json
+        └── retriever_comparison.json
+```
+
+## Usage
+
+### Basic Retrieval
+```bash
+# Basic usage - run all retrievers with default parameters
+python retriever.py
+
+# Run with custom queries file  (4 threads)
+python retriever.py --queries_file sample_queries.json
+
+# Run with more threads for faster processing
+python retriever.py --queries_file questions.json --threads 8
+
+# Run specific retrievers and chunking types
+python retriever.py --retrievers content prefix reranker --chunking_types semantic
+
+# Customize results parameters
+python retriever.py --top_k 10 --reranker_k 30
+
+
+# Available options
+--embedding_dir     Directory containing embeddings (default: embeddings_output)
+--output_dir        Directory to store retrieval results (default: retrieval_output)
+--queries_file      JSON file containing queries and relevance judgments
+--retrievers        Retrievers to use (content, tfidf, prefix, reranker)
+--chunking_types    Chunking types to use (semantic, naive, recursive)
+--top_k             Number of results to retrieve (default: 5)
+--reranker_k        Number of initial results for reranker (default: 20)
+--model             Embedding model to use (default: Snowflake/arctic-embed-s)
+--reranker_model    Reranker model name (default: cross-encoder/ms-marco-MiniLM-L-6-v2)
+--run_id            Unique ID for this evaluation run
+--threads           Number of parallel threads to use (default: 4)
+```
+### Custom Retrieval Configuration
+```bash
+# Run specific retrievers with high parallelism
+python retriever.py --queries_file questions.json --retrievers prefix reranker --threads 12
+
+# Run on specific chunking types with custom top-k
+python retriever.py --queries_file questions.json --chunking_types semantic --top_k 10 --threads 6
+```
+
+### Evaluation
+```bash
+# After running retrieval, evaluate the results:
+python retriever_eval.py --input_dir retrieval_output/run_12345678
+
+# Evaluate with relevance judgments:
+python retriever_eval.py --input_dir retrieval_output/run_12345678 --relevance_file relevance.json
+```
+
+## Sample Questions JSON Format
+
+The system accepts queries in JSON format with the following structure:
+
+```json
+[
+  {"id": "q1", "query": "How do I create a bucket in S3?"},
+  {"id": "q2", "query": "What is Amazon S3 Glacier?"},
+  {"id": "q3", "query": "How to upload files to S3?"}
+]
+```
+
+The multithreading option `--threads` controls how many retrievers run in parallel. Higher values will process queries faster but use more system resources. The optimal value depends on your machine's capabilities and the number of retrievers you're running.
+
+## Retriever Types
+
+### 1. Content Retriever
+
+Simple content-based retrieval using naive embeddings:
+
+- Uses raw chunk text without metadata
+- Provides a baseline for comparison
+- Available with all chunking methods
+
+### 2. TF-IDF Retriever
+
+Combines content and metadata using a weighted approach:
+
+- Content embedding (70% weight)
+- TF-IDF vector from metadata (30% weight)
+- Preserves semantic meaning while adding keyword focus
+- Uses pre-computed tf-idf embeddings
+
+### 3. Prefix-Fusion Retriever
+
+Uses embeddings that incorporate metadata as prefixes:
+
+- Automatically detects query intent and injects appropriate prefixes
+- Formats prefixes similar to those used during embedding
+- Strengthens content-metadata connection
+
+### 4. Reranker Retriever
+
+Adds cross-encoder reranking on top of another retriever:
+
+- First retrieves a larger candidate set (default: 20 results)
+- Then reranks using cross-encoder model
+- Returns the top-k reranked results (default: 5)
+- Uses MS-MARCO-MiniLM-L-6-v2 by default
+
+## Evaluation Metrics
+
+The system evaluates retrieval performance using:
+
+### Core IR Metrics
+
+- **Contextual Precision (CP@K)**: Proportion of relevant results in top-k
+- **Mean Reciprocal Rank (MRR)**: Position of first relevant result
+- **Normalized Discounted Cumulative Gain (NDCG@K)**: Relevance-weighted ranking quality
+- **Recall@K**: Proportion of all relevant documents retrieved in top-k
+
+### AWS-Specific Metrics
+
+- **Chunk Utilization Rate**: Diversity of chunks in results
+- **API Element Recall**: Coverage of API elements mentioned in query
+- **Metadata Consistency Score**: Consistency of metadata across results
+
+## Retriever Comparison
+
+After evaluation, the system generates a comparison report identifying:
+
+- Performance of each retriever on key metrics
+- Best retriever for each metric
+- Overall best retriever based on average ranking
+
+## Resuming Interrupted Runs
+
+The system uses checkpoints to save progress during retrieval:
+
+- Results are saved after every 5 queries
+- If interrupted, running again with the same run_id will resume
+- Use `--eval_only` to evaluate existing results without re-running retrieval
+
+## Performance Considerations
+
+- Multithreaded retrieval for improved performance
+- Configurable number of parallel threads
+- Progress reporting with estimated time remaining
+
+## Next Steps
+
+The retrieval results generated by this system can be used as input for the answer generation phase, where an LLM will formulate coherent answers based on the retrieved chunks.
+
 # Future Work
 
 

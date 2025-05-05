@@ -1,0 +1,122 @@
+===== EMBEDDING EVALUATION SUMMARY =====
+
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| Chunking Method   | Embedding Type          |   Vectors |   Dimension | Index Size   |   Avg NN Distance |
++===================+=========================+===========+=============+==============+===================+
+| naive             | naive_embedding         |      4792 |         384 | 7.02 MB      |          0.892869 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| naive             | prefix_fusion_embedding |      4792 |         384 | 7.02 MB      |          0.902162 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| naive             | tfidf_embedding         |      4792 |         384 | 7.02 MB      |          0.83945  |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| recursive         | naive_embedding         |      4099 |         384 | 6.00 MB      |          0.887088 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| recursive         | prefix_fusion_embedding |      4099 |         384 | 6.00 MB      |          0.898896 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| recursive         | tfidf_embedding         |      4099 |         384 | 6.00 MB      |          0.834962 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| semantic          | naive_embedding         |      5706 |         384 | 8.36 MB      |          0.884626 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| semantic          | prefix_fusion_embedding |      5706 |         384 | 8.36 MB      |          0.889666 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+| semantic          | tfidf_embedding         |      5706 |         384 | 8.36 MB      |          0.833085 |
++-------------------+-------------------------+-----------+-------------+--------------+-------------------+
+
+===== CHUNKING METHOD COMPARISON =====
+
+
+NAIVE
+Embedding Type             Vectors    Avg NN Distance
+-----------------------  ---------  -----------------
+naive_embedding               4792           0.892869
+prefix_fusion_embedding       4792           0.902162
+tfidf_embedding               4792           0.83945
+
+RECURSIVE
+Embedding Type             Vectors    Avg NN Distance
+-----------------------  ---------  -----------------
+naive_embedding               4099           0.887088
+prefix_fusion_embedding       4099           0.898896
+tfidf_embedding               4099           0.834962
+
+SEMANTIC
+Embedding Type             Vectors    Avg NN Distance
+-----------------------  ---------  -----------------
+naive_embedding               5706           0.884626
+prefix_fusion_embedding       5706           0.889666
+tfidf_embedding               5706           0.833085
+
+===== EMBEDDING TYPE COMPARISON =====
+
+
+NAIVE_EMBEDDING
+Chunking Method      Vectors    Avg NN Distance
+-----------------  ---------  -----------------
+naive                   4792           0.892869
+recursive               4099           0.887088
+semantic                5706           0.884626
+
+PREFIX_FUSION_EMBEDDING
+Chunking Method      Vectors    Avg NN Distance
+-----------------  ---------  -----------------
+naive                   4792           0.902162
+recursive               4099           0.898896
+semantic                5706           0.889666
+
+TFIDF_EMBEDDING
+Chunking Method      Vectors    Avg NN Distance
+-----------------  ---------  -----------------
+naive                   4792           0.83945
+recursive               4099           0.834962
+semantic                5706           0.833085
+
+
+Interpretation:
+
+TF-IDF Embedding Advantage
+TF-IDF embedding demonstrates superior clustering characteristics regardless of chunking method:
+
+    It has the lowest average neighbor distance (0.833-0.839)
+    Its minimum distances are consistently lower (as low as 0.683 for semantic chunking)
+    Its maximum distances are lower, suggesting less extreme outliers
+
+This indicates TF-IDF embedding creates more cohesive content clusters, 
+which typically translates to better retrieval performance for similar content.
+
+
+Prefix Fusion Trade-offs
+The prefix fusion approach shows the highest average distances, 
+suggesting it's creating more separation between vectors. This could be interpreted in two ways:
+
+    Positive: Better discrimination between different concepts (reducing false positives)
+    Negative: Potentially losing connections between related content (increasing false negatives)
+
+Since the prefix fusion embedding incorporates metadata like intent,
+content type, and service context directly into the embeddings, 
+it appears to be creating more distinct separations based on these metadata categories.
+
+
+Chunking Method Impact
+Semantic chunking produces 39% more chunks than recursive chunking, which has implications for:
+
+    Index Size: Larger index requires more storage and memory
+    Granularity: More chunks provide finer-grained retrieval possibilities
+    Context: Smaller chunks might lose important context
+
+
+
+Practical Recommendations
+Based on these results:
+
+Best Overall Approach: The combination of semantic chunking with TF-IDF embedding appears optimal if
+                        your priority is tight content clustering (0.833 avg NN distance).
+
+Most Efficient Approach: Recursive chunking with TF-IDF embedding offers the smallest index size (6.00 MB)
+                        while still maintaining good clustering (0.834 avg NN distance).
+
+When to Use Prefix Fusion: This approach might be preferable in scenarios where you want clear separation
+                        between different content types or intents, potentially reducing category bleed between different types of documentation.
+
+Practical Consideration: The TF-IDF approach's tighter clustering likely translates to better relevance for
+                        standard similarity searches, but prefix fusion might perform better for queries
+                        where intent or content type matching is critical.

@@ -1,0 +1,20 @@
+{
+  "run_id": "run_1746479369",
+  "timestamp": "2025-05-05 16:09:37",
+  "query_count": 5,
+  "retrievers": [
+    "content_semantic",
+    "tfidf_semantic",
+    "prefix_semantic",
+    "reranker_semantic",
+    "content_naive",
+    "tfidf_naive",
+    "prefix_naive",
+    "reranker_naive",
+    "content_recursive",
+    "tfidf_recursive",
+    "prefix_recursive",
+    "reranker_recursive"
+  ],
+  "output_path": "retrieval_output\\run_1746479369"
+}

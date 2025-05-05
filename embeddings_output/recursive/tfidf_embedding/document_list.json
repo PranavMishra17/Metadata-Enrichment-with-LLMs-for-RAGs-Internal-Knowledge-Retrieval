@@ -1,0 +1,13 @@
+{
+  "documents": [
+    "glacier-dg",
+    "s3-api",
+    "s3-outposts",
+    "s3-userguide"
+  ],
+  "total_chunks": 4099,
+  "chunking_type": "recursive",
+  "embedding_type": "tfidf",
+  "model_name": "Snowflake/arctic-embed-s",
+  "created_at": "2025-05-05 13:16:23"
+}

@@ -5,10 +5,15 @@ import json
 import time
 from typing import List, Dict, Any
 
-from naive_embedder import NaiveEmbedder
-from tfidf_embedder import TfidfEmbedder
-from prefix_embedder import PrefixEmbedder
+from embedding.naive_embedder import NaiveEmbedder
+from embedding.tfidf_embedder import TfidfEmbedder
+from embedding.prefix_embedder import PrefixEmbedder
 from utils.logger import setup_logger
+
+from gpu_utils import GPUVerifier
+
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
 
 def parse_arguments():
     """Parse command line arguments."""
@@ -121,7 +126,7 @@ def create_embeddings(args):
                 if args.evaluate and index_info:
                     logger.info(f"Running evaluation for {embedding_type} embeddings of {chunking_type} chunks")
                     # Import evaluation module only when needed
-                    from .evaluator import EmbeddingEvaluator
+                    from embedding.evaluator import EmbeddingEvaluator
                     evaluator = EmbeddingEvaluator(args.output_dir)
                     evaluator.evaluate_embeddings(chunking_type, embedding_type)
                 
@@ -137,3 +142,36 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+'''
+# Basic usage - generate all embedding types for all chunking methods
+python embeddings.py
+
+# Generate specific embedding types
+python embeddings.py --embedding_types naive tfidf
+
+# Generate embeddings for specific chunking methods
+python embeddings.py --chunking_types semantic
+
+# Customize embedding model
+python embeddings.py --model all-MiniLM-L6-v2
+
+# Customize TF-IDF weights
+python embeddings.py --embedding_types tfidf --content_weight 0.6 --tfidf_weight 0.4
+
+# Run with evaluation
+python embeddings.py --evaluate
+
+# Available options
+--input_dir       Input directory containing enriched chunks (default: metadata_gen_output)
+--output_dir      Output directory for embeddings (default: embeddings_output)
+--chunking_types  Chunking types to process (default: semantic naive recursive)
+--embedding_types Types of embeddings to generate (default: naive tfidf prefix)
+--model           SentenceTransformer model to use (default: Snowflake/arctic-embed-s)
+--content_weight  Weight for content embeddings in TF-IDF approach (default: 0.7)
+--tfidf_weight    Weight for TF-IDF embeddings in TF-IDF approach (default: 0.3)
+--evaluate        Run evaluation after generating embeddings
+
+
+'''

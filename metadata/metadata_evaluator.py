@@ -5,9 +5,13 @@ from typing import Dict, List, Any
 import matplotlib.pyplot as plt
 import numpy as np
 from collections import Counter
-import time
 
 from utils.logger import setup_logger
+
+from gpu_utils import GPUVerifier
+
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
 
 class MetadataEvaluator:
     """Evaluator for assessing metadata quality."""
@@ -415,6 +419,7 @@ class MetadataEvaluator:
         plt.close()
     
     def _plot_distribution(self, distribution, title, filename, output_dir, top_n=None):
+
         """Plot distribution of values."""
         if not distribution:
             return
@@ -450,3 +455,24 @@ class MetadataEvaluator:
         output_path = os.path.join(output_dir, filename)
         plt.savefig(output_path)
         plt.close()
+
+
+    def _evaluate_file_directory(self, directory_path):
+        """Evaluate all metadata files in a directory."""
+        self.logger.info(f"Evaluating files in directory: {directory_path}")
+        
+        # Find all enriched JSON files
+        metadata_files = glob.glob(os.path.join(directory_path, "*_enriched_chunks.json"))
+        self.logger.info(f"Found {len(metadata_files)} metadata files")
+        
+        # Process each file
+        file_results = {}
+        for file_path in metadata_files:
+            try:
+                result = self._evaluate_file(file_path)
+                file_name = os.path.basename(file_path)
+                file_results[file_name] = result
+            except Exception as e:
+                self.logger.error(f"Error evaluating {file_path}: {str(e)}")
+        
+        return file_results

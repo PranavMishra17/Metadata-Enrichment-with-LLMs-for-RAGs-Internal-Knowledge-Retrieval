@@ -8,6 +8,11 @@ from metadata.llm_metadata_generator import LLMMetadataGenerator
 from metadata.metadata_evaluator import MetadataEvaluator
 from utils.logger import setup_logger
 
+from gpu_utils import GPUVerifier
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
+
+
 def parse_arguments():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(description="Metadata generation tool")

@@ -1,0 +1,81 @@
+{
+  "retrievers": [
+    "Content (naive)",
+    "Content (recursive)",
+    "Content (semantic)",
+    "Prefix-Fusion (naive)",
+    "Prefix-Fusion (recursive)",
+    "Prefix-Fusion (semantic)",
+    "TF-IDF (naive)",
+    "TF-IDF (recursive)",
+    "TF-IDF (semantic)"
+  ],
+  "metrics": {
+    "precision@5": {
+      "Content (naive)": 0.0,
+      "Content (recursive)": 0.0,
+      "Content (semantic)": 0.0,
+      "Prefix-Fusion (naive)": 0.0,
+      "Prefix-Fusion (recursive)": 0.0,
+      "Prefix-Fusion (semantic)": 0.0,
+      "TF-IDF (naive)": 0.0,
+      "TF-IDF (recursive)": 0.0,
+      "TF-IDF (semantic)": 0.0
+    },
+    "recall@5": {
+      "Content (naive)": 0.0,
+      "Content (recursive)": 0.0,
+      "Content (semantic)": 0.0,
+      "Prefix-Fusion (naive)": 0.0,
+      "Prefix-Fusion (recursive)": 0.0,
+      "Prefix-Fusion (semantic)": 0.0,
+      "TF-IDF (naive)": 0.0,
+      "TF-IDF (recursive)": 0.0,
+      "TF-IDF (semantic)": 0.0
+    },
+    "ndcg@5": {
+      "Content (naive)": 0.0,
+      "Content (recursive)": 0.0,
+      "Content (semantic)": 0.0,
+      "Prefix-Fusion (naive)": 0.0,
+      "Prefix-Fusion (recursive)": 0.0,
+      "Prefix-Fusion (semantic)": 0.0,
+      "TF-IDF (naive)": 0.0,
+      "TF-IDF (recursive)": 0.0,
+      "TF-IDF (semantic)": 0.0
+    },
+    "mrr": {
+      "Content (naive)": 0.0,
+      "Content (recursive)": 0.0,
+      "Content (semantic)": 0.0,
+      "Prefix-Fusion (naive)": 0.0,
+      "Prefix-Fusion (recursive)": 0.0,
+      "Prefix-Fusion (semantic)": 0.0,
+      "TF-IDF (naive)": 0.0,
+      "TF-IDF (recursive)": 0.0,
+      "TF-IDF (semantic)": 0.0
+    }
+  },
+  "best_retrievers": {
+    "precision@5": {
+      "retriever": "Content (naive)",
+      "value": 0.0
+    },
+    "recall@5": {
+      "retriever": "Content (naive)",
+      "value": 0.0
+    },
+    "ndcg@5": {
+      "retriever": "Content (naive)",
+      "value": 0.0
+    },
+    "mrr": {
+      "retriever": "Content (naive)",
+      "value": 0.0
+    }
+  },
+  "best_overall": {
+    "retriever": "Content (naive)",
+    "average_rank": 0.0
+  }
+}

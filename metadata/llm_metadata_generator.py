@@ -8,6 +8,11 @@ import re
 import config
 from metadata.base_metadata_generator import BaseMetadataGenerator
 
+from gpu_utils import GPUVerifier
+
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
+
 class LLMMetadataGenerator(BaseMetadataGenerator):
     """Metadata generator using LLM."""
     
