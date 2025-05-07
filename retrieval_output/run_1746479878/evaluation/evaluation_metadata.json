@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-05-05 21:11:57",
+  "runtime_seconds": 0.10830020904541016,
+  "num_retrievers": 9,
+  "evaluation_method": "threshold",
+  "threshold": 0.8,
+  "top_k_percent": null,
+  "k_values": [
+    1,
+    3,
+    5
+  ],
+  "retrievers": [
+    "Content_(naive)",
+    "Content_(semantic)",
+    "Content_(recursive)",
+    "Prefix-Fusion_(naive)",
+    "TF-IDF_(recursive)",
+    "Prefix-Fusion_(recursive)",
+    "TF-IDF_(naive)",
+    "Prefix-Fusion_(semantic)",
+    "TF-IDF_(semantic)"
+  ]
+}
