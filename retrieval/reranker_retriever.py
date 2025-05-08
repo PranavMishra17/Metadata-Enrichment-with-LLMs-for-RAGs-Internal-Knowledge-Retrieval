@@ -15,7 +15,7 @@ class RerankerRetriever:
         self,
         base_retriever: BaseRetriever,
         reranker_model: str = "cross-encoder/ms-marco-MiniLM-L-6-v2",
-        initial_k: int = 20
+        initial_k: int = 50
     ):
         """Initialize the reranker retriever.
         

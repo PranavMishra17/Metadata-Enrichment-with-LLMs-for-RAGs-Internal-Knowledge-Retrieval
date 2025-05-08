@@ -2,425 +2,547 @@
 import os
 import json
 import argparse
-import time
+import logging
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 from collections import defaultdict
 from typing import List, Dict, Any, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-from retrieval.evaluator import RetrievalEvaluator
-from utils.logger import setup_logger
+from gpu_utils import GPUVerifier
+
+# Initialize GPU verification
+gpu_verifier = GPUVerifier(require_gpu=True)
+
+
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger("RetrieverEval")
 
 def parse_arguments():
-    """Parse command line arguments."""
-    parser = argparse.ArgumentParser(description="Retrieval evaluation tool")
+    parser = argparse.ArgumentParser(description="Retriever Evaluation Tool")
     
-    # Input/output arguments
-    parser.add_argument("--input_dir", type=str, required=True,
-                        help="Directory containing retrieval results (run folder)")
+    parser.add_argument("--retrieval_dir", type=str, required=True,
+                        help="Directory containing retrieval results")
+    parser.add_argument("--ground_truth_dir", type=str, required=True,
+                        help="Directory containing ground truth data")
     parser.add_argument("--output_dir", type=str, default=None,
-                        help="Directory to store evaluation results (default: input_dir/evaluation)")
-    parser.add_argument("--relevance_file", type=str, required=False,
-                        help="JSON file with relevance judgments (optional)")
-    
-    # Evaluation options
-    parser.add_argument("--retrievers", type=str, nargs="+", default=None,
-                        help="Specific retrievers to evaluate (default: all)")
+                        help="Directory to store evaluation results")
     parser.add_argument("--k_values", type=int, nargs="+", default=[1, 3, 5, 10, 20],
-                        help="K values for evaluation metrics (default: 1, 3, 5, 10, 20)")
-    
-    # Pseudo-relevance options
-    parser.add_argument("--relevance_threshold", type=float, default=0.8,
-                        help="Score threshold for pseudo-relevance labeling (default: 0.8)")
-    parser.add_argument("--relevance_top_k", type=float, default=0.2,
-                        help="Percentage of top results to consider relevant (default: 0.2)")
-    parser.add_argument("--relevance_method", type=str, default="threshold",
-                        choices=["threshold", "percentile", "reranker", "combined"],
-                        help="Method for determining pseudo-relevance (default: threshold)")
-    
-    # Performance options
+                        help="K values for precision, recall, etc.")
     parser.add_argument("--threads", type=int, default=4,
                         help="Number of parallel threads to use")
     
     return parser.parse_args()
 
-def group_retrieval_files(input_dir: str) -> Dict[str, Dict[str, str]]:
-    """Group retrieval files by retriever type.
-    
-    Args:
-        input_dir: Directory containing retrieval results
-        
-    Returns:
-        Dictionary mapping retriever types to file paths for results and retrieval files
-    """
-    logger = setup_logger("FileGrouper")
-    
-    # Check if directory exists
-    if not os.path.exists(input_dir):
-        logger.error(f"Input directory not found: {input_dir}")
-        return {}
-    
-    # Find all result files
-    retriever_groups = defaultdict(dict)
-    
-    for file in os.listdir(input_dir):
-        file_path = os.path.join(input_dir, file)
-        
-        # Skip directories and non-JSON files
-        if os.path.isdir(file_path) or not file.endswith('.json'):
-            continue
-            
-        # Group by retriever name pattern
-        if file.endswith('_results.json'):
-            # Extract retriever name from filename (e.g., "Content_(naive)")
-            retriever_name = file.replace('_results.json', '')
-            retriever_groups[retriever_name]['results'] = file_path
-            
-        elif file.endswith('_retrieval.json'):
-            # Extract retriever name from filename
-            retriever_name = file.replace('_retrieval.json', '')
-            retriever_groups[retriever_name]['retrieval'] = file_path
-    
-    # Check that each group has both files
-    complete_groups = {}
-    for retriever_name, files in retriever_groups.items():
-        if 'results' in files and 'retrieval' in files:
-            complete_groups[retriever_name] = files
-            logger.info(f"Found complete file group for {retriever_name}")
-        else:
-            logger.warning(f"Incomplete file group for {retriever_name}")
-    
-    logger.info(f"Grouped {len(complete_groups)} complete retriever file sets")
-    return complete_groups
+def normalize_retriever_name(name):
+    """Normalize retriever names to handle format differences."""
+    # Convert spaces in parentheses to underscores
+    if " (" in name:
+        name = name.replace(" (", "_(")
+    # Handle other potential differences
+    return name.strip()
 
-def load_retrieval_data(file_groups: Dict[str, Dict[str, str]]) -> Dict[str, Dict[str, Any]]:
-    """Load retrieval data from grouped files.
-    
-    Args:
-        file_groups: Dictionary mapping retriever names to file paths
-        
-    Returns:
-        Dictionary mapping retriever names to retrieval data
-    """
-    logger = setup_logger("DataLoader")
-    
-    retrieval_data = {}
-    
-    for retriever_name, files in file_groups.items():
-        try:
-            # Load retrieval data (contains run_info and structured results)
-            with open(files['retrieval'], 'r', encoding='utf-8') as f:
-                retrieval_info = json.load(f)
-            
-            # Load results data (contains raw results)
-            with open(files['results'], 'r', encoding='utf-8') as f:
-                results_data = json.load(f)
-            
-            # Combine both data sets
-            retrieval_data[retriever_name] = {
-                'info': retrieval_info.get('run_info', {}),
-                'queries': retrieval_info.get('queries', {}),
-                'results': results_data
-            }
-            
-            logger.info(f"Loaded data for {retriever_name}")
-        except Exception as e:
-            logger.error(f"Error loading data for {retriever_name}: {str(e)}")
-    
-    return retrieval_data
+def load_ground_truth(ground_truth_dir):
+    # Same as before but store with normalized names
+    ground_truth = {}
+    for filename in os.listdir(ground_truth_dir):
+        if filename.endswith("_ground_truth.json"):
+            try:
+                with open(os.path.join(ground_truth_dir, filename), 'r') as f:
+                    data = json.load(f)
+                    retriever_name = data.get("retriever_name")
+                    if retriever_name:
+                        # Normalize name for consistent lookup
+                        norm_name = normalize_retriever_name(retriever_name)
+                        ground_truth[norm_name] = data["ground_truth"]
+                        logger.info(f"Loaded ground truth for {retriever_name}")
+            except Exception as e:
+                logger.error(f"Error loading {filename}: {str(e)}")
+    return ground_truth
 
-def load_relevance_judgments(relevance_file: str, queries: List[str]) -> Dict[str, List[str]]:
-    """Load relevance judgments from a JSON file.
+def load_retrieval_results(retrieval_dir):
+    # Similar update for retrieval results
+    results = {}
+    for filename in os.listdir(retrieval_dir):
+        if filename.endswith("_retrieval.json"):
+            try:
+                with open(os.path.join(retrieval_dir, filename), 'r') as f:
+                    data = json.load(f)
+                    retriever_name = data.get("run_info", {}).get("retriever_name")
+                    if retriever_name:
+                        # Normalize name
+                        norm_name = normalize_retriever_name(retriever_name)
+                        # Transform format
+                        query_results = {}
+                        for query_id, query_data in data["queries"].items():
+                            if "retrieved_chunks" in query_data:
+                                query_results[query_id] = query_data["retrieved_chunks"]
+                        results[norm_name] = query_results
+                        logger.info(f"Loaded retrieval results for {retriever_name}")
+            except Exception as e:
+                logger.error(f"Error loading {filename}: {str(e)}")
+    return results
+
+
+
+
+def precision_at_k(retrieved: List[Dict[str, Any]], ground_truth: List[Dict[str, Any]], k: int) -> float:
+    """Calculate precision@k."""
+    if not retrieved or not ground_truth or k <= 0:
+        return 0.0
     
-    Args:
-        relevance_file: Path to relevance judgments file
-        queries: List of query IDs to ensure coverage
-        
-    Returns:
-        Dictionary mapping query IDs to relevant chunk IDs
-    """
-    logger = setup_logger("RelevanceLoader")
+    k = min(k, len(retrieved))
     
-    relevance = {}
+    # Extract top-k chunk IDs from retrieval results
+    retrieved_ids = [chunk.get("chunk_id") for chunk in retrieved[:k]]
     
-    # Initialize with empty relevance for all queries
-    for query_id in queries:
-        relevance[query_id] = []
+    # Extract top-k chunk IDs from ground truth (these are the most relevant ones)
+    relevant_ids = [chunk.get("chunk_id") for chunk in ground_truth[:k]]
     
-    if not relevance_file or not os.path.exists(relevance_file):
-        logger.warning("No relevance judgments file provided or file not found")
-        logger.info("Will use pseudo-relevance labeling for evaluation")
-        return relevance
+    # Count matches
+    matches = sum(1 for chunk_id in retrieved_ids if chunk_id in relevant_ids)
+    
+    return matches / k if k > 0 else 0.0
+
+def recall_at_k(retrieved: List[Dict[str, Any]], ground_truth: List[Dict[str, Any]], k: int) -> float:
+    """Calculate recall@k."""
+    if not retrieved or not ground_truth:
+        return 0.0
+    
+    k = min(k, len(retrieved))
+    
+    # Extract top-k chunk IDs from retrieval results
+    retrieved_ids = [chunk.get("chunk_id") for chunk in retrieved[:k]]
+    
+    # Extract all chunk IDs from ground truth (all are considered relevant)
+    relevant_ids = [chunk.get("chunk_id") for chunk in ground_truth]
+    
+    # Count matches
+    retrieved_relevant = sum(1 for chunk_id in retrieved_ids if chunk_id in relevant_ids)
+    
+    return retrieved_relevant / len(relevant_ids) if relevant_ids else 0.0
+
+def mean_reciprocal_rank(retrieved: List[Dict[str, Any]], ground_truth: List[Dict[str, Any]]) -> float:
+    """Calculate Mean Reciprocal Rank (MRR)."""
+    if not retrieved or not ground_truth:
+        return 0.0
+    
+    # Get top ground truth chunks (most relevant ones)
+    top_relevant_ids = [chunk.get("chunk_id") for chunk in ground_truth[:1]]
+    
+    # Find first position where a retrieved chunk is in top ground truth
+    for i, chunk in enumerate(retrieved):
+        if chunk.get("chunk_id") in top_relevant_ids:
+            return 1.0 / (i + 1)  # MRR = 1/rank
+    
+    return 0.0
+
+def ndcg_at_k(retrieved: List[Dict[str, Any]], ground_truth: List[Dict[str, Any]], k: int) -> float:
+    """Calculate normalized discounted cumulative gain at k."""
+    if not retrieved or not ground_truth or k <= 0:
+        return 0.0
+    
+    k = min(k, len(retrieved))
+    
+    # Create a mapping of chunk_id to relevance score from ground truth
+    relevance_map = {chunk.get("chunk_id"): chunk.get("score", 0.0) for chunk in ground_truth}
+    
+    # Calculate DCG
+    dcg = 0.0
+    for i, chunk in enumerate(retrieved[:k]):
+        chunk_id = chunk.get("chunk_id")
+        rel = relevance_map.get(chunk_id, 0.0)
+        # Use log base 2 for standard NDCG calculation
+        dcg += rel / np.log2(i + 2)  # +2 because i is 0-indexed and log2(1) = 0
+    
+    # Calculate ideal DCG
+    ideal_dcg = 0.0
+    sorted_relevance = sorted([chunk.get("score", 0.0) for chunk in ground_truth], reverse=True)
+    for i, rel in enumerate(sorted_relevance[:k]):
+        ideal_dcg += rel / np.log2(i + 2)
+    
+    return dcg / ideal_dcg if ideal_dcg > 0 else 0.0
+
+def metadata_consistency(chunks: List[Dict[str, Any]]) -> float:
+    """Calculate metadata consistency based on category entropy."""
+    if not chunks:
+        return 0.0
+    
+    # Extract categories
+    categories = []
+    for chunk in chunks:
+        if "primary_category" in chunk:
+            categories.append(chunk["primary_category"])
+        elif "content_type" in chunk:
+            categories.append(chunk["content_type"])
+        elif "intents" in chunk and isinstance(chunk["intents"], list) and chunk["intents"]:
+            categories.append(chunk["intents"][0])
+    
+    if not categories:
+        return 0.0
+    
+    # Calculate entropy
+    from collections import Counter
+    import numpy as np
+    from scipy.stats import entropy
+    
+    category_counts = Counter(categories)
+    category_probs = [count / len(categories) for count in category_counts.values()]
     
     try:
-        with open(relevance_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        # Support different formats
-        if isinstance(data, dict):
-            for query_id, judgments in data.items():
-                if isinstance(judgments, list):
-                    relevance[query_id] = judgments
-                elif isinstance(judgments, dict) and "relevant_ids" in judgments:
-                    relevance[query_id] = judgments["relevant_ids"]
-                    
-        # Fill in any missing queries with empty relevance
-        for query_id in queries:
-            if query_id not in relevance:
-                relevance[query_id] = []
-        
-        logger.info(f"Loaded relevance judgments for {len(relevance)} queries")
+        ent = entropy(category_probs)
+        max_entropy = np.log(len(category_counts))
+        if max_entropy > 0:
+            consistency = 1 - (ent / max_entropy)
+        else:
+            consistency = 1.0
     except Exception as e:
-        logger.error(f"Error loading relevance judgments: {str(e)}")
-        logger.info("Will use pseudo-relevance labeling for evaluation")
+        logger.error(f"Error calculating entropy: {str(e)}")
+        consistency = 0.0
     
-    return relevance
+    return consistency
 
-def generate_pseudo_relevance_labels(results: List[Dict[str, Any]], 
-                                    method: str = "threshold",
-                                    threshold: float = 0.8,
-                                    top_k_percent: float = 0.2) -> List[str]:
-    """Generate pseudo-relevance labels for a set of retrieval results.
+def hit_rate_at_k(retrieved: List[Dict[str, Any]], ground_truth: List[Dict[str, Any]], k: int, threshold: float = 0.95) -> float:
+    """Calculate Hit Rate@k - proportion of highly relevant docs found in top-k.
     
     Args:
-        results: List of retrieval results with scores
-        method: Method for determining relevance ('threshold', 'percentile', 'reranker', 'combined')
-        threshold: Score threshold for relevance (used with 'threshold' method)
-        top_k_percent: Percentage of top results to consider relevant (used with 'percentile' method)
+        retrieved: List of retrieved chunks
+        ground_truth: List of ground truth chunks with scores
+        k: Number of top chunks to consider
+        threshold: Score threshold to consider a document relevant (percentile)
         
     Returns:
-        List of chunk IDs deemed relevant
+        Hit Rate@k score
     """
-    if not results:
-        return []
+    if not retrieved or not ground_truth or k <= 0:
+        return 0.0
     
-    # Extract scores and chunk IDs
-    scores = []
-    chunk_ids = []
+    k = min(k, len(retrieved))
     
-    for result in results:
-        chunk_id = result.get("chunk_id")
-        if not chunk_id:
-            continue
-            
-        if method == "reranker" and "rerank_score" in result:
-            score = result.get("rerank_score", 0.0)
-        elif method == "combined" and "rerank_score" in result:
-            # Combine base score and reranker score (with more weight on reranker)
-            base_score = result.get("score", 0.0)
-            rerank_score = result.get("rerank_score", 0.0)
-            score = 0.3 * base_score + 0.7 * rerank_score
-        else:
-            # Default to retriever score
-            score = result.get("score", 0.0)
-        
-        scores.append(score)
-        chunk_ids.append(chunk_id)
+    # Determine relevance threshold (95th percentile by default)
+    scores = [chunk.get("score", 0.0) for chunk in ground_truth]
+    if not scores:
+        return 0.0
     
-    # Create relevance labels based on method
-    relevant_ids = []
+    threshold_score = np.percentile(scores, threshold * 100)
     
-    if method == "threshold":
-        # Label chunks with scores above threshold as relevant
-        relevant_ids = [chunk_id for i, chunk_id in enumerate(chunk_ids) 
-                       if i < len(scores) and scores[i] >= threshold]
+    # Get highly relevant docs from ground truth
+    relevant_ids = [chunk.get("chunk_id") for chunk in ground_truth 
+                   if chunk.get("score", 0.0) >= threshold_score]
     
-    elif method == "percentile":
-        # Label top X% as relevant
-        if not chunk_ids:
-            return []
-            
-        # Calculate how many to include
-        top_k = max(1, int(len(chunk_ids) * top_k_percent))
-        
-        # Get indices of top scoring chunks
-        if scores:
-            top_indices = np.argsort(scores)[-top_k:]
-            relevant_ids = [chunk_ids[i] for i in top_indices if i < len(chunk_ids)]
+    if not relevant_ids:
+        return 0.0
     
-    else:  # "reranker" or "combined" or fallback
-        # Mix of threshold and percentile
-        # Start with threshold
-        threshold_relevance = [chunk_id for i, chunk_id in enumerate(chunk_ids) 
-                              if i < len(scores) and scores[i] >= threshold]
-        
-        # If too few results, use percentile
-        if len(threshold_relevance) < 2:
-            top_k = max(2, int(len(chunk_ids) * top_k_percent))
-            if scores:
-                top_indices = np.argsort(scores)[-top_k:]
-                relevant_ids = [chunk_ids[i] for i in top_indices if i < len(chunk_ids)]
-        else:
-            relevant_ids = threshold_relevance
+    # Count relevant docs in top-k
+    retrieved_relevant = sum(1 for chunk in retrieved[:k] 
+                            if chunk.get("chunk_id") in relevant_ids)
     
-    return relevant_ids
+    return retrieved_relevant / len(relevant_ids)
 
-def process_retriever(retriever_name: str, retrieval_data: Dict[str, Any], 
-                     evaluator: RetrievalEvaluator, args: argparse.Namespace) -> Dict[str, Any]:
-    """Process and evaluate results for a single retriever.
-    
-    Args:
-        retriever_name: Name of the retriever
-        retrieval_data: Retrieval data for this retriever
-        evaluator: Evaluator instance
-        args: Command line arguments
-        
-    Returns:
-        Evaluation results
-    """
-    logger = setup_logger(f"Evaluator_{retriever_name}")
-    logger.info(f"Evaluating {retriever_name}")
-    
-    # Extract data
-    queries = retrieval_data.get('queries', {})
-    results = retrieval_data.get('results', {})
-    
-    # Generate query relevance based on pseudo-relevance if no ground truth
-    query_relevance = {}
-    for query_id, query_data in queries.items():
-        # Use results data
-        query_results = results.get(query_id, [])
-        
-        # Generate pseudo-relevance labels
-        relevant_ids = generate_pseudo_relevance_labels(
-            query_results,
-            method=args.relevance_method,
-            threshold=args.relevance_threshold,
-            top_k_percent=args.relevance_top_k
-        )
-        
-        query_relevance[query_id] = relevant_ids
-        logger.debug(f"Generated {len(relevant_ids)} pseudo-relevance labels for query {query_id}")
-    
-    # Run evaluation
-    try:
-        eval_results = evaluator.evaluate_retriever(
-            retriever_name=retriever_name,
-            query_results=results,
-            query_relevance=query_relevance,
-            k_values=args.k_values,
-            run_id=f"eval_{int(time.time())}_{retriever_name}"
-        )
-        logger.info(f"Completed evaluation for {retriever_name}")
-        return eval_results
-    except Exception as e:
-        logger.error(f"Error evaluating {retriever_name}: {str(e)}")
-        return None
 
-def main():
-    """Main entry point for evaluation."""
-    start_time = time.time()
-    
-    # Parse command line arguments
-    args = parse_arguments()
-    
-    # Setup logging
-    logger = setup_logger("RetrievalEvaluator")
-    logger.info("Starting retrieval evaluation")
-    
-    # Group retrieval files by retriever type
-    file_groups = group_retrieval_files(args.input_dir)
-    if not file_groups:
-        logger.error("No complete retrieval file groups found, exiting")
-        return
-    
-    # Filter retrievers if specified
-    if args.retrievers:
-        file_groups = {name: files for name, files in file_groups.items() 
-                      if any(r in name for r in args.retrievers)}
-        logger.info(f"Filtered to {len(file_groups)} retrievers")
-    
-    # Load retrieval data
-    retrieval_data = load_retrieval_data(file_groups)
-    if not retrieval_data:
-        logger.error("No retrieval data loaded, exiting")
-        return
-    
-    # Extract all query IDs
-    all_query_ids = set()
-    for retriever_name, data in retrieval_data.items():
-        all_query_ids.update(data['results'].keys())
-    
-    # Set output directory and create evaluation subfolder
-    output_dir = args.output_dir or os.path.join(args.input_dir, "evaluation")
-    os.makedirs(output_dir, exist_ok=True)
-    
-    # Initialize evaluator with the evaluation subfolder
-    evaluator = RetrievalEvaluator(output_dir=output_dir)
-    
-    # Process each retriever's results in parallel
-    all_evaluations = {}
-    
-    if args.threads > 1:
-        with ThreadPoolExecutor(max_workers=args.threads) as executor:
-            # Submit tasks
-            future_to_retriever = {}
-            for retriever_name, data in retrieval_data.items():
-                future = executor.submit(
-                    process_retriever,
-                    retriever_name,
-                    data,
-                    evaluator,
-                    args
-                )
-                future_to_retriever[future] = retriever_name
-            
-            # Collect results
-            for future in as_completed(future_to_retriever):
-                retriever_name = future_to_retriever[future]
-                try:
-                    eval_results = future.result()
-                    if eval_results:
-                        all_evaluations[retriever_name] = eval_results
-                        logger.info(f"Processed evaluation for {retriever_name}")
-                except Exception as e:
-                    logger.error(f"Error processing {retriever_name}: {str(e)}")
-    else:
-        # Process sequentially
-        for retriever_name, data in retrieval_data.items():
-            eval_results = process_retriever(
-                retriever_name,
-                data,
-                evaluator,
-                args
-            )
-            if eval_results:
-                all_evaluations[retriever_name] = eval_results
-    
-    # Compare retrievers if multiple were evaluated
-    if len(all_evaluations) > 1:
-        try:
-            comparison = evaluator.compare_retrievers(list(all_evaluations.values()))
-            comparison_path = os.path.join(output_dir, "retriever_comparison.json")
-            with open(comparison_path, "w", encoding="utf-8") as f:
-                json.dump(comparison, f, indent=2)
-            logger.info(f"Completed retriever comparison and saved to {comparison_path}")
-        except Exception as e:
-            logger.error(f"Error comparing retrievers: {str(e)}")
-    
-    # Calculate and log performance metrics
-    end_time = time.time()
-    elapsed = end_time - start_time
-    logger.info(f"Evaluation completed in {elapsed:.2f} seconds")
-    logger.info(f"Results saved to {output_dir}")
-    
-    # Save evaluation metadata
-    metadata = {
-        "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-        "runtime_seconds": elapsed,
-        "num_retrievers": len(all_evaluations),
-        "evaluation_method": args.relevance_method,
-        "threshold": args.relevance_threshold if args.relevance_method == "threshold" else None,
-        "top_k_percent": args.relevance_top_k if args.relevance_method == "percentile" else None,
-        "k_values": args.k_values,
-        "retrievers": list(all_evaluations.keys())
+def evaluate_retriever(retriever_name: str, retrieval_results: Dict[str, List[Dict[str, Any]]], 
+                      ground_truth: Dict[str, List[Dict[str, Any]]], k_values: List[int]) -> Dict[str, Any]:
+    """Evaluate a single retriever across all queries and metrics."""
+    metrics = {
+        "retriever_name": retriever_name,
+        "query_metrics": {},
+        "aggregated_metrics": defaultdict(float)
     }
     
-    metadata_path = os.path.join(output_dir, "evaluation_metadata.json")
-    with open(metadata_path, "w", encoding="utf-8") as f:
-        json.dump(metadata, f, indent=2)
+    # Track metrics for averaging
+    metric_counts = defaultdict(int)
     
-    logger.info(f"Saved evaluation metadata to {metadata_path}")
+    # Evaluate each query
+    for query_id, retrieved_chunks in retrieval_results.items():
+        # Skip if no ground truth exists
+        if query_id not in ground_truth:
+            logger.warning(f"No ground truth for query {query_id}, retriever {retriever_name}")
+            continue
+        
+        gt_chunks = ground_truth[query_id]
+        
+        query_metrics = {}
+        
+        # Calculate MRR
+        query_metrics["mrr"] = mean_reciprocal_rank(retrieved_chunks, gt_chunks)
+        metrics["aggregated_metrics"]["mrr"] += query_metrics["mrr"]
+        metric_counts["mrr"] += 1
+        
+        # Calculate precision, recall, and NDCG at different k values
+        for k in k_values:
+            if k <= len(retrieved_chunks):
+                p_k = precision_at_k(retrieved_chunks, gt_chunks, k)
+                r_k = recall_at_k(retrieved_chunks, gt_chunks, k)
+                ndcg_k = ndcg_at_k(retrieved_chunks, gt_chunks, k)
+                
+                query_metrics[f"precision@{k}"] = p_k
+                query_metrics[f"recall@{k}"] = r_k
+                query_metrics[f"ndcg@{k}"] = ndcg_k
+                
+                metrics["aggregated_metrics"][f"precision@{k}"] += p_k
+                metrics["aggregated_metrics"][f"recall@{k}"] += r_k
+                metrics["aggregated_metrics"][f"ndcg@{k}"] += ndcg_k
+                
+                metric_counts[f"precision@{k}"] += 1
+                metric_counts[f"recall@{k}"] += 1
+                metric_counts[f"ndcg@{k}"] += 1
+
+                # Add Hit Rate
+                hit_rate = hit_rate_at_k(retrieved_chunks, gt_chunks, k)
+                query_metrics[f"hit_rate@{k}"] = hit_rate
+                metrics["aggregated_metrics"][f"hit_rate@{k}"] += hit_rate
+                metric_counts[f"hit_rate@{k}"] += 1
+
+        
+        # Calculate metadata consistency
+        consistency = metadata_consistency(retrieved_chunks)
+        query_metrics["metadata_consistency"] = consistency
+        metrics["aggregated_metrics"]["metadata_consistency"] += consistency
+        metric_counts["metadata_consistency"] += 1
+        
+        metrics["query_metrics"][query_id] = query_metrics
+    
+    # Calculate averages
+    for metric, total in metrics["aggregated_metrics"].items():
+        count = metric_counts[metric]
+        if count > 0:
+            metrics["aggregated_metrics"][metric] = total / count
+    
+    return metrics
+
+
+
+
+def generate_comparison_tables(all_metrics: Dict[str, Dict[str, Any]], k_values: List[int]) -> Dict[str, pd.DataFrame]:
+    """Generate comparison tables for different metrics."""
+    tables = {}
+    
+    # Extract retriever names and organize by type and chunking method
+    retrievers = {}
+    for retriever_name in all_metrics.keys():
+        if "(" in retriever_name and ")" in retriever_name:
+            parts = retriever_name.split("(")
+            retriever_type = parts[0].strip()
+            chunking_type = parts[1].replace(")", "").strip()
+            
+            if retriever_type not in retrievers:
+                retrievers[retriever_type] = {}
+            
+            retrievers[retriever_type][chunking_type] = retriever_name
+    
+    # Create metrics tables
+    for k in k_values:
+        # Precision table
+        precision_data = []
+        for retriever_type, chunking_methods in retrievers.items():
+            row = {"Retriever": retriever_type}
+            for chunking, full_name in chunking_methods.items():
+                if full_name in all_metrics:
+                    row[chunking] = all_metrics[full_name]["aggregated_metrics"].get(f"precision@{k}", 0.0)
+            precision_data.append(row)
+        
+        precision_df = pd.DataFrame(precision_data)
+        tables[f"precision@{k}"] = precision_df
+        
+        # Recall table
+        recall_data = []
+        for retriever_type, chunking_methods in retrievers.items():
+            row = {"Retriever": retriever_type}
+            for chunking, full_name in chunking_methods.items():
+                if full_name in all_metrics:
+                    row[chunking] = all_metrics[full_name]["aggregated_metrics"].get(f"recall@{k}", 0.0)
+            recall_data.append(row)
+        
+        recall_df = pd.DataFrame(recall_data)
+        tables[f"recall@{k}"] = recall_df
+        
+        # NDCG table
+        ndcg_data = []
+        for retriever_type, chunking_methods in retrievers.items():
+            row = {"Retriever": retriever_type}
+            for chunking, full_name in chunking_methods.items():
+                if full_name in all_metrics:
+                    row[chunking] = all_metrics[full_name]["aggregated_metrics"].get(f"ndcg@{k}", 0.0)
+            ndcg_data.append(row)
+        
+        ndcg_df = pd.DataFrame(ndcg_data)
+        tables[f"ndcg@{k}"] = ndcg_df
+    
+    # MRR and metadata consistency tables
+    for metric in ["mrr", "metadata_consistency"]:
+        metric_data = []
+        for retriever_type, chunking_methods in retrievers.items():
+            row = {"Retriever": retriever_type}
+            for chunking, full_name in chunking_methods.items():
+                if full_name in all_metrics:
+                    row[chunking] = all_metrics[full_name]["aggregated_metrics"].get(metric, 0.0)
+            metric_data.append(row)
+        
+        metric_df = pd.DataFrame(metric_data)
+        tables[metric] = metric_df
+    
+    # Add Hit Rate tables
+    for k in k_values:
+        hit_rate_data = []
+        for retriever_type, chunking_methods in retrievers.items():
+            row = {"Retriever": retriever_type}
+            for chunking, full_name in chunking_methods.items():
+                if full_name in all_metrics:
+                    row[chunking] = all_metrics[full_name]["aggregated_metrics"].get(f"hit_rate@{k}", 0.0)
+            hit_rate_data.append(row)
+        
+        hit_rate_df = pd.DataFrame(hit_rate_data)
+        tables[f"hit_rate@{k}"] = hit_rate_df
+
+    return tables
+
+
+def generate_visualizations(tables: Dict[str, pd.DataFrame], output_dir: str):
+    """Generate visualizations from comparison tables."""
+    # Create a directory for visualizations
+    vis_dir = os.path.join(output_dir, "visualizations")
+    os.makedirs(vis_dir, exist_ok=True)
+    
+    sns.set(style="whitegrid")
+    
+    for metric, df in tables.items():
+        # Skip empty dataframes
+        if df.empty or "Retriever" not in df.columns:
+            logger.warning(f"Skipping visualization for {metric} - empty data")
+            continue
+        # Set up the figure
+        plt.figure(figsize=(12, 6))
+        
+        # Reshape data for visualization
+        df_melted = df.melt(id_vars=["Retriever"], var_name="Chunking", value_name="Score")
+        
+        # Create barplot
+        ax = sns.barplot(x="Chunking", y="Score", hue="Retriever", data=df_melted)
+        
+        # Add labels and title
+        plt.title(f"{metric.capitalize()} by Retriever and Chunking Method")
+        plt.xlabel("Chunking Method")
+        plt.ylabel(f"{metric.capitalize()} Score")
+        plt.legend(title="Retriever Type")
+        
+        # Adjust layout
+        plt.tight_layout()
+        
+        # Save figure
+        output_path = os.path.join(vis_dir, f"{metric}_comparison.png")
+        plt.savefig(output_path, dpi=300)
+        plt.close()
+        
+        logger.info(f"Generated visualization for {metric}")
+        
+        # Generate heatmap
+        if "Retriever" in df.columns:
+            # Pivot the dataframe
+            pivot_df = df.set_index("Retriever")
+            
+            plt.figure(figsize=(10, 8))
+            sns.heatmap(pivot_df, annot=True, cmap="YlGnBu", fmt=".3f", linewidths=.5)
+            
+            plt.title(f"{metric.capitalize()} Heatmap by Retriever and Chunking Method")
+            plt.tight_layout()
+            
+            # Save heatmap
+            heatmap_path = os.path.join(vis_dir, f"{metric}_heatmap.png")
+            plt.savefig(heatmap_path, dpi=300)
+            plt.close()
+            
+            logger.info(f"Generated heatmap for {metric}")
+
+def main():
+    args = parse_arguments()
+    
+    # Set output directory if not specified
+    if args.output_dir is None:
+        args.output_dir = os.path.join(args.retrieval_dir, "evaluation")
+    
+    # Create output directory
+    os.makedirs(args.output_dir, exist_ok=True)
+    
+    # Load ground truth and retrieval results
+    ground_truth = load_ground_truth(args.ground_truth_dir)
+    retrieval_results = load_retrieval_results(args.retrieval_dir)
+    
+    if not ground_truth or not retrieval_results:
+        logger.error("No ground truth or retrieval results found, exiting")
+        return
+    
+    # Evaluate all retrievers
+    all_metrics = {}
+    
+    with ThreadPoolExecutor(max_workers=args.threads) as executor:
+        future_to_retriever = {}
+        
+        for retriever_name, results in retrieval_results.items():
+            # Skip if no ground truth exists
+            if retriever_name not in ground_truth:
+                logger.warning(f"No ground truth for retriever {retriever_name}")
+                continue
+            
+            future = executor.submit(
+                evaluate_retriever,
+                retriever_name,
+                results,
+                ground_truth[retriever_name],
+                args.k_values
+            )
+            future_to_retriever[future] = retriever_name
+        
+        for future in as_completed(future_to_retriever):
+            retriever_name = future_to_retriever[future]
+            try:
+                metrics = future.result()
+                all_metrics[retriever_name] = metrics
+                logger.info(f"Completed evaluation for {retriever_name}")
+                
+                # Save individual metrics
+                output_path = os.path.join(args.output_dir, f"{retriever_name}_metrics.json")
+                with open(output_path, "w", encoding="utf-8") as f:
+                    json.dump(metrics, f, indent=2)
+            except Exception as e:
+                logger.error(f"Error evaluating {retriever_name}: {str(e)}")
+    
+    # Generate comparison tables
+    comparison_tables = generate_comparison_tables(all_metrics, args.k_values)
+    
+    # Save tables
+    tables_dir = os.path.join(args.output_dir, "tables")
+    os.makedirs(tables_dir, exist_ok=True)
+    
+    for metric, df in comparison_tables.items():
+        # Save as CSV
+        csv_path = os.path.join(tables_dir, f"{metric}_comparison.csv")
+        df.to_csv(csv_path, index=False)
+        
+        # Save as HTML
+        html_path = os.path.join(tables_dir, f"{metric}_comparison.html")
+        df.to_html(html_path, index=False)
+        
+        logger.info(f"Saved comparison table for {metric}")
+    
+    # Generate visualizations
+    generate_visualizations(comparison_tables, args.output_dir)
+    
+    # Save summary of all metrics
+    summary = {
+        "retrievers": list(all_metrics.keys()),
+        "metrics": args.k_values,
+        "output_path": args.output_dir
+    }
+    
+    summary_path = os.path.join(args.output_dir, "evaluation_summary.json")
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2)
+    
+    logger.info(f"Evaluation completed. Results saved to {args.output_dir}")
 
 if __name__ == "__main__":
     main()

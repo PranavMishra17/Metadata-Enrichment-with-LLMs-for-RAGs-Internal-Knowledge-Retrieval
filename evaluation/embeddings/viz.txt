@@ -120,3 +120,45 @@ When to Use Prefix Fusion: This approach might be preferable in scenarios where 
 Practical Consideration: The TF-IDF approach's tighter clustering likely translates to better relevance for
                         standard similarity searches, but prefix fusion might perform better for queries
                         where intent or content type matching is critical.
+
+
+
+Hit Rate @k(5)
+Retriever,recursive,semantic,naive
+Content_,0.0,0.5,0.1
+Prefix-Fusion_,0.8,0.8,0.0
+TF-IDF_,0.2,0.8,0.4
+
+Metadata Consistency
+Retriever,recursive,semantic,naive
+Content_,0.5276049709819374,0.44910360673748534,0.6214887006965564
+Prefix-Fusion_,0.5423100422982767,0.4076588562209705,0.6213938017681668
+TF-IDF_,0.5168153988763315,0.45901913842415193,0.5724895800089252
+
+Mrr comp
+Retriever,recursive,semantic,naive
+Content_,0.08085714285714286,0.45928571428571435,0.06426470588235293
+Prefix-Fusion_,0.825,0.8125,0.08416666666666667
+TF-IDF_,0.11343035619351408,0.825,0.4396493212669683
+
+ngcg @k(5)
+Retriever,recursive,semantic,naive
+Content_,0.16007743062884597,0.521907706634759,0.20168261187991915
+Prefix-Fusion_,0.8353048191091093,0.8517567456090294,0.1773457591954834
+TF-IDF_,0.294984520010705,0.8032792360369687,0.5181227519506932
+
+
+precision @k(5)
+Retriever,recursive,semantic,naive
+Content_,0.16,0.5199999999999999,0.16
+Prefix-Fusion_,0.8800000000000001,0.8400000000000001,0.2
+TF-IDF_,0.28,0.8400000000000001,0.52
+
+
+recall @k(5)
+Retriever,recursive,semantic,naive
+Content_,0.2,0.2,0.2
+Prefix-Fusion_,0.25,0.25,0.25
+TF-IDF_,0.25,0.25,0.25
+
+

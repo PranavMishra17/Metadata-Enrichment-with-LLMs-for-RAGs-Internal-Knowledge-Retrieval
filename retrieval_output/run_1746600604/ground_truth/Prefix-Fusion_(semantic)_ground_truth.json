@@ -1,0 +1,463 @@
+{
+  "retriever_name": "Prefix-Fusion_(semantic)",
+  "ground_truth": {
+    "q4": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1151",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1119",
+        "score": 0.95
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_914",
+        "score": 0.9
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1123",
+        "score": 0.85
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_665",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_410",
+        "score": 0.75
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_117",
+        "score": 0.7
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1124",
+        "score": 0.65
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1056",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_184",
+        "score": 0.55
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1125",
+        "score": 0.5
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_251",
+        "score": 0.44999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1122",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2923",
+        "score": 0.35
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1428",
+        "score": 0.30000000000000004
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_309",
+        "score": 0.25
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1087",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1337",
+        "score": 0.15000000000000002
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1728",
+        "score": 0.09999999999999998
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1145",
+        "score": 0.050000000000000044
+      }
+    ],
+    "q5": [
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_3",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_0",
+        "score": 0.95
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2185",
+        "score": 0.9
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_1",
+        "score": 0.85
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2193",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2144",
+        "score": 0.75
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+        "score": 0.7
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_0",
+        "score": 0.65
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2114",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_6",
+        "score": 0.55
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_2",
+        "score": 0.5
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_4",
+        "score": 0.44999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2138",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_247",
+        "score": 0.35
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_0",
+        "score": 0.30000000000000004
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_39",
+        "score": 0.25
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_209",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1847",
+        "score": 0.15000000000000002
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_14",
+        "score": 0.09999999999999998
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2148",
+        "score": 0.050000000000000044
+      }
+    ],
+    "q1": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_421",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1547",
+        "score": 0.95
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2826",
+        "score": 0.9
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_34",
+        "score": 0.85
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_104",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_576",
+        "score": 0.75
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_715",
+        "score": 0.7
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1197",
+        "score": 0.65
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_791",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_872",
+        "score": 0.55
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1236",
+        "score": 0.5
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2077",
+        "score": 0.44999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_546",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_486",
+        "score": 0.35
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_933",
+        "score": 0.30000000000000004
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2798",
+        "score": 0.25
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_880",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2835",
+        "score": 0.15000000000000002
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+        "score": 0.09999999999999998
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_755",
+        "score": 0.050000000000000044
+      }
+    ],
+    "q3": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_53",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_933",
+        "score": 0.95
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_312",
+        "score": 0.9
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1486",
+        "score": 0.85
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_46",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_880",
+        "score": 0.75
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2844",
+        "score": 0.7
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2830",
+        "score": 0.65
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1129",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_427",
+        "score": 0.55
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2149",
+        "score": 0.5
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_202",
+        "score": 0.44999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_633",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1424",
+        "score": 0.35
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_304",
+        "score": 0.30000000000000004
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1411",
+        "score": 0.25
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1408",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_961",
+        "score": 0.15000000000000002
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_195",
+        "score": 0.09999999999999998
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_791",
+        "score": 0.050000000000000044
+      }
+    ],
+    "q2": [
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_4",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_3",
+        "score": 0.8579873442649841
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_4",
+        "score": 0.21354718506336212
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_7",
+        "score": 0.026874134317040443
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_6",
+        "score": 0.02325470745563507
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_14",
+        "score": 0.00638535525649786
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_39",
+        "score": 0.004428344778716564
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_247",
+        "score": 0.004348827060312033
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_5",
+        "score": 0.0030073528178036213
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_16",
+        "score": 0.0030073528178036213
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_0",
+        "score": 0.0022079392801970243
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_202",
+        "score": 0.0016158948419615626
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_0",
+        "score": 0.0003616436442825943
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1847",
+        "score": 0.00014462124090641737
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_0",
+        "score": 8.89409493538551e-05
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_0",
+        "score": 8.105924644041806e-05
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_2",
+        "score": 1.2170772833997034e-07
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_1",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_1",
+        "score": 0.0
+      }
+    ]
+  },
+  "statistics": {
+    "rank_changes": {
+      "q4": 0,
+      "q5": 0,
+      "q1": 0,
+      "q3": 0,
+      "q2": 20
+    },
+    "percentiles": {
+      "q4": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q5": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q1": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q3": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q2": {
+        "99": 0.9730175954103468,
+        "95": 0.865087977051735,
+        "90": 0.27799120098352526,
+        "85": 0.05487509192898843
+      }
+    },
+    "overall_rank_change_percent": 20.0,
+    "overall_percentiles": {
+      "99": 1.0,
+      "95": 0.9524999999999998,
+      "90": 0.9,
+      "85": 0.85
+    }
+  }
+}

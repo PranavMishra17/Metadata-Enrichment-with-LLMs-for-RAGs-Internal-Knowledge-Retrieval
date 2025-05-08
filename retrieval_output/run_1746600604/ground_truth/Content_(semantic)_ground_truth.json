@@ -1,0 +1,563 @@
+{
+  "retriever_name": "Content_(semantic)",
+  "ground_truth": {
+    "q4": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1151",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1044",
+        "score": 0.96
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1056",
+        "score": 0.92
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1054",
+        "score": 0.88
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_16",
+        "score": 0.84
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_141",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_914",
+        "score": 0.76
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1087",
+        "score": 0.72
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1220",
+        "score": 0.6799999999999999
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2923",
+        "score": 0.64
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1159",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1728",
+        "score": 0.56
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_56",
+        "score": 0.52
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1053",
+        "score": 0.48
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1730",
+        "score": 0.43999999999999995
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1149",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1729",
+        "score": 0.36
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_10",
+        "score": 0.31999999999999995
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1119",
+        "score": 0.28
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+        "score": 0.24
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1045",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1145",
+        "score": 0.16000000000000003
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_665",
+        "score": 0.12
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2836",
+        "score": 0.07999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1501",
+        "score": 0.040000000000000036
+      }
+    ],
+    "q2": [
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_0",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_1",
+        "score": 0.96
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_3",
+        "score": 0.92
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_247",
+        "score": 0.88
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_14",
+        "score": 0.84
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_4",
+        "score": 0.8
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_39",
+        "score": 0.76
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_0",
+        "score": 0.72
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_5",
+        "score": 0.6799999999999999
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+        "score": 0.64
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1855",
+        "score": 0.6
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_1",
+        "score": 0.56
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_475",
+        "score": 0.52
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_6",
+        "score": 0.48
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_473",
+        "score": 0.43999999999999995
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_65",
+        "score": 0.4
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_2",
+        "score": 0.36
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_293",
+        "score": 0.31999999999999995
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_16",
+        "score": 0.28
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_40",
+        "score": 0.24
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_7",
+        "score": 0.19999999999999996
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_292",
+        "score": 0.16000000000000003
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_13",
+        "score": 0.12
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2194",
+        "score": 0.07999999999999996
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+        "score": 0.040000000000000036
+      }
+    ],
+    "q5": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_4",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2188",
+        "score": 0.03527155891060829
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_247",
+        "score": 0.03463571146130562
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_14",
+        "score": 0.016221284866333008
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2186",
+        "score": 0.012230820953845978
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_7",
+        "score": 0.012044645845890045
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1855",
+        "score": 0.009932290762662888
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_3",
+        "score": 0.009534120559692383
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2148",
+        "score": 0.009015752002596855
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_39",
+        "score": 0.00828856322914362
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2144",
+        "score": 0.0074425567872822285
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_4",
+        "score": 0.004373572301119566
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_473",
+        "score": 0.004323007073253393
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2101",
+        "score": 0.003750856500118971
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2185",
+        "score": 0.0030215575825423002
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2114",
+        "score": 0.0026721758767962456
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_5",
+        "score": 0.002272319048643112
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2193",
+        "score": 0.0015521530294790864
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_0",
+        "score": 0.0009821945568546653
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2194",
+        "score": 0.0007807911024428904
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2137",
+        "score": 9.885230838335701e-07
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_3004",
+        "score": 1.9008076890258963e-07
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_65",
+        "score": 5.2023421126534686e-09
+      },
+      {
+        "chunk_id": "b1ca4c82-c1f1-4c9a-a31f-c41a2382464e_chunk_1",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1",
+        "score": 0.0
+      }
+    ],
+    "q3": [
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1780",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1140",
+        "score": 0.3196914494037628
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_53",
+        "score": 0.17446573078632355
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_488",
+        "score": 0.04002844914793968
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1584",
+        "score": 0.036415815353393555
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1583",
+        "score": 0.03223686292767525
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_51",
+        "score": 0.027875397354364395
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_548",
+        "score": 0.02083588019013405
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+        "score": 0.016998350620269775
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1129",
+        "score": 0.004975456744432449
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1486",
+        "score": 0.004599192179739475
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_710",
+        "score": 0.0037499202881008387
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2844",
+        "score": 0.0032938115764409304
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1444",
+        "score": 0.002956114010885358
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2829",
+        "score": 0.002772166160866618
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1195",
+        "score": 0.002132054651156068
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_67",
+        "score": 0.0012708991998806596
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_489",
+        "score": 0.001202052808366716
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_880",
+        "score": 0.0010326619958505034
+      },
+      {
+        "chunk_id": "60e91d28-1836-4b05-9340-ebf93c192453_chunk_1165",
+        "score": 0.0007619825773872435
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_203",
+        "score": 0.00019342468294780701
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_933",
+        "score": 3.472783646429889e-05
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_46",
+        "score": 3.148393443552777e-05
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2149",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_202",
+        "score": 0.0
+      }
+    ],
+    "q1": [
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_545",
+        "score": 1.0
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_486",
+        "score": 0.9988669157028198
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_119",
+        "score": 0.9979612231254578
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_546",
+        "score": 0.9975480437278748
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_745",
+        "score": 0.990213930606842
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1669",
+        "score": 0.9884286522865295
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1547",
+        "score": 0.9725024700164795
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2798",
+        "score": 0.9628651738166809
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2791",
+        "score": 0.9585045576095581
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_791",
+        "score": 0.8329602479934692
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_715",
+        "score": 0.8295943737030029
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2840",
+        "score": 0.6283060908317566
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2826",
+        "score": 0.5905983448028564
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1781",
+        "score": 0.4405304193496704
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_576",
+        "score": 0.36856964230537415
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2879",
+        "score": 0.3546791076660156
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_1605",
+        "score": 0.18378859758377075
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_976",
+        "score": 0.18378859758377075
+      },
+      {
+        "chunk_id": "11f472bd-d07c-4c4e-bf8c-cfa7c03de250_chunk_21",
+        "score": 0.17179977893829346
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_421",
+        "score": 0.1698170304298401
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2176",
+        "score": 0.11608736962080002
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2149",
+        "score": 0.05893738195300102
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_202",
+        "score": 0.05893738195300102
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_67",
+        "score": 0.0015731871826574206
+      },
+      {
+        "chunk_id": "fbb98b97-b2bd-41a5-87b1-c317d4697079_chunk_2902",
+        "score": 0.0
+      }
+    ]
+  },
+  "statistics": {
+    "rank_changes": {
+      "q4": 0,
+      "q2": 0,
+      "q5": 25,
+      "q3": 24,
+      "q1": 23
+    },
+    "percentiles": {
+      "q4": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q2": {
+        "99": 1.0,
+        "95": 0.95,
+        "90": 0.9,
+        "85": 0.85
+      },
+      "q5": {
+        "99": 0.7684651741385441,
+        "95": 0.035144389420747754,
+        "90": 0.027269940823316602,
+        "85": 0.013827006518840784
+      },
+      "q3": {
+        "99": 0.8367259478569017,
+        "95": 0.29064630568027455,
+        "90": 0.12069081813097018,
+        "85": 0.037860868871212
+      },
+      "q1": {
+        "99": 0.9997280597686767,
+        "95": 0.9986857771873474,
+        "90": 0.9977959513664245,
+        "85": 0.9931475758552551
+      }
+    },
+    "overall_rank_change_percent": 57.599999999999994,
+    "overall_percentiles": {
+      "99": 1.0,
+      "95": 0.9978785872459411,
+      "90": 0.96,
+      "85": 0.8559999999999997
+    }
+  }
+}

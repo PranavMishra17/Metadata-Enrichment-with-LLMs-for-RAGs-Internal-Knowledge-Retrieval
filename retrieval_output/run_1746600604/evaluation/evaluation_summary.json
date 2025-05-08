@@ -1,0 +1,21 @@
+{
+  "retrievers": [
+    "Content_(recursive)",
+    "Content_(semantic)",
+    "Content_(naive)",
+    "Prefix-Fusion_(naive)",
+    "Prefix-Fusion_(recursive)",
+    "TF-IDF_(naive)",
+    "Prefix-Fusion_(semantic)",
+    "TF-IDF_(recursive)",
+    "TF-IDF_(semantic)"
+  ],
+  "metrics": [
+    1,
+    3,
+    5,
+    10,
+    20
+  ],
+  "output_path": "retrieval_output/run_1746600604\\evaluation"
+}

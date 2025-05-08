@@ -1,0 +1,4 @@
+Retriever,recursive,semantic,naive
+Content_,0.8,0.8,0.8
+Prefix-Fusion_,1.0,1.0,1.0
+TF-IDF_,1.0,1.0,1.0
