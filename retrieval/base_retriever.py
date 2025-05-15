@@ -84,6 +84,10 @@ class BaseRetriever(ABC):
             self.logger.error(f"Error loading ID mappings: {str(e)}")
             raise
         
+        # Test FAISS index size and capacity
+        self.logger.info(f"FAISS index contains {self.index.ntotal} vectors")
+        self.logger.info(f"FAISS index dimension: {self.index.d}")
+
         # Load metadata
         metadata_path = os.path.join(embedding_path, "metadata.json")
         if not os.path.exists(metadata_path):
@@ -120,24 +124,24 @@ class BaseRetriever(ABC):
         pass
     
     def retrieve(self, query: str) -> List[Dict[str, Any]]:
-        """Retrieve top-k relevant chunks for a query.
-        
-        Args:
-            query: The query string
-            
-        Returns:
-            List of retrieved metadata with scores
-        """
+        """Retrieve top-k relevant chunks for a query."""
         # Prepare query
         query_vector = self._prepare_query(query)
         
+        # Log configured top_k
+        self.logger.info(f"Searching for query with top_k={self.top_k}")
+        
         # Search
         scores, indices = self.index.search(query_vector, self.top_k)
+        
+        # Log search results
+        self.logger.info(f"FAISS search returned {len(indices[0])} results")
         
         # Prepare results
         results = []
         for i, (score, idx) in enumerate(zip(scores[0], indices[0])):
             if idx < 0 or idx >= len(self.index_to_id):
+                self.logger.warning(f"Invalid index {idx} - skipping")
                 continue  # Skip invalid indices
                 
             chunk_id = self.index_to_id[idx]
@@ -149,7 +153,16 @@ class BaseRetriever(ABC):
             result["rank"] = i + 1
             result["chunk_id"] = chunk_id
             
+            # Make sure text field is included
+            if "text" not in result or not result["text"]:
+                # Try to get text from metadata
+                result["text"] = metadata.get("text", "")
+                if not result["text"]:
+                    self.logger.warning(f"No text found for chunk {chunk_id}")
+            
             results.append(result)
+        
+        self.logger.info(f"Returning {len(results)} results")
         
         return results
     

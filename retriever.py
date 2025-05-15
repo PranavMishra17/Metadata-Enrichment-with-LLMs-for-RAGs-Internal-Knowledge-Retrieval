@@ -111,7 +111,9 @@ def load_queries(queries_file: str) -> Dict[str, str]:
 
 def create_retrievers(args) -> Dict[str, Dict[str, Any]]:
     """Create retriever instances based on command line arguments."""
+    """Create retriever instances based on command line arguments."""
     logger = setup_logger("RetrieverFactory")
+    logger.info(f"Creating retrievers with top_k={args.top_k}")
     retrievers = {}
     
     # Process each chunking type

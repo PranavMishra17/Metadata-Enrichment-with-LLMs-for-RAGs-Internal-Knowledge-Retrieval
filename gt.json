@@ -1,0 +1,77 @@
+{
+    "q1": {
+      "answer": "In Amazon S3 Glacier, a vault is a container for storing archives and serves as a logical grouping, similar to an S3 bucket. Vaults are region-specific and uniquely named per account within a region. An archive is the actual data object (files, photos, etc.) stored within a vault. Archives are immutable, assigned a unique ID upon upload, and cannot be modified, only deleted or retrieved. A single vault can hold an unlimited number of archives."
+    },
+    "q2": {
+      "answer": "To upload an archive to S3 Glacier using the AWS SDK for Java (v2), you use the GlacierClient, UploadArchiveRequest, and UploadArchiveResponse. Key steps involve initializing the GlacierClient, preparing the UploadArchiveRequest (providing the vault name and a computed SHA-256 tree hash checksum), performing the upload using `glacier.uploadArchive()`, and closing the client. The SDK handles checksum computation and API calls. The archive ID is returned upon success, but the archive isn't immediately visible in the console until the next inventory update."
+    },
+    "q3": {
+      "answer": "Downloading a vault inventory in S3 Glacier is an asynchronous, multi-step process. First, you initiate an inventory retrieval job using the `InitiateJob` API, specifying 'inventory-retrieval' and receiving a job ID. Second, you wait for the job to complete, which can take up to 24 hours, by either polling its status or receiving an SNS notification. Finally, after completion, you download the inventory output using `GetJobOutput` with the job ID. The inventory provides a point-in-time snapshot containing metadata for all archives at the time of generation, including Archive ID, Description, Size, and Creation date, typically returned in JSON format."
+    },
+    "q4": {
+      "answer": "Implementing Vault Lock in Amazon S3 Glacier using the AWS SDK for Java involves a two-step process. First, you initiate the vault lock by attaching a Vault Lock policy (a JSON document defining rules like WORM). This is done using `InitiateVaultLockRequest`, which returns a `lockId`. Second, you complete the vault lock using `CompleteVaultLockRequest` with the same vault name and the obtained `lockId`. The policy becomes enforced and immutable after the `completeVaultLock` call, which must occur within 24 hours of initiation."
+    },
+    "q5": {
+      "answer": "Amazon S3 Glacier provides robust data encryption in transit and at rest. Data transferred to Glacier is encrypted using SSL/TLS. For data at rest, Glacier automatically applies server-side encryption (SSE) using AES-256 with AWS-managed and rotated keys. Each object is encrypted with a unique key, further encrypted by a master key. Key management options include SSE-S3 (AWS-managed keys, default) and client-side encryption (you manage your own keys). FIPS 140-2 endpoints and support for TLS 1.2/1.3 and PFS are also available."
+    },
+    "q6": {
+      "answer": "S3 on Outposts is object storage physically located on your on-premises Outposts hardware, while standard Amazon S3 is cloud-native in AWS regions. Key differences include: S3 on Outposts uses a single `OUTPOSTS` storage class with a 50 TB bucket size limit and no support for many S3 features (ACLs, CORS, S3 Batch, etc.). Access is only via mandatory access points and VPC endpoints using private networking. It's best for workloads with strict data residency, low-latency, or local processing needs, unlike standard S3's global, feature-rich nature."
+    },
+    "q7": {
+      "answer": "In S3 on Outposts, buckets, access points, and endpoints work together for access. Buckets store objects locally. Access points are mandatory named network entry points attached to specific buckets, providing the target for object operations. Endpoints are the routing mechanism created within a VPC that allow private communication to the access points. Requests use access point ARNs and are routed through the endpoint to reach the bucket, ensuring secure, VPC-scoped access."
+    },
+    "q8": {
+      "answer": "Object replication in S3 on Outposts requires enabling versioning on source and destination buckets, creating an IAM role with necessary permissions (`s3:GetObject` on source, `s3:PutObject` on destination), defining a replication configuration (XML) based on prefixes or tags, and deploying it via API/SDK. It replicates objects created *after* setup, metadata, and version IDs. It does *not* replicate pre-existing or SSE-C encrypted objects, bucket configurations, or lifecycle deletions. Limitations include no support for S3 RTC or Batch Operations Replication. CloudWatch monitors replication metrics."
+    },
+    "q9": {
+      "answer": "Performing a multipart upload to S3 on Outposts using the AWS SDK for Java (v1) involves: 1. Initiating the multipart upload using `InitiateMultipartUploadRequest` with the access point ARN. 2. Getting the source object size. 3. Copying parts of the object in a loop using `CopyPartRequest`, specifying source/destination access point ARNs, object keys, upload ID, and byte ranges. 4. Collecting the `ETag` for each part. 5. Completing the upload using `CompleteMultipartUploadRequest` with the access point ARN, destination object key, upload ID, and the list of part ETags."
+    },
+    "q10": {
+      "answer": "AWS PrivateLink enables private management access to S3 on Outposts from your VPC using interface VPC endpoints, without public internet exposure. You create a VPC interface endpoint for S3 on Outposts, which provides private IPs via ENIs. You then access *management-level* APIs (like listing buckets/endpoints) using the generated private DNS names or specifying the endpoint URL in requests. It does *not* support object-level operations (GET/PUT), FIPS endpoints, or private DNS. Access is controlled via IAM and endpoint policies."
+    },
+    "q11": {
+      "answer": "Amazon S3 primarily supports AWS Signature Version 4 (SigV4) for authenticating API requests. Supported methods include: 1. HTTP Authorization Header (recommended and most secure), where the signature is passed in the header. 2. Query String Parameters (used in presigned URLs for temporary access), where the signature is part of the URL. 3. Browser-Based Uploads using HTTP POST, where authentication uses POST policies and signatures in form fields. SigV2 is deprecated; only SigV4 is supported in modern regions."
+    },
+    "q12": {
+      "answer": "A signature for an authenticated S3 request using AWS Signature Version 4 (SigV4) is calculated by: 1. Creating a 'Canonical Request' from standardized request elements (HTTP method, URI, query string, headers, payload hash). 2. Creating a 'String to Sign' by combining algorithm info, date, credential scope (date/region/service/`aws4_request`), and the hash of the Canonical Request. 3. Calculating a hierarchical 'Signing Key' derived from your secret access key, date, region, and service. 4. Computing the final signature using HMAC-SHA256 on the 'String to Sign' with the 'Signing Key'. This signature is included in the `Authorization` header or query string parameters."
+    },
+    "q13": {
+      "answer": "Browser-based upload using HTTP POST allows users to upload files directly from their browser to an S3 bucket via an HTML form (`multipart/form-data`). Instead of headers, parameters like key, ACL, policy, and authentication details (`x-amz-algorithm`, `x-amz-credential`, `x-amz-date`, `x-amz-signature`) are passed as form fields. Authentication is handled by signing a POST policy document. The form includes a file input field and is posted to the bucket's S3 URL. S3 validates the signature and policy before storing the complete object. It's secure, efficient, and suitable for web applications needing client-side uploads."
+    },
+    "q14": {
+      "answer": "A POST policy document for S3 browser uploads is a base64-encoded JSON object. Its components are: 1. `expiration`: The policy's expiry time in ISO8601 format. 2. `conditions`: An array of rules defining constraints on form fields, using match types like exact match (`{ field: value }`), `starts-with`, and `content-length-range`. 3. Supported fields include `acl`, `bucket`, `key`, `content-length-range`, `x-amz-algorithm`, `x-amz-credential`, `x-amz-date`, custom metadata (`x-amz-meta-*`), etc. Special characters in the JSON must be escaped."
+    },
+    "q15": {
+      "answer": "You make Amazon S3 requests over IPv6 using dual-stack endpoints: `bucketname.s3.dualstack.<region>.amazonaws.com`. Your client and network must support IPv6. Update IAM and bucket policies to include IPv6 ranges in `aws:SourceIp` conditions. You can test compatibility with `curl -v` or `ping ipv6.`. Use virtual-hosted or path-style dual-stack endpoints in applications or configure AWS CLI/SDKs to use dual-stack. Limitations include no support for static website hosting or Transfer Acceleration via CLI (currently)."
+    },
+    "q16": {
+      "answer": "Best practices for error handling in S3 API calls include: 1. Retrying on `InternalError` (HTTP 500) with exponential backoff. 2. Handling `SlowDown` errors gracefully by reducing request rate and using retry with delay. 3. Using S3-specific error codes (`<Code>`, `<Message>` in XML responses) instead of just HTTP status codes for better context. 4. Handling common errors like `AccessDenied` (403), `NoSuchKey` (404), `NoSuchBucket` (404), etc. 5. Using developer debug info (`<Details>`, `x-amz-request-id`, `x-amz-id-2` headers) during development. 6. Masking raw errors in production, logging full details internally while showing user-friendly messages."
+    },
+    "q17": {
+      "answer": "You can obtain request IDs from Amazon S3 responses using several methods: 1. HTTP Response Headers: Every response includes `x-amz-request-id` and `x-amz-id-2`. 2. Browser Developer Tools: Inspect network responses. For errors, IDs are in `<RequestId>` and `<HostId>` XML tags. 3. AWS SDKs: Most SDKs (Java, Python Boto3, Go, PHP, .NET, Ruby) provide ways to extract these IDs from response metadata or via logging. 4. AWS CLI: Use the `--debug` flag. 5. AWS PowerShell Tools: Enable response logging. 6. CloudTrail Data Events or S3 Server Access Logs: Configure logging and query logs (e.g., with Athena). Always collect both IDs when contacting AWS Support."
+    },
+    "q18": {
+      "answer": "Multi-chunk payload signature calculation (chunked upload) in S3 SigV4 differs from single-chunk primarily by requiring a seed signature calculated from headers first, followed by chained signatures for each chunk. Each chunk's signature includes the previous chunk's signature, ensuring order and integrity. Special headers like `x-amz-content-sha256: STREAMING-AWS4-HMAC-SHA256-PAYLOAD`, `Content-Encoding: aws-chunked`, and `x-amz-decoded-content-length` are required. Each chunk includes metadata and its own signature. Use chunked uploads for large files or when data cannot be buffered entirely before sending."
+    },
+    "q19": {
+      "answer": "The Amazon S3 SelectObjectContent operation allows querying the contents of an S3 object directly using SQL expressions (for CSV, JSON, Parquet formats). It returns a streamed response using chunked Transfer-Encoding, consisting of various message types (Records, Continuation, Progress, Stats, End, RequestLevelError). Each message has a prelude, prelude CRC, headers, optional payload, and message CRC. This enables filtering and retrieving only relevant data portions, reducing data transfer and speeding up analysis, especially for large datasets."
+    },
+    "q20": {
+      "answer": "To specify the signature version in S3 request authentication, you primarily configure AWS SDKs and tools to use Signature Version 4 (SigV4), which is the default for most recent versions. For older SDKs or specific control, you might need to set configuration options (e.g., `aws configure set default.s3.signature_version s3v4` in CLI, system properties/client builder flags in Java, client constructor options in JavaScript/PHP, or config files in Python Boto3). Newer SDK versions typically use SigV4 automatically."
+    },
+    "q21": {
+      "answer": "Amazon S3 POST policies support various condition types to constrain browser uploads. These include comparison operators like `eq` (exact match), `starts-with` (for prefixes), and `content-length-range` (min/max file size). Conditions can be applied to key fields within the HTML form and request, such as `key` (object name/prefix), `acl`, `Content-Type`, `x-amz-meta-*` (custom metadata), and required SigV4 authentication fields (`x-amz-algorithm`, `x-amz-credential`, `x-amz-date`). These conditions are defined in a base64-encoded JSON policy document included in the form."
+    },
+    "q22": {
+      "answer": "Common Amazon S3 request headers used in REST API calls include: `Authorization` (contains the signature), `x-amz-date` (request timestamp for signing), `x-amz-content-sha256` (hash of payload for SigV4), `x-amz-security-token` (for STS temporary credentials), `Content-MD5` (optional hash for integrity check), `Content-Type` (MIME type), `Content-Length` (body size), `Host` (target host), `Expect` (for 100-continue), and CORS headers like `Origin` and `Access-Control-Request-Method`. These headers are crucial for authentication, security, and request handling."
+    },
+    "q23": {
+      "answer": "AWS Amplify supports browser-based file uploads to S3 via its JavaScript library's `Storage` module. After configuring Amplify with Cognito and S3 bucket details, developers can use high-level `Storage.put()` methods for public or private uploads. Amplify automatically handles underlying complexities like authentication, SigV4 signing, and error handling, abstracting the direct S3 REST API calls. You provide the file data, key, and optionally specify `level` (public/private) and `contentType`. This simplifies integrating file uploads into web and mobile applications."
+    },
+    "q24": {
+      "answer": "Amazon S3 supports both REST and SOAP APIs, but REST is the modern, recommended interface, while SOAP is legacy. REST operates over HTTP/HTTPS using standard methods (GET, PUT, POST, DELETE), supports all new S3 features, and uses standard HTTP error codes. SOAP operates only over HTTPS (HTTP deprecated), relies on XML messaging, has deprecated support for many operations, does not support new features, and uses XML-encapsulated errors. AWS strongly recommends using the REST API or SDKs (which use REST) for all new development."
+    },
+    "q25": {
+      "answer": "HTML forms can be used for uploads to S3 directly from a browser via HTTP POST. This requires constructing a form with `method='post'`, `enctype='multipart/form-data'`, and the bucket's S3 URL as the `action`. The form must include specific fields: `key` (object name, often using `${filename}`), `acl`, a base64-encoded `policy` document (defining constraints), and SigV4 authentication fields (`x-amz-algorithm`, `x-amz-credential`, `x-amz-date`, `x-amz-signature`). A file input field (`<input type='file' name='file'>`) is essential. The form data (excluding file) must be under 20KB and use UTF-8. S3 validates the signature/policy and stores the file, redirecting or returning a status code on success."
+    }
+  }
