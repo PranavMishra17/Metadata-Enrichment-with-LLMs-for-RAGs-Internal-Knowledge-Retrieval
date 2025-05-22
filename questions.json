@@ -1,0 +1,163 @@
+{
+    "q1": {
+      "question": "What is the difference between a vault and an archive in Amazon S3 Glacier?",
+      "answer": ""
+    },
+    "q2": {
+      "question": "How do you upload an archive to S3 Glacier using the AWS SDK for Java?",
+      "answer": ""
+    },
+    "q3": {
+      "question": "Explain the process of downloading a vault inventory in S3 Glacier and what information it contains.",
+      "answer": ""
+    },
+    "q4": {
+      "question": "Write the Java code to implement Vault Lock in Amazon S3 Glacier.",
+      "answer": ""
+    },
+    "q5": {
+      "question": "How does S3 Glacier handle data encryption and what are the key management options available?",
+      "answer": ""
+    },
+    "q6": {
+      "question": "What are the core differences between S3 on Outposts and standard Amazon S3?",
+      "answer": ""
+    },
+    "q7": {
+      "question": "Explain the relationship between buckets, access points, and endpoints in S3 on Outposts.",
+      "answer": ""
+    },
+    "q8": {
+      "question": "How would you implement object replication for S3 on Outposts and what are its limitations?",
+      "answer": ""
+    },
+    "q9": {
+      "question": "Write code using AWS SDK for Java to perform a multipart upload to an S3 on Outposts bucket.",
+      "answer": ""
+    },
+    "q10": {
+      "question": "How can you configure and use AWS PrivateLink with S3 on Outposts, and what are its restrictions?",
+      "answer": ""
+    },
+    
+        "q11": {
+          "question": "What are the different authentication methods supported by Amazon S3 API and how do they differ?",
+          "answer": ""
+        },
+        "q12": {
+          "question": "Explain the process of calculating a signature for Amazon S3 requests using AWS Signature Version 4.",
+          "answer": ""
+        },
+        "q13": {
+          "question": "How do you implement browser-based uploads to Amazon S3 using HTTP POST?",
+          "answer": ""
+        },
+        "q14": {
+          "question": "What are the components of a POST Policy in S3 and how do you create one with proper security constraints?",
+          "answer": ""
+        },
+        "q15": {
+          "question": "Compare making S3 requests over IPv6 versus IPv4, including endpoints and compatibility considerations.",
+          "answer": ""
+        },
+        "q16": {
+          "question": "What are the best practices for handling S3 errors, particularly for InternalErrors and SlowDown responses?",
+          "answer": ""
+        },
+        "q17": {
+          "question": "How do you retrieve and use Amazon S3 request IDs for AWS Support troubleshooting?",
+          "answer": ""
+        },
+        "q18": {
+          "question": "Write code to implement a multi-chunk payload transfer using AWS Signature Version 4 authentication.",
+          "answer": ""
+        },
+        "q19": {
+          "question": "What is the SelectObjectContent response structure and how do you process its events?",
+          "answer": ""
+        },
+        "q20": {
+          "question": "How do you specify the Signature Version in S3 request authentication across different AWS SDKs?",
+          "answer": ""
+        },
+        "q21": {
+          "question": "Explain the conditions you can use in S3 POST policies and how they constrain uploaded content.",
+          "answer": ""
+        },
+        "q22": {
+          "question": "What are the common S3 request and response headers, and how do they affect API operations?",
+          "answer": ""
+        },
+        "q23": {
+          "question": "How would you implement a browser-based file upload to S3 using AWS Amplify?",
+          "answer": ""
+        },
+        "q24": {
+          "question": "What are the differences between the S3 REST API and SOAP API, and which one should you use?",
+          "answer": ""
+        },
+        "q25": {
+          "question": "How do you create HTML forms for direct browser uploads to S3 and what fields are required?",
+          "answer": ""
+        },
+            "q26": {
+              "question": "What is Amazon S3 Versioning and how does it help with data protection? Include steps to enable it for a bucket.",
+              "answer": ""
+            },
+            "q27": {
+              "question": "Explain Amazon S3 Storage Classes in detail, including when to use each class and the cost/performance tradeoffs.",
+              "answer": ""
+            },
+            "q28": {
+              "question": "How do you configure S3 Lifecycle policies to automatically transition objects between storage classes and expire objects?",
+              "answer": ""
+            },
+            "q29": {
+              "question": "Explain S3 Object Lock, its modes (Governance and Compliance), and provide examples of configuring it for regulatory requirements.",
+              "answer": ""
+            },
+            "q30": {
+              "question": "How does S3 Transfer Acceleration work, and how do you implement and test it for your application?",
+              "answer": ""
+            },
+            "q31": {
+              "question": "Describe S3 Event Notifications and how to configure them with various AWS services (SNS, SQS, Lambda, and EventBridge).",
+              "answer": ""
+            },
+            "q32": {
+              "question": "What is S3 Express One Zone and how does it differ from standard S3? Explain directory buckets and their performance benefits.",
+              "answer": ""
+            },
+            "q33": {
+              "question": "Explain the process of hosting a static website on Amazon S3, including configuration of index documents, error pages, and redirects.",
+              "answer": ""
+            },
+            "q34": {
+              "question": "How do you implement Cross-Origin Resource Sharing (CORS) for S3 buckets and what are the elements of a CORS configuration?",
+              "answer": ""
+            },
+            "q35": {
+              "question": "Describe S3 Replication (Same-Region, Cross-Region, and Bi-directional) and how to set it up, including requirements and limitations.",
+              "answer": ""
+            },
+            "q36": {
+              "question": "What is S3 Storage Lens and how can you use it to analyze and optimize your storage usage across AWS accounts?",
+              "answer": ""
+            },
+            "q37": {
+              "question": "Explain the S3 Object Lambda feature and provide examples of transforming objects during retrieval without modifying the original data.",
+              "answer": ""
+            },
+            "q38": {
+              "question": "What are S3 Access Points and Multi-Region Access Points? How do they simplify managing access to shared datasets?",
+              "answer": ""
+            },
+            "q39": {
+              "question": "Describe S3 Batch Operations and how to use them to perform operations on large numbers of S3 objects efficiently.",
+              "answer": ""
+            },
+            "q40": {
+              "question": "Explain the best practices for optimizing S3 performance, including horizontal scaling, parallelization, and choosing appropriate request patterns.",
+              "answer": ""
+            }
+          }
